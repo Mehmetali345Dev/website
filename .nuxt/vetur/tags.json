@@ -1,0 +1,20 @@
+{
+  "SocialMedia": {
+    "description": "Auto imported from components/SocialMedia.vue"
+  },
+  "LazySocialMedia": {
+    "description": "Auto imported from components/SocialMedia.vue"
+  },
+  "PostCard": {
+    "description": "Auto imported from components/blog/PostCard.vue"
+  },
+  "LazyPostCard": {
+    "description": "Auto imported from components/blog/PostCard.vue"
+  },
+  "Sidebar": {
+    "description": "Auto imported from components/blog/Sidebar.vue"
+  },
+  "LazySidebar": {
+    "description": "Auto imported from components/blog/Sidebar.vue"
+  }
+}

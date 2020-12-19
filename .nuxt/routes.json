@@ -1,0 +1,28 @@
+[
+  {
+    "name": "blog",
+    "path": "/blog",
+    "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\blog\\\\index.vue",
+    "chunkName": "pages/blog/index",
+    "url": "/blog"
+  },
+  {
+    "name": "blog-gonderi-ara-title",
+    "path": "/blog/gonderi/ara/:title?",
+    "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\blog\\\\gonderi\\\\ara\\\\_title.vue",
+    "chunkName": "pages/blog/gonderi/ara/_title"
+  },
+  {
+    "name": "blog-gonderi-slug",
+    "path": "/blog/gonderi/:slug?",
+    "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\blog\\\\gonderi\\\\_slug.vue",
+    "chunkName": "pages/blog/gonderi/_slug"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "url": "/"
+  }
+]

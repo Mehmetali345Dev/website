@@ -1,0 +1,17 @@
+{
+  "entry": "server.js",
+  "files": {
+    "pages/blog/gonderi/_slug.js": "pages/blog/gonderi/_slug.js",
+    "pages/blog/gonderi/ara/_title.js": "pages/blog/gonderi/ara/_title.js",
+    "pages/blog/index.js": "pages/blog/index.js",
+    "pages/index.js": "pages/index.js",
+    "server.js": "server.js"
+  },
+  "maps": {
+    "pages/blog/gonderi/_slug.js": "pages/blog/gonderi/_slug.js.map",
+    "pages/blog/gonderi/ara/_title.js": "pages/blog/gonderi/ara/_title.js.map",
+    "pages/blog/index.js": "pages/blog/index.js.map",
+    "pages/index.js": "pages/index.js.map",
+    "server.js": "server.js.map"
+  }
+}
