@@ -1,18 +1,9 @@
-﻿
----
-
+﻿---
 title:  Cyberpunk 2077 İlk İzlenim, Düşüncelerim
-
 description:  Only bruh
-
 tags:  oyun, haber
-
 image:  https://cdn.mos.cms.futurecdn.net/3ziVdCVxDZtYzisoMrx5Cb.jpg
-
 createdAt:  2020-12-19 13:32
-
-related:
-
 ---
 
 # Hepinize Merhaba
