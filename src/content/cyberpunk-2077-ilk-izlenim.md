@@ -1,4 +1,4 @@
----
+﻿---
 title:  Cyberpunk 2077 İlk İzlenim, Düşüncelerim
 description:  Only bruh
 tags:  oyun, haber

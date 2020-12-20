@@ -289,9 +289,13 @@ export default {
         },
       ],
       positions: [     
-       <p>
-       Pozisyonum yok
-       </p>    
+      {
+          current: true,
+          service: "Katil CivCiv - Discord Botu",
+          role: "Website Geliştiricisi",
+          icon: "/images/projects/favicons/kc.png",
+          url: "https://site.katilcivciv.cf/",
+        },  
       ].map((i) => {
         if (!i.samePage) i.url = `${i.url}?utm_source=mehmetali345.ml`;
         return i;
