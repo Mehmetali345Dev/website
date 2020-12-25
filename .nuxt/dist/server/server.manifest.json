@@ -5,6 +5,7 @@
     "pages/blog/gonderi/ara/_title.js": "pages/blog/gonderi/ara/_title.js",
     "pages/blog/index.js": "pages/blog/index.js",
     "pages/index.js": "pages/index.js",
+    "pages/redirect/_url.js": "pages/redirect/_url.js",
     "server.js": "server.js"
   },
   "maps": {
@@ -12,6 +13,7 @@
     "pages/blog/gonderi/ara/_title.js": "pages/blog/gonderi/ara/_title.js.map",
     "pages/blog/index.js": "pages/blog/index.js.map",
     "pages/index.js": "pages/index.js.map",
+    "pages/redirect/_url.js": "pages/redirect/_url.js.map",
     "server.js": "server.js.map"
   }
 }

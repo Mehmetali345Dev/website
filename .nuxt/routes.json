@@ -4,25 +4,36 @@
     "path": "/blog",
     "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\blog\\\\index.vue",
     "chunkName": "pages/blog/index",
-    "url": "/blog"
+    "url": "/blog",
+    "_name": "_425353e5"
   },
   {
     "name": "blog-gonderi-ara-title",
     "path": "/blog/gonderi/ara/:title?",
     "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\blog\\\\gonderi\\\\ara\\\\_title.vue",
-    "chunkName": "pages/blog/gonderi/ara/_title"
+    "chunkName": "pages/blog/gonderi/ara/_title",
+    "_name": "_1b1cbea8"
   },
   {
     "name": "blog-gonderi-slug",
     "path": "/blog/gonderi/:slug?",
     "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\blog\\\\gonderi\\\\_slug.vue",
-    "chunkName": "pages/blog/gonderi/_slug"
+    "chunkName": "pages/blog/gonderi/_slug",
+    "_name": "_1e4807c9"
+  },
+  {
+    "name": "redirect-url",
+    "path": "/redirect/:url?",
+    "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\redirect\\\\_url.vue",
+    "chunkName": "pages/redirect/_url",
+    "_name": "_377850a7"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "url": "/"
+    "url": "/",
+    "_name": "_a1737bf2"
   }
 ]

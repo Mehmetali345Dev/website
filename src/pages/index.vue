@@ -83,7 +83,7 @@
               <v-list-item-title class="mb-2">
                 {{ project.name }}
                 <span class="new v-align:middle text:xxsmall" v-if="project.new"
-                  >New</span
+                  >Yeni</span
                 >
               </v-list-item-title>
               <v-list-item-subtitle>{{
@@ -253,7 +253,7 @@ export default {
   head: {
     title: "Ana Sayfa",
     meta: [
-      { name: "og:title", content: "EGGSY's Website" },
+      { name: "og:title", content: "Mehmetali345.ml" },
       { name: "premid-details", content: "Viewing a page:" },
       { name: "premid-state", content: "Homepage" },
     ],
@@ -296,6 +296,13 @@ export default {
           icon: "/images/projects/favicons/kc.png",
           url: "https://site.katilcivciv.cf/",
         },  
+         {
+          current: true,
+          service: "Gamer Zone Bot - Discord Botu",
+          role: "Website Geliştiricisi",
+          icon: "/images/projects/favicons/GZB.png",
+          url: "https://gamerzonebot.ml/",
+        },  
       ].map((i) => {
         if (!i.samePage) i.url = `${i.url}?utm_source=mehmetali345.ml`;
         return i;
@@ -307,7 +314,14 @@ export default {
             "Kişisel genellikle güncel konulardan veya haberlerden bahsettiğim bloğum.",
           to: "/blog",
           new: false,
-        },      
+        },
+        {
+          name: "CodePad",
+          description:
+            "Hızlı ve Hafif bir kod editörü",
+          to: "/redirect/codepad",
+          new: true,
+        },          
       ],
     };
   },
