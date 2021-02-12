@@ -253,11 +253,11 @@ export default {
   head: {
     title: "Ana Sayfa",
     meta: [
-      { name: "og:title", content: "Mehmetali345.ml" },
+      { name: "og:title", content: "Mehmetali345.xyz" },
       { name: "premid-details", content: "Viewing a page:" },
       { name: "premid-state", content: "Homepage" },
     ],
-    link: [{ rel: "canonical", content: "https://mehmetali345.ml" }],
+    link: [{ rel: "canonical", content: "https://mehmetali345.xyz" }],
   },
   data() {
     return {
@@ -304,7 +304,7 @@ export default {
           url: "https://gamerzonebot.ml/",
         },  
       ].map((i) => {
-        if (!i.samePage) i.url = `${i.url}?utm_source=mehmetali345.ml`;
+        if (!i.samePage) i.url = `${i.url}?utm_source=mehmetali345.xyz`;
         return i;
       }),
       projects: [

@@ -2,38 +2,38 @@
   {
     "name": "blog",
     "path": "/blog",
-    "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\blog\\\\index.vue",
+    "component": "C:\\\\Users\\\\Mehmetali345\\\\Desktop\\\\site-main\\\\src\\\\pages\\\\blog\\\\index.vue",
     "chunkName": "pages/blog/index",
     "url": "/blog",
-    "_name": "_425353e5"
+    "_name": "_a3dedab0"
   },
   {
     "name": "blog-gonderi-ara-title",
     "path": "/blog/gonderi/ara/:title?",
-    "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\blog\\\\gonderi\\\\ara\\\\_title.vue",
+    "component": "C:\\\\Users\\\\Mehmetali345\\\\Desktop\\\\site-main\\\\src\\\\pages\\\\blog\\\\gonderi\\\\ara\\\\_title.vue",
     "chunkName": "pages/blog/gonderi/ara/_title",
-    "_name": "_1b1cbea8"
+    "_name": "_4397c185"
   },
   {
     "name": "blog-gonderi-slug",
     "path": "/blog/gonderi/:slug?",
-    "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\blog\\\\gonderi\\\\_slug.vue",
+    "component": "C:\\\\Users\\\\Mehmetali345\\\\Desktop\\\\site-main\\\\src\\\\pages\\\\blog\\\\gonderi\\\\_slug.vue",
     "chunkName": "pages/blog/gonderi/_slug",
-    "_name": "_1e4807c9"
+    "_name": "_7481b466"
   },
   {
     "name": "redirect-url",
     "path": "/redirect/:url?",
-    "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\redirect\\\\_url.vue",
+    "component": "C:\\\\Users\\\\Mehmetali345\\\\Desktop\\\\site-main\\\\src\\\\pages\\\\redirect\\\\_url.vue",
     "chunkName": "pages/redirect/_url",
-    "_name": "_377850a7"
+    "_name": "_19ba11f8"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\Mehmet Ali\\\\Desktop\\\\Ivır Zıvır\\\\deneme-website\\\\src\\\\pages\\\\index.vue",
+    "component": "C:\\\\Users\\\\Mehmetali345\\\\Desktop\\\\site-main\\\\src\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
     "url": "/",
-    "_name": "_a1737bf2"
+    "_name": "_f302e1ec"
   }
 ]

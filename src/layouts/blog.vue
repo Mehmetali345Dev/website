@@ -191,13 +191,12 @@ export default {
           to: "/blog",
         },
         {
-          icon: "mdi-discord",
-          title: "Discord (Gönderileri)",
+          title: "Haber",
           to: "/blog/gonderi/ara/haber",
         },
         {
           icon: "mdi-play-circle",
-          title: "Video",
+          title: "yazılım",
           to: "/blog/gonderi/ara/yazılım",
         },
         {
@@ -206,9 +205,8 @@ export default {
           to: "/blog/gonderi/ara/oyun",
         },
         {
-          icon: "mdi-linux",
-          title: "Linux",
-          to: "/blog/gonderi/ara/c#",
+          title: "C#",
+          to: "/blog/gonderi/ara/csharp",
         },
         {
           icon: "mdi-exit-run",

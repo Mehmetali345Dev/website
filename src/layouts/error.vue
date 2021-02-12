@@ -76,11 +76,11 @@ export default {
         },
         401: {
           shortname: "Yetkin yok",
-          description: "Wowowow, where do you think your going?",
+          description: "YETKİN YOK!",
         },
         403: {
           shortname: "Forbidden",
-          description: "Stop right there, calling the cops now!",
+          description: "DIZZZZZT BELİRSİZ.",
         },
         404: {
           shortname: "Sayfa bulunamadı.",

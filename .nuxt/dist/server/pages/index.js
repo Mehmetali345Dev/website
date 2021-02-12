@@ -471,7 +471,7 @@ if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(5).default
 module.exports.__inject__ = function (context) {
-  add("72beb9a6", content, true, context)
+  add("10e2dff9", content, true, context)
 };
 
 /***/ }),
@@ -481,9 +481,9 @@ module.exports.__inject__ = function (context) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_2a039680_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(178);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_2a039680_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_2a039680_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_2a039680_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_2a039680_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_4fa6444a_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(178);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_4fa6444a_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_4fa6444a_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_4fa6444a_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_4fa6444a_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
@@ -495,7 +495,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "h3[data-v-2a039680]:not(:first-child){margin-top:1em}.avatar[data-v-2a039680]{transition:border-radius .2s;border-radius:4px;height:auto;width:100%}.avatar[data-v-2a039680]:hover{border-radius:0}.information[data-v-2a039680]{margin:0 1em}.information p[data-v-2a039680]{max-width:500px}.skills[data-v-2a039680]{margin-top:.5em}.skills div[data-v-2a039680]{margin-top:4px}.skills .progress[data-v-2a039680]{border-radius:2px;transition:all .2s}.skills .progress[data-v-2a039680]:hover{opacity:.9}.socials[data-v-2a039680]{margin-top:1em;display:flex;justify-content:space-around}.positions[data-v-2a039680]{max-width:500px}.positions div[data-v-2a039680]{display:flex;justify-content:space-between}.positions div .logo[data-v-2a039680]{height:22px;width:22px;align-self:center;margin-right:8px}.positions div a[data-v-2a039680]{text-decoration:none}.positions div a i[data-v-2a039680]{margin-left:8px;font-size:large;color:hsla(0,0%,98%,.75);transition:color .2s}.positions div a i[data-v-2a039680]:hover{color:#fafafa}.projects h3[data-v-2a039680]{text-align:right}.projects .cards[data-v-2a039680]{float:right}.projects .cards div[data-v-2a039680]{-ms-user-select:none;user-select:none;-moz-user-select:none;-webkit-user-select:none;cursor:pointer;transition:transform .2s}.projects .cards div.v-card[data-v-2a039680]:not(:last-child){margin-bottom:.5em}.projects .cards div.v-card[data-v-2a039680]:hover{transform:translateX(-15px)}@media only screen and (max-width:600px){.row[data-v-2a039680]{display:unset}.row .avatar[data-v-2a039680]{max-width:50%}.row h3[data-v-2a039680]{margin-top:1.5em;text-align:left}.row .cards[data-v-2a039680]{float:unset}.row .cards div.v-card[data-v-2a039680]{max-width:100%!important}.row .cards div.v-card[data-v-2a039680]:hover{transform:unset}.row .col-2[data-v-2a039680],.row .col-4[data-v-2a039680]{flex:unset;max-width:unset}.row .information[data-v-2a039680]{margin-left:0}.positions span[data-v-2a039680]{max-width:35vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}", ""]);
+exports.push([module.i, "h3[data-v-4fa6444a]:not(:first-child){margin-top:1em}.avatar[data-v-4fa6444a]{transition:border-radius .2s;border-radius:4px;height:auto;width:100%}.avatar[data-v-4fa6444a]:hover{border-radius:0}.information[data-v-4fa6444a]{margin:0 1em}.information p[data-v-4fa6444a]{max-width:500px}.skills[data-v-4fa6444a]{margin-top:.5em}.skills div[data-v-4fa6444a]{margin-top:4px}.skills .progress[data-v-4fa6444a]{border-radius:2px;transition:all .2s}.skills .progress[data-v-4fa6444a]:hover{opacity:.9}.socials[data-v-4fa6444a]{margin-top:1em;display:flex;justify-content:space-around}.positions[data-v-4fa6444a]{max-width:500px}.positions div[data-v-4fa6444a]{display:flex;justify-content:space-between}.positions div .logo[data-v-4fa6444a]{height:22px;width:22px;align-self:center;margin-right:8px}.positions div a[data-v-4fa6444a]{text-decoration:none}.positions div a i[data-v-4fa6444a]{margin-left:8px;font-size:large;color:hsla(0,0%,98%,.75);transition:color .2s}.positions div a i[data-v-4fa6444a]:hover{color:#fafafa}.projects h3[data-v-4fa6444a]{text-align:right}.projects .cards[data-v-4fa6444a]{float:right}.projects .cards div[data-v-4fa6444a]{-ms-user-select:none;user-select:none;-moz-user-select:none;-webkit-user-select:none;cursor:pointer;transition:transform .2s}.projects .cards div.v-card[data-v-4fa6444a]:not(:last-child){margin-bottom:.5em}.projects .cards div.v-card[data-v-4fa6444a]:hover{transform:translateX(-15px)}@media only screen and (max-width:600px){.row[data-v-4fa6444a]{display:unset}.row .avatar[data-v-4fa6444a]{max-width:50%}.row h3[data-v-4fa6444a]{margin-top:1.5em;text-align:left}.row .cards[data-v-4fa6444a]{float:unset}.row .cards div.v-card[data-v-4fa6444a]{max-width:100%!important}.row .cards div.v-card[data-v-4fa6444a]:hover{transform:unset}.row .col-2[data-v-4fa6444a],.row .col-4[data-v-4fa6444a]{flex:unset;max-width:unset}.row .information[data-v-4fa6444a]{margin-left:0}.positions span[data-v-4fa6444a]{max-width:35vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}", ""]);
 // Exports
 module.exports = exports;
 
@@ -592,7 +592,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "6c80dae4"
+  "a7b7b138"
   
 )
 
@@ -614,14 +614,14 @@ installComponents_default()(component, {VBtn: VBtn["a" /* default */],VIcon: VIc
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/pages/index.vue?vue&type=template&id=2a039680&scoped=true&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/pages/index.vue?vue&type=template&id=4fa6444a&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-row',{attrs:{"no-gutters":""}},[_c('v-col',{attrs:{"cols":"2"}},[_c('v-img',{staticClass:"avatar",attrs:{"title":"Yüzümü göstermem maalesef :>","alt":"personal-image","src":"/images/irl_image.jpg"}}),_vm._v(" "),_c('div',{staticClass:"skills"},_vm._l((_vm.skills),function(skill){return _c('div',{key:skill.name},[_c('small',[_vm._v(_vm._s(skill.name))]),_vm._v(" "),_c('v-progress-linear',{staticClass:"progress",attrs:{"value":skill.value,"color":skill.color,"height":"20"},scopedSlots:_vm._u([{key:"default",fn:function(ref){
 var value = ref.value;
 return [_c('small',[_vm._v(_vm._s(Math.ceil(value))+"%")])]}}],null,true)})],1)}),0),_vm._v(" "),_c('div',{staticClass:"socials"},[_c('SocialMedia',{attrs:{"slice":"5"}})],1)],1),_vm._v(" "),_c('v-col',{staticClass:"information",attrs:{"md":"5"}},[_c('h3',{staticClass:"font-weight-light text-uppercase"},[_vm._v("Ben kimim?")]),_vm._v(" "),_c('p'),_vm._v("\n      Merhaba ben Mehmet Ali (Namı değer Mehmetali_345) genç bir geliştiriciyim. Genellikle C# ve\n      Javascript kullanarak masaüstü programları ve web uygulamaları yazıyorum. \n    "),_c('p',[_vm._v("\n      İnsanlarla kodlarımı paylaşmayı ve insanlara kodlamanın veya yazılım yazmanın ne kadar\n      eğlenceli olduğunu anlatmayı seviyorum.    \n    ")]),_vm._v(" "),_c('h3',{staticClass:"font-weight-light text-uppercase"},[_vm._v("Şuanki Pozisyonlarım")]),_vm._v(" "),_c('div',{staticClass:"positions"},_vm._l((_vm.positions.filter(function (p) { return p.current; })),function(position){return _c('div',{key:position.name},[_c('div',[_c('v-img',{staticClass:"logo",attrs:{"alt":"logo","src":position.icon}}),_vm._v(" "),_c('span',[_vm._v(_vm._s(position.service))])],1),_vm._v(" "),_c('div',[_c('span',[_vm._v(_vm._s(position.role))]),_vm._v(" "),(!position.samePage)?_c('a',{attrs:{"href":position.url,"target":"_blank"}},[_c('v-icon',[_vm._v("mdi-open-in-new")])],1):_c('nuxt-link',{attrs:{"to":position.url}},[_c('v-icon',[_vm._v("mdi-open-in-new")])],1)],1)])}),0)]),_vm._v(" "),_c('v-col',{staticClass:"projects"},[_c('h3',{staticClass:"font-weight-light text-uppercase"},[_vm._v("Projelerim")]),_vm._v(" "),_c('div',{staticClass:"cards"},_vm._l((_vm.projects),function(project){return _c('v-card',{directives:[{name:"ripple",rawName:"v-ripple"}],key:project.name,attrs:{"max-width":"344"},on:{"click":function($event){project.samePage ? _vm.$router.push(project.to) : _vm.open(project.to)},"mouseup":function($event){if('button' in $event && $event.button !== 1){ return null; }return _vm.open(project.to, '_blank')}}},[_c('v-list-item',{attrs:{"three-line":""}},[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"mb-2"},[_vm._v("\n              "+_vm._s(project.name)+"\n              "),(project.new)?_c('span',{staticClass:"new v-align:middle text:xxsmall"},[_vm._v("Yeni")]):_vm._e()]),_vm._v(" "),_c('v-list-item-subtitle',[_vm._v(_vm._s(project.description))])],1)],1)],1)}),1)])],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/pages/index.vue?vue&type=template&id=2a039680&scoped=true&
+// CONCATENATED MODULE: ./src/pages/index.vue?vue&type=template&id=4fa6444a&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/pages/index.vue?vue&type=script&lang=js&
 //
@@ -879,7 +879,7 @@ var staticRenderFns = []
     title: "Ana Sayfa",
     meta: [{
       name: "og:title",
-      content: "Mehmetali345.ml"
+      content: "Mehmetali345.xyz"
     }, {
       name: "premid-details",
       content: "Viewing a page:"
@@ -889,7 +889,7 @@ var staticRenderFns = []
     }],
     link: [{
       rel: "canonical",
-      content: "https://mehmetali345.ml"
+      content: "https://mehmetali345.xyz"
     }]
   },
 
@@ -929,7 +929,7 @@ var staticRenderFns = []
         icon: "/images/projects/favicons/GZB.png",
         url: "https://gamerzonebot.ml/"
       }].map(i => {
-        if (!i.samePage) i.url = `${i.url}?utm_source=mehmetali345.ml`;
+        if (!i.samePage) i.url = `${i.url}?utm_source=mehmetali345.xyz`;
         return i;
       }),
       projects: [{
@@ -1012,8 +1012,8 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   injectStyles,
-  "2a039680",
-  "4b66fef7"
+  "4fa6444a",
+  "60d68277"
   
 )
 

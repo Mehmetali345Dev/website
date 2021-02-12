@@ -11,7 +11,7 @@
         <li @click="open('https://github.com/mehmetali345')">
           <v-card class="profile-card pa-2" width="100%">
             <span>
-              <v-icon left>mdi-github</v-icon>Mehmetali345_Dev
+              <v-icon left>mdi-github</v-icon>Mehmetali345
             </span>
           </v-card>
         </li>
@@ -29,10 +29,10 @@
             </span>
           </v-card>
         </li>      
-        <li @click="open('https://discord.com/users/404360912460578816')">
+        <li @click="open('https://discord.com/users/715487388247523351')">
           <v-card class="profile-card pa-2" width="100%">
             <span>
-              <v-icon left>mdi-discord</v-icon>Fat Yoshi#0345
+              <v-icon left>mdi-discord</v-icon>AnakinSkywalker#0345
             </span>
           </v-card>
         </li>

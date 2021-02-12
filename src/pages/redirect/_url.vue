@@ -79,7 +79,7 @@ export default {
       link = [
         {
           rel: "canonical",
-          href: `https://mehmetali345.ml/redirect/${this.params.url}`,
+          href: `https://mehmetali345.xyz/redirect/${this.params.url}`,
         },
       ];
 

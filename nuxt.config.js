@@ -39,7 +39,7 @@ export default {
       {
         hid: "og:site_name",
         name: "og:site_name",
-        content: "mehmetali345.ml",
+        content: "mehmetali345.xyz",
       },
       {
         name: "viewport",
@@ -53,7 +53,7 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description,
+        content: "14 years old Young Developer",
       },
       {
         hid: "og:description",
@@ -126,7 +126,7 @@ export default {
     }
 
     return {
-      hostname: "https://mehmetali345.ml",
+      hostname: "https://mehmetali345.xyz",
       gzip: true,
       routes: routes,
     };

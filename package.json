@@ -1,11 +1,11 @@
 {
-  "name": "345.ml",
+  "name": "mehmetali345.xyz",
   "version": "2.0.0",
-  "description": "Site.",
+  "description": "Mehmet Ali Külahçı - Young Developer",
   "author": {
     "name": "Mehmet Ali Külahçı",
     "email": "345m.ali2007@gmail.com",
-    "url": "https://mehmetali345.ml"
+    "url": "https://mehmetali345.xyz"
   },
   "scripts": {
     "dev": "nuxt",
