@@ -32,7 +32,7 @@
         <li @click="open('https://discord.com/users/715487388247523351')">
           <v-card class="profile-card pa-2" width="100%">
             <span>
-              <v-icon left>mdi-discord</v-icon>AnakinSkywalker#0345
+              <v-icon left>mdi-discord</v-icon>Anakin Skywalker#6419
             </span>
           </v-card>
         </li>
@@ -50,7 +50,7 @@
     text-align: center;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 60%;
     transform: translateX(-50%) translateY(-50%);
     width: 85%;
 
@@ -86,7 +86,7 @@
     list-style: none;
 
     i {
-      width: 24px;
+      width: 34px;
     }
 
     &:not(:last-child) {

@@ -13,17 +13,17 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_ef44f8c6 from 'nuxt_plugin_plugin_ef44f8c6' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_plugin_08fdb512 from 'nuxt_plugin_plugin_08fdb512' // Source: .\\vuetify\\plugin.js (mode: 'all')
-import nuxt_plugin_workbox_dc833f48 from 'nuxt_plugin_workbox_dc833f48' // Source: .\\workbox.js (mode: 'client')
-import nuxt_plugin_metaplugin_72e138dc from 'nuxt_plugin_metaplugin_72e138dc' // Source: .\\pwa\\meta.plugin.js (mode: 'all')
-import nuxt_plugin_iconplugin_7788de50 from 'nuxt_plugin_iconplugin_7788de50' // Source: .\\pwa\\icon.plugin.js (mode: 'all')
-import nuxt_plugin_libplugin558ae9f5_acfd3f90 from 'nuxt_plugin_libplugin558ae9f5_acfd3f90' // Source: .\\lib.plugin.558ae9f5.js (mode: 'all')
-import nuxt_plugin_index_4a78b10a from 'nuxt_plugin_index_4a78b10a' // Source: .\\firebase\\index.js (mode: 'all')
-import nuxt_plugin_pluginclient_502c645a from 'nuxt_plugin_pluginclient_502c645a' // Source: .\\content\\plugin.client.js (mode: 'client')
-import nuxt_plugin_pluginserver_3da33f5b from 'nuxt_plugin_pluginserver_3da33f5b' // Source: .\\content\\plugin.server.js (mode: 'server')
-import nuxt_plugin_googleanalytics_5bae14e6 from 'nuxt_plugin_googleanalytics_5bae14e6' // Source: .\\google-analytics.js (mode: 'client')
-import nuxt_plugin_axios_e6208980 from 'nuxt_plugin_axios_e6208980' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_plugin_22a40f3e from 'nuxt_plugin_plugin_22a40f3e' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_plugin_7702f19a from 'nuxt_plugin_plugin_7702f19a' // Source: .\\vuetify\\plugin.js (mode: 'all')
+import nuxt_plugin_workbox_981d8bc0 from 'nuxt_plugin_workbox_981d8bc0' // Source: .\\workbox.js (mode: 'client')
+import nuxt_plugin_metaplugin_6cdfe2c0 from 'nuxt_plugin_metaplugin_6cdfe2c0' // Source: .\\pwa\\meta.plugin.js (mode: 'all')
+import nuxt_plugin_iconplugin_639097d8 from 'nuxt_plugin_iconplugin_639097d8' // Source: .\\pwa\\icon.plugin.js (mode: 'all')
+import nuxt_plugin_libplugin5171d4b1_bf871e5a from 'nuxt_plugin_libplugin5171d4b1_bf871e5a' // Source: .\\lib.plugin.5171d4b1.js (mode: 'all')
+import nuxt_plugin_index_b87ded92 from 'nuxt_plugin_index_b87ded92' // Source: .\\firebase\\index.js (mode: 'all')
+import nuxt_plugin_pluginclient_03aa4097 from 'nuxt_plugin_pluginclient_03aa4097' // Source: .\\content\\plugin.client.js (mode: 'client')
+import nuxt_plugin_pluginserver_6963b21f from 'nuxt_plugin_pluginserver_6963b21f' // Source: .\\content\\plugin.server.js (mode: 'server')
+import nuxt_plugin_googleanalytics_4a4c10bc from 'nuxt_plugin_googleanalytics_4a4c10bc' // Source: .\\google-analytics.js (mode: 'client')
+import nuxt_plugin_axios_e25393f8 from 'nuxt_plugin_axios_e25393f8' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_util_56d02241 from 'nuxt_plugin_util_56d02241' // Source: ..\\src\\plugins\\util.js (mode: 'all')
 import nuxt_plugin_highlight_7f0c2e92 from 'nuxt_plugin_highlight_7f0c2e92' // Source: ..\\src\\plugins\\highlight.js (mode: 'client')
 import nuxt_plugin_player_30f7e402 from 'nuxt_plugin_player_30f7e402' // Source: ..\\src\\plugins\\player.js (mode: 'client')
@@ -87,7 +87,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"titleTemplate":"%s - Mehmetali_345","title":"Mehmetali_345","meta":[{"charset":"utf-8"},{"hid":"twitter:card","name":"twitter:card","content":"summary"},{"hid":"twitter:site","name":"twitter:site","content":"@AnakinS07677978"},{"hid":"twitter:creator","name":"twitter:creator","content":"@AnakinS07677978"},{"hid":"twitter:title","name":"twitter:title","content":"mehmetali345.ml"},{"hid":"twitter:description","name":"twitter:description","content":"Site."},{"hid":"og:site_name","name":"og:site_name","content":"mehmetali345.xyz"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"theme-color","name":"theme-color","content":"#212121"},{"hid":"description","name":"description","content":"14 years old Young Developer"},{"hid":"og:description","name":"og:description","content":"Site."}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
+    head: {"titleTemplate":"%s - Mehmetali_345","title":"Mehmetali_345","meta":[{"charset":"utf-8"},{"hid":"twitter:card","name":"twitter:card","content":"summary"},{"hid":"twitter:site","name":"twitter:site","content":"@AnakinS07677978"},{"hid":"twitter:creator","name":"twitter:creator","content":"@AnakinS07677978"},{"hid":"twitter:title","name":"twitter:title","content":"mehmetali345.xyz"},{"hid":"twitter:description","name":"twitter:description","content":"Mehmet Ali Külahçı - Young Developer"},{"hid":"og:site_name","name":"og:site_name","content":"mehmetali345.xyz"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"theme-color","name":"theme-color","content":"#212121"},{"hid":"description","name":"description","content":"14 years old Young Developer"},{"hid":"og:description","name":"og:description","content":"Mehmet Ali Külahçı - Young Developer"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
 
     store,
     router,
@@ -216,48 +216,48 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_ef44f8c6 === 'function') {
-    await nuxt_plugin_plugin_ef44f8c6(app.context, inject)
+  if (typeof nuxt_plugin_plugin_22a40f3e === 'function') {
+    await nuxt_plugin_plugin_22a40f3e(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_plugin_08fdb512 === 'function') {
-    await nuxt_plugin_plugin_08fdb512(app.context, inject)
+  if (typeof nuxt_plugin_plugin_7702f19a === 'function') {
+    await nuxt_plugin_plugin_7702f19a(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_workbox_dc833f48 === 'function') {
-    await nuxt_plugin_workbox_dc833f48(app.context, inject)
+  if (process.client && typeof nuxt_plugin_workbox_981d8bc0 === 'function') {
+    await nuxt_plugin_workbox_981d8bc0(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_metaplugin_72e138dc === 'function') {
-    await nuxt_plugin_metaplugin_72e138dc(app.context, inject)
+  if (typeof nuxt_plugin_metaplugin_6cdfe2c0 === 'function') {
+    await nuxt_plugin_metaplugin_6cdfe2c0(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_iconplugin_7788de50 === 'function') {
-    await nuxt_plugin_iconplugin_7788de50(app.context, inject)
+  if (typeof nuxt_plugin_iconplugin_639097d8 === 'function') {
+    await nuxt_plugin_iconplugin_639097d8(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_libplugin558ae9f5_acfd3f90 === 'function') {
-    await nuxt_plugin_libplugin558ae9f5_acfd3f90(app.context, inject)
+  if (typeof nuxt_plugin_libplugin5171d4b1_bf871e5a === 'function') {
+    await nuxt_plugin_libplugin5171d4b1_bf871e5a(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_index_4a78b10a === 'function') {
-    await nuxt_plugin_index_4a78b10a(app.context, inject)
+  if (typeof nuxt_plugin_index_b87ded92 === 'function') {
+    await nuxt_plugin_index_b87ded92(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_pluginclient_502c645a === 'function') {
-    await nuxt_plugin_pluginclient_502c645a(app.context, inject)
+  if (process.client && typeof nuxt_plugin_pluginclient_03aa4097 === 'function') {
+    await nuxt_plugin_pluginclient_03aa4097(app.context, inject)
   }
 
-  if (process.server && typeof nuxt_plugin_pluginserver_3da33f5b === 'function') {
-    await nuxt_plugin_pluginserver_3da33f5b(app.context, inject)
+  if (process.server && typeof nuxt_plugin_pluginserver_6963b21f === 'function') {
+    await nuxt_plugin_pluginserver_6963b21f(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_googleanalytics_5bae14e6 === 'function') {
-    await nuxt_plugin_googleanalytics_5bae14e6(app.context, inject)
+  if (process.client && typeof nuxt_plugin_googleanalytics_4a4c10bc === 'function') {
+    await nuxt_plugin_googleanalytics_4a4c10bc(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_e6208980 === 'function') {
-    await nuxt_plugin_axios_e6208980(app.context, inject)
+  if (typeof nuxt_plugin_axios_e25393f8 === 'function') {
+    await nuxt_plugin_axios_e25393f8(app.context, inject)
   }
 
   if (typeof nuxt_plugin_util_56d02241 === 'function') {

@@ -98,6 +98,20 @@ export default {
           description:
             "Hafif ve Hızlı bir kod editörü.",
           url: "https://github.com/mehmetali345/codepad",
+
+        },
+      },
+    };
+  },
+  data() {
+    return {
+      params: this.$route.params,
+      settings: {
+        "dcutils": {
+          name: "Discord Utilities",
+          description:
+            "Discord için araçlar ve iyileştirmeler.",
+          url: "https://github.com/mehmetali345/dcutilities",
         },
       },
     };

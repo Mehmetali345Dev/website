@@ -302,6 +302,13 @@ export default {
           role: "Website Geliştiricisi",
           icon: "/images/projects/favicons/GZB.png",
           url: "https://gamerzonebot.ml/",
+        },
+         {
+          current: true,
+          service: "Kitten Bot",
+          role: "Website Geliştiricisi",
+          icon: "/images/projects/favicons/kitten.png",
+          url: "https://kittenbot.ml/",
         },  
       ].map((i) => {
         if (!i.samePage) i.url = `${i.url}?utm_source=mehmetali345.xyz`;
@@ -320,6 +327,13 @@ export default {
           description:
             "Hızlı ve Hafif bir kod editörü",
           to: "/redirect/codepad",
+          new: true,
+        },
+        {
+          name: "Discord Utilities",
+          description:
+            "Discord için bazı geliştirmeler ve araçlar",
+          to: "/redirect/dcutils",
           new: true,
         },          
       ],

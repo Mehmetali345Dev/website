@@ -7118,7 +7118,7 @@ module.exports = require("vue-meta");
 /* 65 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"title\":\"345.ml\",\"meta\":[{\"hid\":\"charset\",\"charset\":\"utf-8\"},{\"hid\":\"viewport\",\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"},{\"hid\":\"mobile-web-app-capable\",\"name\":\"mobile-web-app-capable\",\"content\":\"yes\"},{\"hid\":\"apple-mobile-web-app-title\",\"name\":\"apple-mobile-web-app-title\",\"content\":\"345.ml\"},{\"hid\":\"author\",\"name\":\"author\",\"content\":\"Mehmet Ali Külahçı\"},{\"hid\":\"description\",\"name\":\"description\",\"content\":\"Site.\"},{\"hid\":\"og:type\",\"name\":\"og:type\",\"property\":\"og:type\",\"content\":\"website\"},{\"hid\":\"og:title\",\"name\":\"og:title\",\"property\":\"og:title\",\"content\":\"345.ml\"},{\"hid\":\"og:site_name\",\"name\":\"og:site_name\",\"property\":\"og:site_name\",\"content\":\"345.ml\"},{\"hid\":\"og:description\",\"name\":\"og:description\",\"property\":\"og:description\",\"content\":\"Site.\"}],\"link\":[{\"rel\":\"shortcut icon\",\"href\":\"/_nuxt/icons/icon_64x64.9fbeca.png\"},{\"rel\":\"apple-touch-icon\",\"href\":\"/_nuxt/icons/icon_512x512.9fbeca.png\",\"sizes\":\"512x512\"},{\"rel\":\"manifest\",\"href\":\"/_nuxt/manifest.360de634.json\",\"hid\":\"manifest\"}],\"htmlAttrs\":{\"lang\":\"en\"}}");
+module.exports = JSON.parse("{\"title\":\"mehmetali345.xyz\",\"meta\":[{\"hid\":\"charset\",\"charset\":\"utf-8\"},{\"hid\":\"viewport\",\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"},{\"hid\":\"mobile-web-app-capable\",\"name\":\"mobile-web-app-capable\",\"content\":\"yes\"},{\"hid\":\"apple-mobile-web-app-title\",\"name\":\"apple-mobile-web-app-title\",\"content\":\"mehmetali345.xyz\"},{\"hid\":\"author\",\"name\":\"author\",\"content\":\"Mehmet Ali Külahçı\"},{\"hid\":\"description\",\"name\":\"description\",\"content\":\"Mehmet Ali Külahçı - Young Developer\"},{\"hid\":\"og:type\",\"name\":\"og:type\",\"property\":\"og:type\",\"content\":\"website\"},{\"hid\":\"og:title\",\"name\":\"og:title\",\"property\":\"og:title\",\"content\":\"mehmetali345.xyz\"},{\"hid\":\"og:site_name\",\"name\":\"og:site_name\",\"property\":\"og:site_name\",\"content\":\"mehmetali345.xyz\"},{\"hid\":\"og:description\",\"name\":\"og:description\",\"property\":\"og:description\",\"content\":\"Mehmet Ali Külahçı - Young Developer\"}],\"link\":[{\"rel\":\"shortcut icon\",\"href\":\"/_nuxt/icons/icon_64x64.9fbeca.png\"},{\"rel\":\"apple-touch-icon\",\"href\":\"/_nuxt/icons/icon_512x512.9fbeca.png\",\"sizes\":\"512x512\"},{\"rel\":\"manifest\",\"href\":\"/_nuxt/manifest.97ec3040.json\",\"hid\":\"manifest\"}],\"htmlAttrs\":{\"lang\":\"en\"}}");
 
 /***/ }),
 /* 66 */
@@ -8942,15 +8942,15 @@ if (false) {}
 
 
 
-const _a3dedab0 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/index */ 3).then(__webpack_require__.bind(null, 198)));
+const _5bdfe786 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/index */ 3).then(__webpack_require__.bind(null, 198)));
 
-const _4397c185 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/gonderi/ara/_title */ 2).then(__webpack_require__.bind(null, 199)));
+const _51975632 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/gonderi/ara/_title */ 2).then(__webpack_require__.bind(null, 199)));
 
-const _7481b466 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/gonderi/_slug */ 1).then(__webpack_require__.bind(null, 197)));
+const _5f3e0d70 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/gonderi/_slug */ 1).then(__webpack_require__.bind(null, 197)));
 
-const _19ba11f8 = () => interopDefault(__webpack_require__.e(/* import() | pages/redirect/_url */ 5).then(__webpack_require__.bind(null, 200)));
+const _65880d66 = () => interopDefault(__webpack_require__.e(/* import() | pages/redirect/_url */ 5).then(__webpack_require__.bind(null, 200)));
 
-const _f302e1ec = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 4).then(__webpack_require__.bind(null, 201))); // TODO: remove in Nuxt 3
+const _442e6268 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 4).then(__webpack_require__.bind(null, 201))); // TODO: remove in Nuxt 3
 
 
 const emptyFn = () => {};
@@ -8970,23 +8970,23 @@ const routerOptions = {
   scrollBehavior: router_scrollBehavior,
   routes: [{
     path: "/blog",
-    component: _a3dedab0,
+    component: _5bdfe786,
     name: "blog"
   }, {
     path: "/blog/gonderi/ara/:title?",
-    component: _4397c185,
+    component: _51975632,
     name: "blog-gonderi-ara-title"
   }, {
     path: "/blog/gonderi/:slug?",
-    component: _7481b466,
+    component: _5f3e0d70,
     name: "blog-gonderi-slug"
   }, {
     path: "/redirect/:url?",
-    component: _19ba11f8,
+    component: _65880d66,
     name: "redirect-url"
   }, {
     path: "/",
-    component: _f302e1ec,
+    component: _442e6268,
     name: "index"
   }],
   fallback: false
@@ -9375,7 +9375,7 @@ var error_component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "e964a7d6",
-  "a7f9981c"
+  "3315f232"
   
 )
 
@@ -9687,7 +9687,7 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
   false,
   nuxt_loading_injectStyles,
   null,
-  "6776037c"
+  "27ec5c82"
   
 )
 
@@ -13973,7 +13973,7 @@ var blog_component = Object(componentNormalizer["a" /* default */])(
   false,
   blog_injectStyles,
   "76bd266e",
-  "1f7b9ba8"
+  "b00fd530"
   
 )
 
@@ -14021,7 +14021,7 @@ var centered_component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "669943ba"
+  "04c2dd7a"
   
 )
 
@@ -14116,7 +14116,7 @@ var default_component = Object(componentNormalizer["a" /* default */])(
   false,
   default_injectStyles,
   "5976e270",
-  "2223e72b"
+  "2f80156b"
   
 )
 
@@ -14480,7 +14480,7 @@ var meta = __webpack_require__(65);
 
   inject('icon', getIcon);
 });
-// CONCATENATED MODULE: ./.nuxt/lib.plugin.558ae9f5.js
+// CONCATENATED MODULE: ./.nuxt/lib.plugin.5171d4b1.js
 // these regular expressions are borrowed from below page.
 // https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
 // eslint-disable-next-line
@@ -14518,7 +14518,7 @@ function isMacOS(a) {
 }
 
 const DEFAULT_USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Safari/537.36';
-/* harmony default export */ var lib_plugin_558ae9f5 = (async function (ctx, inject) {
+/* harmony default export */ var lib_plugin_5171d4b1 = (async function (ctx, inject) {
   let userAgent = '';
 
   if (typeof ctx.req !== 'undefined') {
@@ -14931,7 +14931,7 @@ function getFormattedDate(pureDate) {
 
  // Source: .\\pwa\\icon.plugin.js (mode: 'all')
 
- // Source: .\\lib.plugin.558ae9f5.js (mode: 'all')
+ // Source: .\\lib.plugin.5171d4b1.js (mode: 'all')
 
  // Source: .\\firebase\\index.js (mode: 'all')
 
@@ -15032,11 +15032,11 @@ async function _nuxt_createApp(ssrContext, config = {}) {
       }, {
         "hid": "twitter:title",
         "name": "twitter:title",
-        "content": "mehmetali345.ml"
+        "content": "mehmetali345.xyz"
       }, {
         "hid": "twitter:description",
         "name": "twitter:description",
-        "content": "Site."
+        "content": "Mehmet Ali Külahçı - Young Developer"
       }, {
         "hid": "og:site_name",
         "name": "og:site_name",
@@ -15055,7 +15055,7 @@ async function _nuxt_createApp(ssrContext, config = {}) {
       }, {
         "hid": "og:description",
         "name": "og:description",
-        "content": "Site."
+        "content": "Mehmet Ali Külahçı - Young Developer"
       }],
       "link": [{
         "rel": "icon",
@@ -15220,8 +15220,8 @@ async function _nuxt_createApp(ssrContext, config = {}) {
     await icon_plugin(app.context, inject);
   }
 
-  if (typeof lib_plugin_558ae9f5 === 'function') {
-    await lib_plugin_558ae9f5(app.context, inject);
+  if (typeof lib_plugin_5171d4b1 === 'function') {
+    await lib_plugin_5171d4b1(app.context, inject);
   }
 
   if (typeof _nuxt_firebase === 'function') {
