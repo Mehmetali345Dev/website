@@ -3,7 +3,7 @@
     <v-col cols="2">
       <v-img
         class="avatar"
-        title="Yüzümü göstermem maalesef :>"
+        title="Darth Vader"
         alt="personal-image"
         src="/images/irl_image.jpg"
       ></v-img>
@@ -31,17 +31,17 @@
     </v-col>
 
     <v-col class="information" md="5">
-      <h3 class="font-weight-light text-uppercase">Ben kimim?</h3>
+      <h3 class="font-weight-light text-uppercase">Who am I?</h3>
       <p>
       </p>
-        Merhaba ben Mehmet Ali (Namı değer Mehmetali_345) genç bir geliştiriciyim. Genellikle C# ve
-        Javascript kullanarak masaüstü programları ve web uygulamaları yazıyorum. 
+        Hello, I am Mehmet Ali (aka Mehmetali_345) I am a young developer.
+        I write desktop programs and web applications using javascript and C#.
       <p>
-        İnsanlarla kodlarımı paylaşmayı ve insanlara kodlamanın veya yazılım yazmanın ne kadar
-        eğlenceli olduğunu anlatmayı seviyorum.    
+        How much it takes to share my code with people and how to code or write software for people?
+        I like to explain that it's fun.   
       </p>
 
-      <h3 class="font-weight-light text-uppercase">Şuanki Pozisyonlarım</h3>
+      <h3 class="font-weight-light text-uppercase">My Positions</h3>
       <div class="positions">
         <div
           v-for="position in positions.filter((p) => p.current)"
@@ -66,7 +66,7 @@
       </div>
     </v-col>    
     <v-col class="projects">
-      <h3 class="font-weight-light text-uppercase">Projelerim</h3>
+      <h3 class="font-weight-light text-uppercase">My Projects</h3>
       <div class="cards">
         <v-card
           v-ripple
@@ -83,7 +83,7 @@
               <v-list-item-title class="mb-2">
                 {{ project.name }}
                 <span class="new v-align:middle text:xxsmall" v-if="project.new"
-                  >Yeni</span
+                  >New</span
                 >
               </v-list-item-title>
               <v-list-item-subtitle>{{
@@ -291,22 +291,22 @@ export default {
       positions: [     
       {
           current: true,
-          service: "Katil CivCiv - Discord Botu",
-          role: "Website Geliştiricisi",
+          service: "Katil CivCiv",
+          role: "Website Developer",
           icon: "/images/projects/favicons/kc.png",
           url: "https://site.katilcivciv.cf/",
         },  
          {
           current: true,
-          service: "Gamer Zone Bot - Discord Botu",
-          role: "Website Geliştiricisi",
+          service: "Gamer Zone Bot",
+          role: "Website Developer",
           icon: "/images/projects/favicons/GZB.png",
           url: "https://gamerzonebot.ml/",
         },
          {
           current: true,
           service: "Kitten Bot",
-          role: "Website Geliştiricisi",
+          role: "Website Developer",
           icon: "/images/projects/favicons/kitten.png",
           url: "https://kittenbot.ml/",
         },  
@@ -318,21 +318,21 @@ export default {
         {
           name: "Kişisel Blog",
           description:
-            "Kişisel genellikle güncel konulardan veya haberlerden bahsettiğim bloğum.",
+            "My Turkish blog",
           to: "/blog",
           new: false,
         },
         {
           name: "CodePad",
           description:
-            "Hızlı ve Hafif bir kod editörü",
+            "Fast and lightweight code editor",
           to: "/redirect/codepad",
           new: true,
         },
         {
           name: "Discord Utilities",
           description:
-            "Discord için bazı geliştirmeler ve araçlar",
+            "Utilities and updates for discord.",
           to: "/redirect/dcutils",
           new: true,
         },          
