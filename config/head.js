@@ -30,7 +30,7 @@ export default {
     {
       hid: "twitter:title",
       name: "twitter:title",
-      content: "mehmetali345.xyz.xyz",
+      content: "mehmetali345.xyz",
     },
     {
       hid: "twitter:description",

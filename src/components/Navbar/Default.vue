@@ -117,10 +117,7 @@ export default {
             title: "Donate",
             to: "/donate",
           },
-          {
-            title: "Daily",
-            to: "/daily",
-          },
+         
         ],      
       },
     }
