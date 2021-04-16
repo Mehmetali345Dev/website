@@ -1,0 +1,33 @@
+[
+  {
+    "name": "blog",
+    "path": "/blog",
+    "component": "C:\\\\Users\\\\Mehmetali345\\\\Desktop\\\\website-main\\\\src\\\\pages\\\\blog\\\\index.vue",
+    "chunkName": "pages/blog/index",
+    "url": "/blog",
+    "_name": "_51067b5e"
+  },
+  {
+    "name": "donate",
+    "path": "/donate",
+    "component": "C:\\\\Users\\\\Mehmetali345\\\\Desktop\\\\website-main\\\\src\\\\pages\\\\donate.vue",
+    "chunkName": "pages/donate",
+    "url": "/donate",
+    "_name": "_f8e95b1e"
+  },
+  {
+    "name": "blog-gonderi-slug",
+    "path": "/blog/gonderi/:slug?",
+    "component": "C:\\\\Users\\\\Mehmetali345\\\\Desktop\\\\website-main\\\\src\\\\pages\\\\blog\\\\gonderi\\\\_slug.vue",
+    "chunkName": "pages/blog/gonderi/_slug",
+    "_name": "_e0318f20"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\Mehmetali345\\\\Desktop\\\\website-main\\\\src\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "url": "/",
+    "_name": "_6f66b840"
+  }
+]

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>Mehmetali_345 - Blog</ShortName>
+    <Description>Mehmetali_345'in blogunda ara!</Description>
+    <InputEncoding>UTF-8</InputEncoding>
+    <Image height="16" width="16" type="image/x-icon">https://mehmetali345.xyz/assets/icons/icon.ico</Image>
+    <Url type="text/html" method="get" template="https://mehmetali345.xyz/blog/?q={searchTerms}" />
+</OpenSearchDescription>
