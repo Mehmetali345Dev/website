@@ -1,4 +1,4 @@
-class QueryBuilder {
+export default class QueryBuilder {
   constructor (url, { deep = false, text = false } = {}) {
     this.url = url
     this.params = {
@@ -62,12 +62,12 @@ class QueryBuilder {
 
   /**
    * Surround results
-   * @param {string} slug - Slug of the file to surround.
+   * @param {string} slugOrPath - Slug or path of the file to surround.
    * @param {Object} options - Options to surround (before / after).
    * @returns {QueryBuilder} Returns current instance to be chained
    */
-  surround (slug, options) {
-    this.params.surround = { slug, options }
+  surround (slugOrPath, options) {
+    this.params.surround = { slugOrPath, options }
     return this
   }
 
@@ -110,5 +110,3 @@ class QueryBuilder {
     })
   }
 }
-
-module.exports = QueryBuilder

@@ -1,349 +1,218 @@
 <template>
-  <v-row no-gutters>
-    <v-col cols="2">
-      <v-img
-        class="avatar"
-        title="Darth Vader"
-        alt="personal-image"
-        src="/images/irl_image.jpg"
-      ></v-img>
-
-      <div class="skills">
-        <div v-for="skill in skills" :key="skill.name">
-          <small>{{ skill.name }}</small>
-
-          <v-progress-linear
-            class="progress"
-            :value="skill.value"
-            :color="skill.color"
-            height="20"
+  <div>
+    <header class="flex flex-col-reverse py-24 sm:items-center sm:flex-row">
+      <div class="sm:w-8/12">
+        <div class="space-y-px">
+          <div
+            class="text-2xl font-semibold text-gray-900 sm:text-3xl md:text-4xl dark:text-gray-100"
           >
-            <template v-slot="{ value }">
-              <small>{{ Math.ceil(value) }}%</small>
-            </template>
-          </v-progress-linear>
+            <h1>Young</h1>
+            <h1><span class="text-green-500">Developer</span></h1>
+          </div>
+
+          <p class="text-gray-800 dark:text-gray-200">
+Hello, I am Mehmet Ali (aka Mehmetali_345) I am a young developer. I write desktop programs and web applications using javascript and C#.
+How much it takes to share my code with people and how to code or write software for people? I like to explain that it's fun.
+          </p>
         </div>
+
+        <Status class="mt-2" />
       </div>
 
-      <div class="socials">
-        <SocialMedia slice="5" />
+      <div class="flex flex-shrink-0 mb-8 sm:justify-end sm:mb-0 sm:w-4/12">
+        <SkeletonLoader
+          type="image"
+          image-url="/assets/images/irl_image.webp"
+          class="w-40 h-40 rounded-full ring-4 ring-gray-200 dark:ring-gray-700"
+        />
       </div>
-    </v-col>
+    </header>
 
-    <v-col class="information" md="5">
-      <h3 class="font-weight-light text-uppercase">Who am I?</h3>
-      <p>
-      </p>
-        Hello, I am Mehmet Ali (aka Mehmetali_345) I am a young developer.
-        I write desktop programs and web applications using javascript and C#.
-      <p>
-        How much it takes to share my code with people and how to code or write software for people?
-        I like to explain that it's fun.   
-      </p>
+   
 
-      <h3 class="font-weight-light text-uppercase">My Positions</h3>
-      <div class="positions">
+    <section id="technologies" class="mt-6">
+      <h3
+        class="mt-4 text-xl font-semibold text-gray-900 sm:mt-10 dark:text-gray-100"
+      >
+        Technologies I use
+      </h3>
+
+      <div class="grid grid-cols-2 gap-2 mt-4 sm:grid-cols-3 md:grid-cols-4">
+        <CardSkill
+          v-for="(skill, index) in skills"
+          :key="`skill-${index}`"
+          :title="skill"
+        />
+      </div>
+    </section>
+<section id="projects">
+      <h2 class="mt-10 text-2xl font-semibold text-gray-900 dark:text-gray-100">
+        Projects I currently work on
+      </h2>
+
+      <div class="grid gap-2 mt-2 sm:gap-4 sm:grid-cols-3">
         <div
-          v-for="position in positions.filter((p) => p.current)"
-          :key="position.name"
+          v-for="(project, index) in getProjects.featured"
+          :key="`project-featured-${index}`"
         >
-          <div>
-            <v-img class="logo" alt="logo" :src="position.icon"></v-img>
-            <span>{{ position.service }}</span>
-          </div>
-          <div>
-            <span>{{ position.role }}</span>
+          <nuxt-link v-if="project.to" :to="project.to">
+            <CardProject
+              :title="project.title"
+              :description="project.description"
+              :image="project.image"
+              class="h-full"
+            />
+          </nuxt-link>
 
-            <a v-if="!position.samePage" :href="position.url" target="_blank">
-              <v-icon>mdi-open-in-new</v-icon>
-            </a>
+          <a
+            v-else-if="project.href"
+            :href="`${project.href}?utm_source=mehmetali345.xyz`"
+            rel="noreferrer"
+            target="_blank"
+            title="Click to visit this project"
+          >
+            <CardProject
+              :title="project.title"
+              :description="project.description"
+              :image="project.image"
+              class="h-full"
+            />
+          </a>
 
-            <nuxt-link v-else :to="position.url">
-              <v-icon>mdi-open-in-new</v-icon>
-            </nuxt-link>
-          </div>
+          <CardProject
+            v-else
+            :title="project.title"
+            :description="project.description"
+            :image="project.image"
+            class="h-full"
+          />
         </div>
       </div>
-    </v-col>    
-    <v-col class="projects">
-      <h3 class="font-weight-light text-uppercase">My Projects</h3>
-      <div class="cards">
-        <v-card
-          v-ripple
-          v-for="project in projects"
-          :key="project.name"
-          max-width="344"
-          @click="
-            project.samePage ? $router.push(project.to) : open(project.to)
-          "
-          @click.middle="open(project.to, '_blank')"
+
+      <div class="grid gap-2 mt-2 sm:mt-4 sm:gap-4 sm:grid-cols-3">
+        <nuxt-link
+          v-for="(project, index) in getProjects.rest"
+          :key="`project-rest-${index}`"
+          :to="project.to"
         >
-          <v-list-item three-line>
-            <v-list-item-content>
-              <v-list-item-title class="mb-2">
-                {{ project.name }}
-                <span class="new v-align:middle text:xxsmall" v-if="project.new"
-                  >New</span
-                >
-              </v-list-item-title>
-              <v-list-item-subtitle>{{
-                project.description
-              }}</v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-        </v-card>
+          <CardProject
+            :title="project.title"
+            :description="project.description"
+            class="h-full"
+          />
+        </nuxt-link>
       </div>
-    </v-col>
-  </v-row>
+    </section>
+
+    <section id="repositories" class="mt-6">
+      <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
+        My GitHub repositories
+      </h2>
+
+      <div class="mt-4">
+        <div
+          v-if="$fetchState.pending"
+          class="grid grid-cols-1 gap-2 sm:grid-cols-2"
+        >
+          <SkeletonLoader
+            v-for="item in 6"
+            :key="`repo-skeleton-${item}`"
+            type="repository"
+          />
+        </div>
+
+        <div v-else-if="$fetchState.error">
+          Couldn't load GitHub repositories.
+        </div>
+
+        <div
+          v-else-if="repos.length > 0"
+          class="grid grid-cols-1 gap-2 sm:grid-cols-2"
+        >
+          <a
+            v-for="(repo, index) in repos"
+            :key="`repo-${index}`"
+            :href="repo.html_url"
+            target="_blank"
+            rel="noreferrer"
+            title="Click here to visit this repository"
+          >
+            <CardRepository
+              :name="repo.name"
+              :language="repo.language"
+              :stars="repo.stargazers_count"
+              :description="repo.description"
+              class="h-full"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="socials" class="mt-6">
+      <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
+        Follow me
+      </h2>
+
+      <Socials class="mt-2" />
+    </section>
+  </div>
 </template>
 
-<style lang="scss" scoped>
-h3:not(:first-child) {
-  margin-top: 1em;
-}
-
-.avatar {
-  transition: border-radius 0.2s;
-  border-radius: 4px;
-  height: auto;
-  width: 100%;
-
-  &:hover {
-    border-radius: 0;
-  }
-}
-
-.information {
-  margin: 0 1em;
-
-  p {
-    max-width: 500px;
-  }
-}
-
-.skills {
-  margin-top: 0.5em;
-
-  div {
-    margin-top: 4px;
-  }
-
-  .progress {
-    border-radius: 2px;
-    transition: all 0.2s;
-
-    &:hover {
-      opacity: 0.9;
-    }
-  }
-}
-
-.socials {
-  margin-top: 1em;
-  display: flex;
-  justify-content: space-around;
-}
-
-.positions {
-  max-width: 500px;
-
-  div {
-    display: flex;
-    justify-content: space-between;
-
-    .logo {
-      height: 22px;
-      width: 22px;
-      align-self: center;
-      margin-right: 8px;
-    }
-
-    a {
-      text-decoration: none;
-
-      i {
-        margin-left: 8px;
-        font-size: large;
-        color: rgba($color: #fafafa, $alpha: 0.75);
-        transition: color 0.2s;
-
-        &:hover {
-          color: #fafafa;
-        }
-      }
-    }
-  }
-}
-
-.projects {
-  h3 {
-    text-align: right;
-  }
-
-  .cards {
-    float: right;
-
-    div {
-      user-select: none;
-      -moz-user-select: none;
-      -webkit-user-select: none;
-      cursor: pointer;
-      transition: transform 0.2s;
-
-      &.v-card {
-        &:not(:last-child) {
-          margin-bottom: 0.5em;
-        }
-
-        &:hover {
-          transform: translateX(-15px);
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .row {
-    display: unset;
-
-    .avatar {
-      max-width: 50%;
-    }
-
-    h3 {
-      margin-top: 1.5em;
-      text-align: left;
-    }
-
-    .cards {
-      float: unset;
-
-      div.v-card {
-        max-width: 100% !important;
-
-        &:hover {
-          transform: unset;
-        }
-      }
-    }
-
-    .col-2,
-    .col-4 {
-      flex: unset;
-      max-width: unset;
-    }
-
-    .information {
-      margin-left: 0;
-    }
-  }
-
-  .positions span {
-    max-width: 35vw;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-</style>
+    
 
 <script>
 export default {
-  head: {
-    title: "Ana Sayfa",
-    meta: [
-      { name: "og:title", content: "Mehmetali345.xyz" },
-      { name: "premid-details", content: "Viewing a page:" },
-      { name: "premid-state", content: "Homepage" },
-    ],
-    link: [{ rel: "canonical", content: "https://mehmetali345.xyz" }],
-  },
   data() {
     return {
-      skills: [
-        {
-          name: "Javascript",
-          value: 99,
-          color: "#ffca28",
-        },
-        {
-          name: "C#",
-          value: 90,
-          color: "#75ac64",
-        },
-        {
-          name: "Java",
-          value: 83,
-          color: "#0074c1",
-        },
-        {
-          name: "C++",
-          value: 80,
-          color: "#00c58e",
-        },
-        {
-          name: "Html/Css/Scss",
-          value: 78,
-          color: "#41b883",
-        },
-      ],
-      positions: [     
-      {
-          current: true,
-          service: "Katil CivCiv",
-          role: "Website Developer",
-          icon: "/images/projects/favicons/kc.png",
-          url: "https://site.katilcivciv.cf/",
-        },  
-         {
-          current: true,
-          service: "Gamer Zone Bot",
-          role: "Website Developer",
-          icon: "/images/projects/favicons/GZB.png",
-          url: "https://gamerzonebot.ml/",
-        },
-         {
-          current: true,
-          service: "Kitten Bot",
-          role: "Website Developer",
-          icon: "/images/projects/favicons/kitten.png",
-          url: "https://kittenbot.ml/",
-        },  
-      ].map((i) => {
-        if (!i.samePage) i.url = `${i.url}?utm_source=mehmetali345.xyz`;
-        return i;
-      }),
+      repos: [],
       projects: [
         {
-          name: "Kişisel Blog",
+          title: "345 Launcher",
           description:
-            "My Turkish blog",
-          to: "/blog",
-          new: false,
-        },
-        {
-          name: "CodePad",
-          description:
-            "Fast and lightweight code editor",
-          to: "/redirect/codepad",
-          new: true,
-        },
-        {
-          name: "Discord Utilities",
-          description:
-            "Utilities and updates for discord.",
-          to: "/redirect/dcutils",
-          new: true,
-        },          
+            "Fast and Advanced Minecraft Launcher!",
+          image: "https://i.vgy.me/4oVLsP.png",
+          href: "https://launcher.mehmetali345.xyz",
+        },     
       ],
-    };
+      skills: [
+        "C#",
+        "JavaScript",
+        "HTML5",
+        "Nuxt.js",
+        "Vue.js",
+        "Tailwind CSS",
+        "Node.js",
+        "Sass",
+        "Firebase",
+      ],
+    }
   },
-  methods: {
-    open(url, target) {
-      if (!target) this.$router.push(url);
-      else window.open(url, target).focus();
+  fetchOnServer: false,
+  async fetch() {
+    const filter = ["Mehmetali345Dev", "basic-chat","discord-rpc", "katilcivciv-site", "345teamsite", "launcher-site", "anakinium"]
+    const { data: repos } = await this.$axios.get(
+      "https://api.github.com/users/Mehmetali345Dev/repos"
+    )
+
+    this.repos = repos
+      ?.filter((repo) => repo.fork === false && !filter.includes(repo.name))
+      ?.sort((a, b) => b?.stargazers_count - a?.stargazers_count)
+  },
+  head: {
+    title: "Home",
+  },
+  computed: {
+    /**
+     * Slices the first three projects and creates an object with them, and the rest.
+     * @returns {{featured: object[], rest: object[]}} The projects array.
+     */
+    getProjects() {
+      return {
+        featured: this.projects?.slice(0, 3),
+        rest: this.projects.slice(3),
+      }
     },
   },
-};
+}
 </script>

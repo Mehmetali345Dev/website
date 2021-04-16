@@ -1,7 +1,8 @@
 ﻿---
 title:  Discord Utilities çıktı.
 description:  Discord deneyimini ve toksikliğini arttırın.
-tags:  yazılım, csharp
+tags:  
+- yazılım
 image:  https://lh3.googleusercontent.com/J63brE6LlONpQy313P2klN0FoVtkVyZCJ6SIik3HPJJnQMHUhqX0hvs_Zql7PBdjS3H5-qiX1R9v5GDgGvdrxWVBauDVHpLGTViZfWRUyOKnHV6h1Tt1Ffmp4_tW1dmUAI33dhePazvEX-vZ2G6WU_poQsGSJDJTxqnv99xQ_LALJ56z14Kc6_m3bGltXW1cLzh4wH5NBG0oQw2n3tszx5lj522z791l21zRuTIZwqRAyTb4ioIDKGKsTugRhSA-voLipw_NRwVVNBF3Ana4Es3yxH-8LxugADP9FLMblbzcfREvoG3P2gXRcAdEM-z1AMivyAgJddvgWtcd1f-a6lPsdnejqJrE3FSZ27wPg-K8Bz0qWHYwYpeng31nirlvUd86VxiEuGwpYIK-BHTIZEnpOlZnpyxerL5ZP-3Z8LIqVKZUVzjtwVG39dSf29nTkqWWGCoPECcdKJV_SlgigTyDRgOvmOxevJfXmIFuaF66K8F6KC8A1MlVrfzZOpT2FZ8asqmi0A9DgLBJFcQ2iUOnj5kptxzP8Eih4JcuyeYVG7DX5e5qqhZPIbU3znk6PVZvz-UmifppgOQKDHglRqTEWp7ySgnAUY8W6p-UXIXPJSwT3h9Kv-gULrBRwL-0IcxtZ3lMnZnFID-GztdyBDjjRV5osBkUrGCIp5FC12ojjOeYWOwr1ZFRw-u6=w295-h300-no?authuser=0
 createdAt:  2020-02-15 14:55
 ---

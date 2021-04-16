@@ -2,38 +2,32 @@
   {
     "name": "blog",
     "path": "/blog",
-    "component": "D:\\\\Projeler\\\\site-main\\\\src\\\\pages\\\\blog\\\\index.vue",
+    "component": "C:\\\\Users\\\\Mehmetali345\\\\Desktop\\\\website-main\\\\src\\\\pages\\\\blog\\\\index.vue",
     "chunkName": "pages/blog/index",
     "url": "/blog",
-    "_name": "_5bdfe786"
+    "_name": "_51067b5e"
   },
   {
-    "name": "blog-gonderi-ara-title",
-    "path": "/blog/gonderi/ara/:title?",
-    "component": "D:\\\\Projeler\\\\site-main\\\\src\\\\pages\\\\blog\\\\gonderi\\\\ara\\\\_title.vue",
-    "chunkName": "pages/blog/gonderi/ara/_title",
-    "_name": "_51975632"
+    "name": "donate",
+    "path": "/donate",
+    "component": "C:\\\\Users\\\\Mehmetali345\\\\Desktop\\\\website-main\\\\src\\\\pages\\\\donate.vue",
+    "chunkName": "pages/donate",
+    "url": "/donate",
+    "_name": "_f8e95b1e"
   },
   {
     "name": "blog-gonderi-slug",
     "path": "/blog/gonderi/:slug?",
-    "component": "D:\\\\Projeler\\\\site-main\\\\src\\\\pages\\\\blog\\\\gonderi\\\\_slug.vue",
+    "component": "C:\\\\Users\\\\Mehmetali345\\\\Desktop\\\\website-main\\\\src\\\\pages\\\\blog\\\\gonderi\\\\_slug.vue",
     "chunkName": "pages/blog/gonderi/_slug",
-    "_name": "_5f3e0d70"
-  },
-  {
-    "name": "redirect-url",
-    "path": "/redirect/:url?",
-    "component": "D:\\\\Projeler\\\\site-main\\\\src\\\\pages\\\\redirect\\\\_url.vue",
-    "chunkName": "pages/redirect/_url",
-    "_name": "_65880d66"
+    "_name": "_e0318f20"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "D:\\\\Projeler\\\\site-main\\\\src\\\\pages\\\\index.vue",
+    "component": "C:\\\\Users\\\\Mehmetali345\\\\Desktop\\\\website-main\\\\src\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
     "url": "/",
-    "_name": "_442e6268"
+    "_name": "_6f66b840"
   }
 ]

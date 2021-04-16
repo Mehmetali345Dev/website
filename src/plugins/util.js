@@ -1,32 +1,32 @@
-import moment from "moment";
+export default ({ $moment }, inject) => {
+  /**
+   * Returns the date as a readable string.
+   * @param {Date} date The target date to compare.
+   * @returns {string} Today, yesterday, x day before, x months before or DD/MM/YYYY.
+   */
+  function getReadableDate(date) {
+    const now = $moment()
+    const createdAt = $moment(date)
+    const diff = now.diff(createdAt, "days")
 
-function getFormattedDate(pureDate) {
-  const date = moment(pureDate),
-    now = moment(),
-    diffMn = now.diff(date, "minutes"),
-    diffHr = now.diff(date, "hours"),
-    diffDy = now.diff(date, "days");
-
-  let timeString;
-
-  if (diffHr <= 0 && diffMn == 0) timeString = `Fırından yeni çıktı!`;
-  else if (diffMn < 60 && diffMn > 0) timeString = `${diffMn} dakika önce`;
-  else if (diffHr < 24 && diffHr > 0) timeString = `${diffHr} saat önce`;
-  else if (diffHr <= 48 && diffHr > 24) timeString = "Dün";
-  else if (diffDy > 0 && diffDy < 30) timeString = `${diffDy} gün önce`;
-  else timeString = `${date.format("DD/MM/YY HH:mm:SS")}`;
-
-  return timeString;
-}
-
-export default (context, inject) => {
-  inject("presenceAdded", () => false);
-  inject("getFormattedDate", getFormattedDate);
-
-  if (process.client) {
-    const presenceAdded = () =>
-      document.querySelector("#__nuxt").classList.contains("presence");
-
-    inject("presenceAdded", presenceAdded);
+    if (diff === 0) return "Bugün"
+    else if (diff === 1) return "Dün"
+    else if (diff <= 30) return `${diff} gün önce`
+    else if (diff >= 30 && diff <= 90) return `${Math.floor(diff / 30)} ay önce`
+    else return createdAt.format("DD/MM/YYYY")
   }
-};
+
+  /**
+   * Calculates the words and returns the potential maximum reading time.
+   * @param {Date} words Words to calculate.
+   * @param {Number} [wpm=200] Words per minute, defaults to 200.
+   * @returns {number|string} Reading time in minutes.
+   */
+  function getReadingTime(words, wpm = 200) {
+    const splitted = words?.split(" ").length || 0
+    return Math.ceil(splitted / wpm).toFixed()
+  }
+
+  inject("getReadableDate", getReadableDate)
+  inject("getReadingTime", getReadingTime)
+}

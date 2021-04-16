@@ -1,66 +1,47 @@
 <template>
-  <v-container class="text-center" fluid>
-    <div v-if="errors[error.statusCode]">
-      <v-icon style="font-size:125px;">mdi-skull-crossbones</v-icon>
-      <h1>
-        {{ $props.error.customMessage || errors[error.statusCode].shortname }}
+  <div class="py-8 space-y-4">
+    <div>
+      <h1 class="text-2xl text-gray-900 dark:text-gray-100">
+        Something bad happened...
       </h1>
-      <span v-if="!$props.error.customMessage">{{
-        errors[error.statusCode].description
-      }}</span>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300">Maybe this'd help:</p>
     </div>
 
-    <div v-else>
-      <h1>{{ errors[404].shortname }}</h1>
-      <span>{{ errors[404].description }}</span>
+    <div
+      class="flex flex-col px-4 py-2 space-y-4 whitespace-normal bg-gray-200 rounded dark:text-gray-200 dark:bg-gray-800"
+    >
+      <div class="flex flex-col">
+        <h3 class="font-semibold text-gray-800 dark:text-gray-200">Title:</h3>
+        <code>{{ getErrorMeta.title }}</code>
+      </div>
+
+      <div class="flex flex-col">
+        <h3 class="font-semibold text-gray-800 dark:text-gray-200">
+          Description:
+        </h3>
+        <code> {{ getErrorMeta.description }}</code>
+      </div>
+
+      <div class="flex flex-col">
+        <h3 class="font-semibold text-gray-800 dark:text-gray-200">Details:</h3>
+        <code>{{ JSON.stringify(error) }}</code>
+      </div>
     </div>
 
-    <div style="margin-top:20px">
-      <v-btn style="margin-right:4px" outlined @click="$router.back()"
-        >Geri git</v-btn
-      >
-      <v-btn style="margin-right:4px" outlined to="/">Ana sayfa</v-btn>
-      <v-btn outlined @click="reload">Yeniden yükle</v-btn>
+    <div class="flex flex-wrap space-x-2">
+      <button title="Click to go back" @click="$router.back()">Go Back</button>
+
+      <button title="Click to refresh the page" @click="refresh">
+        Refresh Page
+      </button>
     </div>
-  </v-container>
+  </div>
 </template>
 
 <script>
 export default {
-  layout: "centered",
-  head() {
-    const title = this.errors[this.error.statusCode]
-        ? this.errors[this.error.statusCode].shortname
-        : "Error",
-      meta = [
-        {
-          name: "og:title",
-          content: this.errors[this.error.statusCode]
-            ? this.errors[this.error.statusCode].shortname
-            : "Error",
-        },
-        {
-          hid: "og:description",
-          name: "og:description",
-          content: this.errors[this.error.statusCode]
-            ? this.errors[this.error.statusCode].description
-            : "Oh well, seems like there was an error processing your request. You better find a different way!",
-        },
-        { name: "og:image", content: "https://eggsy.xyz/favicon.ico" },
-        { name: "premid-details", content: "Uh oh, it's an error:" },
-        {
-          name: "premid-state",
-          content: this.errors[this.error.statusCode]
-            ? this.errors[this.error.statusCode].shortname
-            : "Error",
-        },
-      ];
-
-    return {
-      title,
-      meta,
-    };
-  },
+  layout: "default",
   props: {
     error: {
       type: Object,
@@ -71,41 +52,64 @@ export default {
     return {
       errors: {
         400: {
-          shortname: "Olumsuz",
-          description: "Aradığının burda olduğuna eminmisin?",
+          title: "Bad Request",
+          description: "Bad, bad request!",
         },
         401: {
-          shortname: "Yetkin yok",
-          description: "YETKİN YOK!",
+          title: "Unauthorized",
+          description:
+            "This page requires some authorization stuff, or maybe you can't just access this.",
         },
         403: {
-          shortname: "Forbidden",
-          description: "DIZZZZZT BELİRSİZ.",
+          title: "Forbidden",
+          description: "Maybe you shouldn't be here!",
         },
         404: {
-          shortname: "Sayfa bulunamadı.",
-          description:
-            "Aradığın sayfa bu değildi sanırım",
+          title: "Page Not Found",
+          description: "Are you sure you entered a right URL?",
         },
         500: {
-          shortname: "Sunucu hatası",
+          title: "Internal Server Error",
           description:
-            "Oh uh... Benden kaynaklanan bir hata",
+            "Lucky. This is not related to you. It's my fault. Please reach me out so that I can fix this issue.",
         },
       },
-    };
+    }
   },
-  methods: {
-    reload() {
-      location.reload();
+  head() {
+    return {
+      title: `Error ${this.$props.error.statusCode}`,
+    }
+  },
+  computed: {
+    /**
+     * Checks through the common error object and returns the title-description if exists.
+     * @returns {{title: string, description: string}} The object that contains error title and description.
+     */
+    getErrorMeta() {
+      return {
+        title: this.errors[this.error.statusCode]?.title || "Unknown",
+        description:
+          this.errors[this.error.statusCode]?.description || "No description.",
+      }
     },
   },
-};
+  mounted() {
+    console.error(this.$props.error)
+  },
+  methods: {
+    /**
+     * Refreshes the page.
+     */
+    refresh() {
+      window.location.reload()
+    },
+  },
+}
 </script>
 
-<style scoped>
-h1 {
-  font-size: 20px;
-  text-transform: uppercase;
+<style lang="scss" scoped>
+button {
+  @apply px-4 py-2 bg-gray-200 rounded text-gray-900 dark:text-gray-100 cursor-pointer select-none dark:bg-gray-700 dark:hover:bg-gray-800 hover:bg-gray-300 focus:outline-none;
 }
 </style>

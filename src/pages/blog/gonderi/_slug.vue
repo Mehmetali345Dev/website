@@ -1,420 +1,222 @@
 <template>
-  <div>
-    <article>
-      <v-card class="card">
-        <v-card-title class="__title text-h5">{{ title }}</v-card-title>
-        <v-card-subtitle
-          :style="{ maxWidth: '500px' }"
-          v-if="post.description"
-          >{{ post.description }}</v-card-subtitle
+  <div
+    v-if="$fetchState.pending"
+    class="flex items-center justify-center h-screen -mt-10 space-x-2 overflow-hidden text-2xl font-semibold text-gray-900 select-none dark:text-gray-100"
+  >
+    <icon name="sync" class="w-8 h-8 animate-spin" />
+    <h3>Gönderi yükleniyor...</h3>
+  </div>
+
+  <div
+    v-else-if="$fetchState.error"
+    class="flex items-center justify-center h-screen -mt-10 overflow-hidden text-gray-900 select-none dark:text-gray-100"
+  >
+    <div class="space-y-2">
+      <div
+        class="flex items-center justify-center space-x-2 text-2xl font-semibold"
+      >
+        <icon name="times" class="w-8 h-8" />
+        <h3>Gönderi yüklenemedi.</h3>
+      </div>
+
+      <small class="text-sm">Büyük ihtimalle gönderi henüz blogumda yok</small>
+
+      <div class="flex justify-center">
+        <nuxt-link
+          to="/blog"
+          class="px-4 py-2 text-gray-200 bg-gray-700 rounded-md hover:bg-gray-800"
+          title="bloga dön"
         >
+          Bloga Dön
+        </nuxt-link>
+      </div>
+    </div>
+  </div>
 
-        <v-card-text :class="{ 'd-flex px-4': !$device.isMobile }">
-          <div class="d-flex align-center mr-4">
-            <v-icon left>mdi-calendar</v-icon>
-            {{ $getFormattedDate(post.createdAt) }}
-          </div>
+  <div v-else class="pt-14">
+    <client-only>
+      <VueScrollProgressBar />
+    </client-only>
 
-          <div class="d-flex" v-if="post.tags && post.tags.split(', ').length">
-            <v-icon left v-if="post.tags.split(', ').length > 1"
-              >mdi-tag-multiple</v-icon
-            >
-            <v-icon left v-else>mdi-tag</v-icon>
-
-            <v-chip
-              :to="`/blog/gonderi/ara/${encodeURIComponent(slug)}`"
-              v-for="(slug, index) in post.tags.split(', ')"
-              :style="{ marginRight: '4px' }"
-              color="primary"
-              :key="index"
-              small
-              >{{ slug }}</v-chip
-            >
-          </div>
-        </v-card-text>
-      </v-card>
-
-      <v-row no-gutters>
-        <v-col
-          class="d-flex pa-2 mb-1 justify-space-between"
-          v-if="$device.isMobile"
-          cols="12"
-        >
-          <div>
-            <div class="d-flex">
-              <v-icon left>mdi-clock</v-icon>
-              <span>Okuma Süresi</span>
-            </div>
-
-            <span class="text-h6">
-              {{ readingTime }}
-              <span class="text-caption">dakika</span>
-            </span>
-          </div>
-
-          <div>
-            <div class="d-flex text-right">
-              <span :style="{ width: '100%' }">Paylaş</span>
-              <v-icon right>mdi-share-circle</v-icon>
-            </div>
-
-            <div class="d-flex">
-              <v-btn
-                icon
-                @click="share('twitter')"
-                color="#31a9f3"
-                class="ml-n1"
+    <div class="space-x-6">
+      <div class="w-full mx-auto">
+        <article>
+          <header class="mb-12 space-y-4 text-center sm:text-left sm:pr-16">
+            <div class="space-y-2">
+              <h1
+                class="block text-2xl font-semibold text-black sm:text-4xl dark:text-gray-50"
               >
-                <v-icon>mdi-twitter</v-icon>
-              </v-btn>
+                {{ post.title }}
+              </h1>
 
-              <v-btn icon @click="share('telegram')">
-                <v-icon>mdi-telegram</v-icon>
-              </v-btn>
-
-              <v-btn icon @click="share('link')">
-                <v-icon>mdi-link</v-icon>
-              </v-btn>
+              <p class="dark:text-gray-100">
+                {{ post.description }}
+              </p>
             </div>
-          </div>
-        </v-col>
 
-        <v-col md="8" sm="12">
-          <nuxt-content ref="content" class="content" :document="post" />
-        </v-col>
-
-        <v-col class="pl-6" md="4" sm="12" v-if="!$device.isMobile">
-          <div class="sticky">
-            <div v-if="post.toc.length">
-              <div class="d-flex mb-2">
-                <v-icon left>mdi-subtitles-outline</v-icon>
-                <span>Başlıklar</span>
+            <div
+              class="flex items-center justify-center space-x-2 whitespace-nowrap sm:justify-start dark:text-gray-300"
+            >
+              <div
+                class="flex items-center px-2 py-1 space-x-1 bg-gray-200 rounded-lg dark:bg-gray-700"
+              >
+                <icon name="clock" class="w-4 h-4" />
+                <div>{{ getReadingTime }} dakika okuma</div>
               </div>
 
               <div
-                :class="{
-                  'grid-titles-list mb-4': true,
-                  'only-four-titles': post.toc.length <= 4,
-                }"
+                class="flex items-center px-2 py-1 pl-2 space-x-1 bg-gray-200 rounded-lg dark:bg-gray-700"
               >
-                <a
-                  :class="{
-                    'active-toc': observer.currentlyActiveToc === link.id,
-                    'mb-1': post.toc.length <= 4,
-                    'pl-4': link.depth === 4,
-                  }"
-                  @click="tableOfContentsHeadingClick(link)"
-                  v-for="link of post.toc"
-                  :href="`#${link.id}`"
-                  :title="link.text"
-                  :key="link.id"
-                  v-ripple
-                >
-                  {{ link.text }}
-                </a>
+                <icon name="calendar" class="w-4 h-4" />
+                <div>{{ getReadableDate }}</div>
               </div>
             </div>
+          </header>
 
-            <div class="d-flex mb-2" v-if="post.related">
-              <v-icon left>mdi-puzzle</v-icon>
-              <span>Benzer Gönderiler</span>
+          <div class="mt-4">
+            <div
+              class="sticky hidden float-left -ml-20 text-right md:block top-4"
+            >
+              <BlogShare
+                type="vertical"
+                :title="post.title"
+                :path="$route.path"
+              />
             </div>
 
-            <div v-if="!related.loaded && post.related">
-              <v-sheet
-                v-for="key in post.related.split(', ')"
-                class="mb-4"
-                :key="key"
-              >
-                <v-skeleton-loader
-                  class="mx-auto"
-                  type="list-item-two-line"
-                ></v-skeleton-loader>
-              </v-sheet>
-            </div>
-
-            <div v-else-if="related.loaded && post.related">
-              <nuxt-link
-                v-for="(related, index) in related.posts"
-                :to="`/blog/gonderi/${related.slug}`"
-                class="related-content pa-4 mb-2"
-                :key="index"
-                tag="div"
-                >{{ related.title }}</nuxt-link
-              >
-            </div>
-
-            <v-row no-gutters>
-              <v-col
-                cols="12"
-                :class="{
-                  'd-flex justify-space-between mb-2': true,
-                  'mt-4': post.related,
-                }"
-              >
-                <div>
-                  <div class="d-flex mb-1">
-                    <v-icon left>mdi-clock</v-icon>
-                    <span>Okuma Süresi</span>
-                  </div>
-
-                  <span class="text-h6">
-                    {{ readingTime }}
-                    <span class="text-caption">dakika</span>
-                  </span>
-                </div>
-
-                <div class="text-right">
-                  <div class="d-flex mb-1">
-                    <span>Son Düzenleme</span>
-                    <v-icon right>mdi-pencil-circle</v-icon>
-                  </div>
-
-                  <span>{{ $getFormattedDate(post.updatedAt) }}</span>
-                </div>
-              </v-col>
-
-              <v-col cols="12" class="mt-2">
-                <div>
-                  <div class="d-flex mb-1">
-                    <v-icon left>mdi-share-circle</v-icon>
-                    <span>Paylaş</span>
-                  </div>
-
-                  <div class="d-flex">
-                    <v-btn
-                      icon
-                      @click="share('twitter')"
-                      color="#31a9f3"
-                      class="ml-n1"
-                    >
-                      <v-icon>mdi-twitter</v-icon>
-                    </v-btn>
-
-                    <v-btn icon class="mx-1" @click="share('telegram')">
-                      <v-icon>mdi-telegram</v-icon>
-                    </v-btn>
-
-                    <v-btn icon @click="share('link')">
-                      <v-icon>mdi-link</v-icon>
-                    </v-btn>
-                  </div>
-                </div>
-              </v-col>
-            </v-row>
+            <nuxt-content :document="post" />
           </div>
-        </v-col>
-      </v-row>
-    </article>
+        </article>
 
-    <v-snackbar
-      color="success darken-2"
-      class="pb-0"
-      v-model="snack.enabled"
-      bottom
-    >
-      {{ snack.text }}
-      <template v-slot:action="{ attrs }">
-        <v-btn text v-bind="attrs" @click="snack.enabled = false">Tamam</v-btn>
-      </template>
-    </v-snackbar>
+        <Disqus
+          shortname="mehmetali345"
+          :title="post.title"
+          :url="`https://mehmetali345.xyz/blog/gonderi/${post.slug}`"
+          :identifier="`/blog/gonderi/${post.slug}`"
+          :slug="post.slug"
+          lang="tr"
+          class="mt-10"
+        />
+
+        <div class="mt-10 space-y-10">
+          <BlogPrevNext :current-slug="post.slug" />
+
+          <div>
+            <h3
+              class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100"
+            >
+              Yazıyı paylaş
+            </h3>
+
+            <BlogShare :title="post.title" :path="$route.path" />
+          </div>
+
+          <div v-if="getTags.length > 0">
+            <h3
+              class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100"
+            >
+              Etiketler
+            </h3>
+
+            <div class="flex flex-wrap space-x-2">
+              <nuxt-link
+                v-for="(tag, index) in getTags"
+                :key="`tag-${index}`"
+                :to="{
+                  name: 'blog',
+                  query: {
+                    etiket: tag,
+                  },
+                }"
+                class="px-2 py-1 text-gray-800 bg-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700"
+              >
+                {{ tag }}
+              </nuxt-link>
+            </div>
+          </div>
+
+          <div v-if="getRelatedPosts.length > 0">
+            <h3
+              class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100"
+            >
+              Bunlar da hoşunuza gidebilir
+            </h3>
+
+            <div class="grid gap-2 sm:grid-cols-3">
+              <nuxt-link
+                v-for="(relatedPost, index) in getRelatedPosts"
+                :key="`related-${index}`"
+                :to="`/blog/gonderi/${relatedPost.slug}`"
+                class="p-4 text-center truncate bg-gray-200 rounded hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-opacity-75 ring-1 ring-opacity-25 ring-gray-300 dark:ring-gray-800 dark:text-gray-100"
+              >
+                {{ relatedPost.title }}
+              </nuxt-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
-.grid-titles-list {
-  display: grid;
-
-  &:not(.only-four-titles) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-gap: 4px;
-  }
-
-  a {
-    transition: background-color 0.2s;
-    background-color: #1e1e1e;
-    -webkit-user-select: none;
-    text-overflow: ellipsis;
-    -moz-user-select: none;
-    text-decoration: none;
-    white-space: nowrap;
-    text-align: center;
-    border-radius: 8px;
-    user-select: none;
-    overflow: hidden;
-    padding: 4px 1em;
-    cursor: pointer;
-    color: #ffffff;
-
-    &.active-toc {
-      background-color: #c0392b;
-    }
-
-    &.active-toc:hover {
-      background-color: rgba($color: #c0392b, $alpha: 0.75);
-    }
-
-    &:not(.active-toc):hover {
-      background-color: rgba($color: #1e1e1e, $alpha: 0.75);
-    }
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  border-left: solid 4px blueviolet;
-  margin: 1em 0 0.5em 0;
-  padding-left: 8px;
-
-  a {
-    text-decoration: none;
-    color: #ffffff;
-  }
-}
-
-.card {
-  margin-bottom: 1em;
-  padding: 1em;
-
-  .__title {
-    word-break: break-word;
-  }
-}
-
-.v-application p {
-  margin-bottom: 0;
-}
-
-.content {
-  background-color: #212121;
-  border-radius: 4px;
-  padding: 1em 2em;
-
-  p:not(:last-child) {
-    padding: 0.5em 0;
-  }
-
-  table {
-    margin-bottom: 1.5em;
-    width: 100%;
-
-    td {
-      span {
-        -webkit-user-select: none;
-        background-color: #c0392b;
-        transition: opacity 0.2s;
-        -moz-user-select: none;
-        padding: 0.25em 0.5em;
-        border-radius: 1em;
-        user-select: none;
-        width: 100px;
-
-        &:hover {
-          opacity: 0.75;
-        }
-      }
-
-      span.new {
-        background-color: #2772a2;
-      }
-    }
-
-    tr:not(:last-child) td {
-      padding-bottom: 4px;
-    }
-
-    tr {
-      @media only screen and (max-width: 1024px) {
-        display: grid;
-      }
-    }
-  }
-
-  ul,
-  ol {
-    padding-bottom: 1em;
-  }
-
-  blockquote {
-    border-left: 4px solid gray;
-    padding-left: 1em;
-  }
-
-  a {
-    transition: opacity 0.2s;
-    text-decoration: none;
-
-    &:hover {
-      opacity: 0.75;
-    }
-  }
-
-  img {
-    box-shadow: 0px 0px 5px #000000;
-    transition: border-radius 0.2s;
-    border-radius: 4px;
-    max-width: 100%;
-
-    &:hover {
-      border-radius: 0;
-    }
-  }
-}
-
-.related-content {
-  background-color: #212121;
-  transition: opacity 0.2s;
-  text-overflow: ellipsis;
-  text-decoration: none;
-  white-space: nowrap;
-  color: currentColor;
-  border-radius: 4px;
-  user-select: none;
-  overflow: hidden;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.75;
-  }
-}
-</style>
-
 <script>
-import moment from "moment";
+import { Disqus } from "vue-disqus"
+import { VueScrollProgressBar } from "@guillaumebriday/vue-scroll-progress-bar"
 
 export default {
-  layout: "blog",
-  head() {
-    const title = this.title
-        ? this.title
-        : this.found
-        ? "Başlık Yok"
-        : "Gönderi Bulunamadı",
-      description =
-        this.post?.description || "Bu gönderinin bir açıklaması yok.";
-
+  components: {
+    Disqus,
+    VueScrollProgressBar,
+  },
+  data() {
     return {
-      title: title,
+      post: {},
+      related: [],
+    }
+  },
+  async fetch() {
+    const post = await this.$content(this.$route.params.slug).fetch()
+    if (!post) return this.$router.push("/blog")
+
+    this.post = post
+
+    if (post.related?.length > 0) {
+      const array = []
+      for (const key of post.related) {
+        const { title } = await this.$content(key).only(["title"]).fetch()
+        array.push({
+          title,
+          slug: key,
+        })
+      }
+
+      this.related = array
+    }
+  },
+  head() {
+    const title = this.post?.title
+    const description =
+      this.post?.description ||
+      "Bu yazıyı okumaya davet edildin.."
+
+    const image = this.getPostImage || false
+    const tags = this.getTags?.join(", ") || title || "etiket"
+    const href = `https://mehmetali345.xyz${this.$route?.path}`
+
+    const object = {
+      title,
       meta: [
         {
-          hid: "og:site_name",
-          name: "og:site_name",
-          content: "Mehmetali_345 | Blog",
+          hid: "description",
+          name: "description",
+          content: description,
         },
         {
-          hid: "og:image",
-          name: "og:image",
-          content: this.post.image || null,
+          hid: "keywords",
+          name: "keywords",
+          content: `mehmetali345, mehmetali345 blog, blog, teknoloji, vue, yazılım, discord, mehmetali_345, gönderi, minecraft, c#, csharp${tags}`,
         },
-        {
-          hid: "og:url",
-          name: "og:url",
-          content: `https:/mehmetali345.ml/blog/gonderi/${this.$route?.params?.slug}`,
-        },
+        // Open-Graph
         {
           hid: "og:title",
           name: "og:title",
@@ -426,23 +228,16 @@ export default {
           content: description,
         },
         {
-          hid: "keywords",
-          name: "keywords",
-          content: this.post?.tags || null,
+          hid: "og:url",
+          name: "og:url",
+          content: href,
         },
         {
-          hid: "description",
-          name: "description",
-          content: description,
+          hid: "og:image",
+          name: "og:image",
+          content: image,
         },
-        {
-          name: "premid-details",
-          content: title,
-        },
-        {
-          name: "premid-state",
-          content: `EGGSY - ${this.$getFormattedDate(this.post.createdAt)}`,
-        },
+        // Twitter
         {
           hid: "twitter:title",
           name: "twitter:title",
@@ -456,133 +251,167 @@ export default {
         {
           hid: "twitter:image",
           name: "twitter:image",
-          content: this.post.image || null,
+          content: image,
         },
         {
           name: "article:published-time",
           content: this.post?.createdAt || null,
         },
-      ],
+      ].map((i) => {
+        if (i.name && !i.property) i.property = i.name
+        return i
+      }),
       link: [
         {
           rel: "canonical",
-          href: `https://mehmetali345.ml/blog/gonderi/${this.$route?.params?.slug}`,
+          href,
         },
       ],
-    };
-  },
-  async asyncData({ $content, params, error, redirect }) {
-    try {
-      const { title, ...post } = await $content(params.slug).fetch(),
-        object = { post, title: title || "Başlık Yok" };
-
-      if (!post.related) object["related"] = { loaded: true, posts: [] };
-      else object["related"] = { loaded: false, posts: [] };
-
-      return object;
-    } catch (err) {
-      if (err.message === `/${params.slug} not found`) return redirect("/blog");
-      else error({ status: err.statusCode, message: err.message });
     }
-  },
-  data() {
-    return {
-      readingTime: 0,
-      snack: {
-        enabled: false,
-        text: "",
-      },
-      observer: {
-        instance: null,
-        currentlyActiveToc: "",
-        options: {
-          root: this.$refs.content,
-          threshold: 0,
-        },
-      },
-    };
-  },
-  async mounted() {
-    this.readingTime = String(
-      this.$refs?.content?.textContent?.split(" ").length / 200
-    ).substring(0, 4);
 
-    // Releated posts loader
-    this.loadRelatedPosts();
-
-    /* Observer setup */
-    this.setupObserver();
+    return object
   },
-  beforeDestroy() {
-    this.observer.instance.disconnect();
-  },
-  methods: {
-    setupObserver() {
-      this.observer.instance = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          const id = entry.target.getAttribute("id");
-          if (entry.isIntersecting) {
-            this.observer.currentlyActiveToc = id;
-          }
-        });
-      }, this.observer.options);
-
-      document
-        .querySelectorAll(".nuxt-content h2[id], .nuxt-content h3[id]")
-        .forEach((section) => {
-          this.observer.instance.observe(section);
-        });
+  computed: {
+    /**
+     * Returns the tags of the current post, if there's none specified, returns an empty array instead.
+     * @returns {string[]} Array of tags.
+     */
+    getTags() {
+      return this.post?.tags || []
     },
-    async loadRelatedPosts() {
-      if (!this.post.related) return;
-      const array = [];
-
-      for (let key of this.post.related.split(", ") || []) {
-        const content = await this.$content(key)
-          .only(["title", "slug"])
-          .fetch();
-        array.push(content);
-      }
-
-      this.related.posts = array;
-      this.related.loaded = true;
+    /**
+     * Calculates the words and returns the potential maximum reading time.
+     * @returns {number|string} Reading time in minutes.
+     */
+    getReadingTime() {
+      return this.$getReadingTime(JSON.stringify(this.post.body))
     },
-    tableOfContentsHeadingClick(link) {
-      this.currentlyActiveToc = link.id;
+    /**
+     * Returns the date as a readable string.
+     * @returns {string} Today, yesterday, x day before, x months before or DD/MM/YYYY.
+     */
+    getReadableDate() {
+      return this.$getReadableDate(this.post?.createdAt)
     },
-    share(platform) {
-      let uri,
-        text = `${this.title || "Başlıksız Gönderi"} ▶ ${
-          document.location.href
-        }`;
-
-      switch (platform) {
-        case "twitter":
-          uri = `https://twitter.com/intent/tweet?via=AnakinS07677978&text=${text}`;
-          window.open(uri, "Twitter", "width=350,height=500");
-          break;
-        case "telegram":
-          uri = `https://telegram.me/share/url?url=${
-            document.location.href
-          }&text=${encodeURIComponent(this.title)}`;
-          window.open(uri, "Telegram", "width=350,height=500");
-          break;
-        case "link":
-          let el = document.createElement("textarea");
-
-          el.value = document.location.href;
-          document.body.appendChild(el);
-
-          el.select();
-
-          document.execCommand("copy");
-          document.body.removeChild(el);
-
-          this.snack.text = "Bağlantı panoya kopyalandı";
-          this.snack.enabled = true;
-          break;
-      }
+    /**
+     * Returns the related posts, if there's no related post, returns an empty array instead.
+     * @returns {string[]|object} Related posts' slugs.
+     */
+    getRelatedPosts() {
+      return this.related || []
+    },
+    /**
+     * Returns the post image if explicitly set, if none, looks for a jpg under assets.
+     * @returns {string} The URL of the image.
+     */
+    getPostImage() {
+      return this.post?.image
+        ? `https://mehmetali345.xyz/${this.post?.image}`
+        : `https://mehmetali345.xyz/assets/images/posts/${this.post?.slug}.jpg`
     },
   },
-};
+}
 </script>
+
+<style lang="scss">
+.nuxt-content {
+  /* Headings */
+  h1,
+  h2,
+  h3 {
+    @apply font-semibold hover:underline text-gray-900 dark:text-gray-100;
+  }
+
+  h1 {
+    @apply text-xl;
+  }
+
+  h2,
+  h3 {
+    @apply text-lg;
+  }
+
+  /* Paragraphs */
+  p {
+    @apply text-gray-800 dark:text-gray-200;
+
+    &.text-center {
+      @apply flex justify-center;
+    }
+
+    strong {
+      @apply font-medium text-gray-900 dark:text-gray-100;
+    }
+
+    a {
+      @apply text-blue-700 dark:text-blue-600 hover:underline;
+    }
+
+    code {
+      @apply bg-gray-800 dark:bg-gray-700 rounded-md text-gray-200 px-1 py-px font-sans;
+    }
+
+    img {
+      @apply rounded;
+    }
+
+    &:not(:last-child) {
+      @apply mb-5;
+    }
+  }
+
+  /* Ratings */
+  .ratings {
+    @apply space-y-px mb-4 dark:text-gray-200;
+  }
+
+  /* Pre and code block filenames */
+
+  .nuxt-content-highlight {
+    @apply relative mb-5;
+
+    .filename {
+      @apply absolute right-0 text-gray-300 font-light z-10 mr-3 mt-3 text-sm;
+    }
+
+    pre {
+      @apply rounded-md px-6 py-4;
+    }
+  }
+
+  /* Ordered and Unordered Lists */
+  ol,
+  ul {
+    @apply text-gray-800 dark:text-gray-300;
+
+    li:not(:last-child) {
+      @apply mb-1;
+    }
+  }
+
+  ol {
+    @apply list-decimal pl-4;
+
+    &:not(:last-child) {
+      @apply mb-5;
+    }
+  }
+
+  ul {
+    @apply list-disc pl-5;
+
+    &:not(:last-child) {
+      @apply mb-5;
+    }
+
+    li::marker {
+      @apply text-gray-600;
+    }
+  }
+
+  /* Horizontal line */
+  hr {
+    @apply border-gray-300 dark:border-gray-700 my-8 border-dashed;
+  }
+}
+</style>

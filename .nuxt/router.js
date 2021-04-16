@@ -1,21 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { normalizeURL } from '@nuxt/ufo'
+import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _5bdfe786 = () => interopDefault(import('..\\src\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index" */))
-const _51975632 = () => interopDefault(import('..\\src\\pages\\blog\\gonderi\\ara\\_title.vue' /* webpackChunkName: "pages/blog/gonderi/ara/_title" */))
-const _5f3e0d70 = () => interopDefault(import('..\\src\\pages\\blog\\gonderi\\_slug.vue' /* webpackChunkName: "pages/blog/gonderi/_slug" */))
-const _65880d66 = () => interopDefault(import('..\\src\\pages\\redirect\\_url.vue' /* webpackChunkName: "pages/redirect/_url" */))
-const _442e6268 = () => interopDefault(import('..\\src\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _51067b5e = () => interopDefault(import('..\\src\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index" */))
+const _f8e95b1e = () => interopDefault(import('..\\src\\pages\\donate.vue' /* webpackChunkName: "pages/donate" */))
+const _e0318f20 = () => interopDefault(import('..\\src\\pages\\blog\\gonderi\\_slug.vue' /* webpackChunkName: "pages/blog/gonderi/_slug" */))
+const _6f66b840 = () => interopDefault(import('..\\src\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
-// TODO: remove in Nuxt 3
 const emptyFn = () => {}
-const originalPush = Router.prototype.push
-Router.prototype.push = function push (location, onComplete = emptyFn, onAbort) {
-  return originalPush.call(this, location, onComplete, onAbort)
-}
 
 Vue.use(Router)
 
@@ -28,50 +22,41 @@ export const routerOptions = {
 
   routes: [{
     path: "/blog",
-    component: _5bdfe786,
+    component: _51067b5e,
     name: "blog"
   }, {
-    path: "/blog/gonderi/ara/:title?",
-    component: _51975632,
-    name: "blog-gonderi-ara-title"
+    path: "/donate",
+    component: _f8e95b1e,
+    name: "donate"
   }, {
     path: "/blog/gonderi/:slug?",
-    component: _5f3e0d70,
+    component: _e0318f20,
     name: "blog-gonderi-slug"
   }, {
-    path: "/redirect/:url?",
-    component: _65880d66,
-    name: "redirect-url"
-  }, {
     path: "/",
-    component: _442e6268,
+    component: _6f66b840,
     name: "index"
   }],
 
   fallback: false
 }
 
-function decodeObj(obj) {
-  for (const key in obj) {
-    if (typeof obj[key] === 'string') {
-      obj[key] = decodeURIComponent(obj[key])
-    }
-  }
-}
+export function createRouter (ssrContext, config) {
+  const base = (config._app && config._app.basePath) || routerOptions.base
+  const router = new Router({ ...routerOptions, base  })
 
-export function createRouter () {
-  const router = new Router(routerOptions)
+  // TODO: remove in Nuxt 3
+  const originalPush = router.push
+  router.push = function push (location, onComplete = emptyFn, onAbort) {
+    return originalPush.call(this, location, onComplete, onAbort)
+  }
 
   const resolve = router.resolve.bind(router)
   router.resolve = (to, current, append) => {
     if (typeof to === 'string') {
       to = normalizeURL(to)
     }
-    const r = resolve(to, current, append)
-    if (r && r.resolved && r.resolved.query) {
-      decodeObj(r.resolved.query)
-    }
-    return r
+    return resolve(to, current, append)
   }
 
   return router

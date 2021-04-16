@@ -1,7 +1,7 @@
 
 
 export default async function (session) {
-  await import('firebase/firestore')
+  await import(/* webpackChunkName: 'firebase-firestore' */'firebase/firestore')
 
   const firestoreService = session.firestore()
 

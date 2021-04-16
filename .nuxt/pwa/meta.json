@@ -23,12 +23,17 @@
     {
       "hid": "author",
       "name": "author",
-      "content": "Mehmet Ali Külahçı"
+      "content": "Mehmet Ali"
     },
     {
       "hid": "description",
       "name": "description",
-      "content": "Mehmet Ali Külahçı - Young Developer"
+      "content": "Personal Site"
+    },
+    {
+      "hid": "theme-color",
+      "name": "theme-color",
+      "content": "#f56565"
     },
     {
       "hid": "og:type",
@@ -52,22 +57,24 @@
       "hid": "og:description",
       "name": "og:description",
       "property": "og:description",
-      "content": "Mehmet Ali Külahçı - Young Developer"
+      "content": "Personal Site"
     }
   ],
   "link": [
     {
+      "hid": "shortcut-icon",
       "rel": "shortcut icon",
       "href": "/_nuxt/icons/icon_64x64.9fbeca.png"
     },
     {
+      "hid": "apple-touch-icon",
       "rel": "apple-touch-icon",
       "href": "/_nuxt/icons/icon_512x512.9fbeca.png",
       "sizes": "512x512"
     },
     {
       "rel": "manifest",
-      "href": "/_nuxt/manifest.97ec3040.json",
+      "href": "/_nuxt/manifest.06ddffe8.json",
       "hid": "manifest"
     }
   ],

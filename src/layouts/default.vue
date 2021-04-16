@@ -1,53 +1,53 @@
 <template>
-  <v-app dark>
-    <v-app-bar dense hide-on-scroll app>
-      <v-container class="d-flex">
-        <div class="logo">
-          <nuxt-link title="Go to homepage" to="/">Mehmetali_345</nuxt-link>
-        </div>
-        <v-spacer></v-spacer>
-        <div>
-          <small>BRUH</small>
-        </div>
-      </v-container>
-    </v-app-bar>
+  <div class="min-h-screen min-w-screen bg-gray-50 dark:bg-gray-900">
+    <!-- Colored top bar -->
+    <div class="w-full py-1 bg-indigo-700 dark:bg-indigo-900" />
 
-    <v-container class="page">
-      <nuxt />
-    </v-container>
-  </v-app>
+    <!-- Navbar -->
+    <transition name="fade" mode="out-in">
+      <NavbarBlog v-if="$route.name.includes('blog')" class="pt-4" />
+      <NavbarDefault v-else class="pt-4" />
+    </transition>
+
+    <!-- Nuxt component -->
+    <Nuxt
+      class="container w-11/12 min-h-screen pb-8 mx-auto sm:pb-10 sm:w-9/12 md:w-7/12"
+    />
+
+    <!-- Footer -->
+    <Footer />
+
+    <!-- Colored bottom bar -->
+    <div class="w-full py-1 bg-indigo-700 dark:bg-indigo-900" />
+
+    <!-- Go to top button -->
+    <div
+      class="fixed bottom-0 right-0 z-50 flex items-center mb-4 mr-6 space-x-2 sm:space-x-4"
+    >
+      <GoTop />
+    </div>
+  </div>
 </template>
-
-<style lang="scss" scoped>
-.logo,
-small {
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-}
-
-.page {
-  margin-top: 3em;
-}
-
-.logo a {
-  text-decoration: none;
-  cursor: pointer;
-  color: #ffffff;
-  transition: color 0.2s;
-
-  &:hover {
-    color: rgba($color: #ffffff, $alpha: 0.75);
-  }
-}
-</style>
 
 <script>
 export default {
-  data() {
+  head() {
+    let string = "mehmetali345.xyz"
+    if (this.$route.name.includes("blog")) string = "Mehmetali_345 - blog"
+
     return {
-      drawer: false,
-    };
+      titleTemplate: `%s - ${string}`,
+      htmlAttrs: {
+        class: `min-h-screen min-w-screen scrollbar-thin ${this.$colorMode.value}`,
+      },
+      meta: [
+        {
+          hid: "og:site_name",
+          name: "og:site_name",
+          content: string,
+        },
+      ],
+    }
   },
-};
+}
 </script>

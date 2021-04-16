@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
+
 import Meta from 'vue-meta'
 import ClientOnly from 'vue-client-only'
 import NoSsr from 'vue-no-ssr'
@@ -9,25 +9,25 @@ import NuxtError from '..\\src\\layouts\\error.vue'
 import Nuxt from './components/nuxt.js'
 import App from './App.js'
 import { setContext, getLocation, getRouteData, normalizeError } from './utils'
-import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_22a40f3e from 'nuxt_plugin_plugin_22a40f3e' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_plugin_7702f19a from 'nuxt_plugin_plugin_7702f19a' // Source: .\\vuetify\\plugin.js (mode: 'all')
-import nuxt_plugin_workbox_981d8bc0 from 'nuxt_plugin_workbox_981d8bc0' // Source: .\\workbox.js (mode: 'client')
-import nuxt_plugin_metaplugin_6cdfe2c0 from 'nuxt_plugin_metaplugin_6cdfe2c0' // Source: .\\pwa\\meta.plugin.js (mode: 'all')
-import nuxt_plugin_iconplugin_639097d8 from 'nuxt_plugin_iconplugin_639097d8' // Source: .\\pwa\\icon.plugin.js (mode: 'all')
-import nuxt_plugin_libplugin5171d4b1_bf871e5a from 'nuxt_plugin_libplugin5171d4b1_bf871e5a' // Source: .\\lib.plugin.5171d4b1.js (mode: 'all')
-import nuxt_plugin_index_b87ded92 from 'nuxt_plugin_index_b87ded92' // Source: .\\firebase\\index.js (mode: 'all')
-import nuxt_plugin_pluginclient_03aa4097 from 'nuxt_plugin_pluginclient_03aa4097' // Source: .\\content\\plugin.client.js (mode: 'client')
-import nuxt_plugin_pluginserver_6963b21f from 'nuxt_plugin_pluginserver_6963b21f' // Source: .\\content\\plugin.server.js (mode: 'server')
-import nuxt_plugin_googleanalytics_4a4c10bc from 'nuxt_plugin_googleanalytics_4a4c10bc' // Source: .\\google-analytics.js (mode: 'client')
-import nuxt_plugin_axios_e25393f8 from 'nuxt_plugin_axios_e25393f8' // Source: .\\axios.js (mode: 'all')
-import nuxt_plugin_util_56d02241 from 'nuxt_plugin_util_56d02241' // Source: ..\\src\\plugins\\util.js (mode: 'all')
-import nuxt_plugin_highlight_7f0c2e92 from 'nuxt_plugin_highlight_7f0c2e92' // Source: ..\\src\\plugins\\highlight.js (mode: 'client')
-import nuxt_plugin_player_30f7e402 from 'nuxt_plugin_player_30f7e402' // Source: ..\\src\\plugins\\player.js (mode: 'client')
-import nuxt_plugin_tippy_3c8c24f2 from 'nuxt_plugin_tippy_3c8c24f2' // Source: ..\\src\\plugins\\tippy.js (mode: 'client')
+import nuxt_plugin_plugin_58e1afba from 'nuxt_plugin_plugin_58e1afba' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_webfontloader_597698c6 from 'nuxt_plugin_webfontloader_597698c6' // Source: .\\webfontloader.js (mode: 'client')
+import nuxt_plugin_index_4549c0b5 from 'nuxt_plugin_index_4549c0b5' // Source: .\\firebase\\index.js (mode: 'all')
+import nuxt_plugin_pluginclient_3109bf59 from 'nuxt_plugin_pluginclient_3109bf59' // Source: .\\content\\plugin.client.js (mode: 'client')
+import nuxt_plugin_pluginserver_d2799e3e from 'nuxt_plugin_pluginserver_d2799e3e' // Source: .\\content\\plugin.server.js (mode: 'server')
+import nuxt_plugin_workbox_9bd6573c from 'nuxt_plugin_workbox_9bd6573c' // Source: .\\workbox.js (mode: 'client')
+import nuxt_plugin_metaplugin_591e46e2 from 'nuxt_plugin_metaplugin_591e46e2' // Source: .\\pwa\\meta.plugin.js (mode: 'all')
+import nuxt_plugin_iconplugin_5dc5ec56 from 'nuxt_plugin_iconplugin_5dc5ec56' // Source: .\\pwa\\icon.plugin.js (mode: 'all')
+import nuxt_plugin_axios_7b810e74 from 'nuxt_plugin_axios_7b810e74' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_googleanalytics_3d12c7a0 from 'nuxt_plugin_googleanalytics_3d12c7a0' // Source: .\\google-analytics.js (mode: 'client')
+import nuxt_plugin_pluginserver_0e5211e3 from 'nuxt_plugin_pluginserver_0e5211e3' // Source: .\\color-mode\\plugin.server.js (mode: 'server')
+import nuxt_plugin_pluginclient_aecebf4a from 'nuxt_plugin_pluginclient_aecebf4a' // Source: .\\color-mode\\plugin.client.js (mode: 'client')
+import nuxt_plugin_moment_d7499cdc from 'nuxt_plugin_moment_d7499cdc' // Source: .\\moment.js (mode: 'all')
+import nuxt_plugin_Util_927bffd4 from 'nuxt_plugin_Util_927bffd4' // Source: ..\\src\\plugins\\Util (mode: 'all')
+import nuxt_plugin_Firebase_3a08d81b from 'nuxt_plugin_Firebase_3a08d81b' // Source: ..\\src\\plugins\\Firebase (mode: 'client')
+import nuxt_plugin_Tippy_216b0650 from 'nuxt_plugin_Tippy_216b0650' // Source: ..\\src\\plugins\\Tippy (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -56,7 +56,11 @@ Vue.component(Nuxt.name, Nuxt)
 
 Object.defineProperty(Vue.prototype, '$nuxt', {
   get() {
-    return this.$root.$options.$nuxt
+    const globalNuxt = this.$root.$options.$nuxt
+    if (process.client && !globalNuxt && typeof window !== 'undefined') {
+      return window.$nuxt
+    }
+    return globalNuxt
   },
   configurable: true
 })
@@ -65,31 +69,16 @@ Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n
 
 const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
-const originalRegisterModule = Vuex.Store.prototype.registerModule
-const baseStoreOptions = { preserveState: process.client }
-
-function registerModule (path, rawModule, options = {}) {
-  return originalRegisterModule.call(this, path, rawModule, { ...baseStoreOptions, ...options })
-}
-
 async function createApp(ssrContext, config = {}) {
-  const router = await createRouter(ssrContext)
-
-  const store = createStore(ssrContext)
-  // Add this.$router into store actions/mutations
-  store.$router = router
-
-  // Fix SSR caveat https://github.com/nuxt/nuxt.js/issues/3757#issuecomment-414689141
-  store.registerModule = registerModule
+  const router = await createRouter(ssrContext, config)
 
   // Create Root instance
 
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"titleTemplate":"%s - Mehmetali_345","title":"Mehmetali_345","meta":[{"charset":"utf-8"},{"hid":"twitter:card","name":"twitter:card","content":"summary"},{"hid":"twitter:site","name":"twitter:site","content":"@AnakinS07677978"},{"hid":"twitter:creator","name":"twitter:creator","content":"@AnakinS07677978"},{"hid":"twitter:title","name":"twitter:title","content":"mehmetali345.xyz"},{"hid":"twitter:description","name":"twitter:description","content":"Mehmet Ali Külahçı - Young Developer"},{"hid":"og:site_name","name":"og:site_name","content":"mehmetali345.xyz"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"theme-color","name":"theme-color","content":"#212121"},{"hid":"description","name":"description","content":"14 years old Young Developer"},{"hid":"og:description","name":"og:description","content":"Mehmet Ali Külahçı - Young Developer"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
+    head: {"title":"Mehmetali_345","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1","property":"viewport"},{"hid":"description","name":"description","content":"Young developer from Turkey, interested in languages, gaming, and programming, trying to improve his C# skills!","property":"description"},{"hid":"twitter:card","name":"twitter:card","content":"summary","property":"twitter:card"},{"hid":"twitter:site","name":"twitter:site","content":"@AnakinS07677978","property":"twitter:site"},{"hid":"twitter:creator","name":"twitter:creator","content":"@AnakinS07677978","property":"twitter:creator"},{"hid":"twitter:title","name":"twitter:title","content":"mehmetali345.xyz.xyz","property":"twitter:title"},{"hid":"twitter:description","name":"twitter:description","content":"Young developer from Turkey, interested in languages, gaming, and programming, trying to improve his C# skills!","property":"twitter:description"},{"hid":"twitter:image","name":"twitter:image","content":"\u002Ficon.png","property":"twitter:image"},{"hid":"og:type","name":"og:type","content":"website","property":"og:type"},{"hid":"og:site_name","name":"og:site_name","content":"mehmetali345.xyz","property":"og:site_name"},{"hid":"og:description","name":"og:description","content":"Young developer from Turkey, interested in languages, gaming, and programming, trying to improve his C# skills!","property":"og:description"},{"hid":"og:image","name":"og:image","content":"https:\u002F\u002Fmehmetali345.xyz\u002Ficon.png","property":"og:image"},{"hid":"theme-color","name":"theme-color","content":"#111827","property":"theme-color"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"https:\u002F\u002Fmehmetali345.xyz\u002Ffavicon.ico"},{"rel":"search","type":"application\u002Fopensearchdescription+xml","title":"Mehmetali_345's Blog","href":"https:\u002F\u002Fmehmetali345.xyz\u002Fopensearch.xml"}],"style":[],"script":[{"hid":"nuxt-color-mode-script","innerHTML":"!function(){\"use strict\";var e=window,s=document,o=s.documentElement,a=[\"dark\",\"light\"],t=window.localStorage.getItem(\"color-mode\")||\"system\",c=\"system\"===t?l():t,i=s.body.getAttribute(\"data-color-mode-forced\");function r(e){var s=\"\"+e+\"\";o.classList?o.classList.add(s):o.className+=\" \"+s}function n(s){return e.matchMedia(\"(prefers-color-scheme\"+s+\")\")}function l(){if(e.matchMedia&&\"not all\"!==n(\"\").media)for(var s of a)if(n(\":\"+s).matches)return s;return\"dark\"}i&&(c=i),r(c),e[\"__NUXT_COLOR_MODE__\"]={preference:t,value:c,getColorScheme:l,addClass:r,removeClass:function(e){var s=\"\"+e+\"\";o.classList?o.classList.remove(s):o.className=o.className.replace(new RegExp(s,\"g\"),\"\")}}}();\n","pbody":true}],"__dangerouslyDisableSanitizersByTagID":{"nuxt-color-mode-script":["innerHTML"]}},
 
-    store,
     router,
     nuxt: {
       defaultTransition,
@@ -134,9 +123,6 @@ async function createApp(ssrContext, config = {}) {
     ...App
   }
 
-  // Make app available into store via this.app
-  store.app = app
-
   const next = ssrContext ? ssrContext.next : location => app.router.push(location)
   // Resolve route
   let route
@@ -149,7 +135,6 @@ async function createApp(ssrContext, config = {}) {
 
   // Set context to app.context
   await setContext(app, {
-    store,
     route,
     next,
     error: app.nuxt.error.bind(app),
@@ -176,9 +161,6 @@ async function createApp(ssrContext, config = {}) {
       app.context[key] = value
     }
 
-    // Add into store
-    store[key] = app[key]
-
     // Check if plugin not already installed
     const installKey = '__nuxt_' + key + '_installed__'
     if (Vue[installKey]) {
@@ -200,13 +182,6 @@ async function createApp(ssrContext, config = {}) {
   // Inject runtime config as $config
   inject('config', config)
 
-  if (process.client) {
-    // Replace store state before plugins execution
-    if (window.__NUXT__ && window.__NUXT__.state) {
-      store.replaceState(window.__NUXT__.state)
-    }
-  }
-
   // Add enablePreview(previewData = {}) in context for plugins
   if (process.static && process.client) {
     app.context.enablePreview = function (previewData = {}) {
@@ -216,64 +191,68 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_22a40f3e === 'function') {
-    await nuxt_plugin_plugin_22a40f3e(app.context, inject)
+  if (typeof nuxt_plugin_plugin_58e1afba === 'function') {
+    await nuxt_plugin_plugin_58e1afba(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_plugin_7702f19a === 'function') {
-    await nuxt_plugin_plugin_7702f19a(app.context, inject)
+  if (process.client && typeof nuxt_plugin_webfontloader_597698c6 === 'function') {
+    await nuxt_plugin_webfontloader_597698c6(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_workbox_981d8bc0 === 'function') {
-    await nuxt_plugin_workbox_981d8bc0(app.context, inject)
+  if (typeof nuxt_plugin_index_4549c0b5 === 'function') {
+    await nuxt_plugin_index_4549c0b5(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_metaplugin_6cdfe2c0 === 'function') {
-    await nuxt_plugin_metaplugin_6cdfe2c0(app.context, inject)
+  if (process.client && typeof nuxt_plugin_pluginclient_3109bf59 === 'function') {
+    await nuxt_plugin_pluginclient_3109bf59(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_iconplugin_639097d8 === 'function') {
-    await nuxt_plugin_iconplugin_639097d8(app.context, inject)
+  if (process.server && typeof nuxt_plugin_pluginserver_d2799e3e === 'function') {
+    await nuxt_plugin_pluginserver_d2799e3e(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_libplugin5171d4b1_bf871e5a === 'function') {
-    await nuxt_plugin_libplugin5171d4b1_bf871e5a(app.context, inject)
+  if (process.client && typeof nuxt_plugin_workbox_9bd6573c === 'function') {
+    await nuxt_plugin_workbox_9bd6573c(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_index_b87ded92 === 'function') {
-    await nuxt_plugin_index_b87ded92(app.context, inject)
+  if (typeof nuxt_plugin_metaplugin_591e46e2 === 'function') {
+    await nuxt_plugin_metaplugin_591e46e2(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_pluginclient_03aa4097 === 'function') {
-    await nuxt_plugin_pluginclient_03aa4097(app.context, inject)
+  if (typeof nuxt_plugin_iconplugin_5dc5ec56 === 'function') {
+    await nuxt_plugin_iconplugin_5dc5ec56(app.context, inject)
   }
 
-  if (process.server && typeof nuxt_plugin_pluginserver_6963b21f === 'function') {
-    await nuxt_plugin_pluginserver_6963b21f(app.context, inject)
+  if (typeof nuxt_plugin_axios_7b810e74 === 'function') {
+    await nuxt_plugin_axios_7b810e74(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_googleanalytics_4a4c10bc === 'function') {
-    await nuxt_plugin_googleanalytics_4a4c10bc(app.context, inject)
+  if (process.client && typeof nuxt_plugin_googleanalytics_3d12c7a0 === 'function') {
+    await nuxt_plugin_googleanalytics_3d12c7a0(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_e25393f8 === 'function') {
-    await nuxt_plugin_axios_e25393f8(app.context, inject)
+  if (process.server && typeof nuxt_plugin_pluginserver_0e5211e3 === 'function') {
+    await nuxt_plugin_pluginserver_0e5211e3(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_util_56d02241 === 'function') {
-    await nuxt_plugin_util_56d02241(app.context, inject)
+  if (process.client && typeof nuxt_plugin_pluginclient_aecebf4a === 'function') {
+    await nuxt_plugin_pluginclient_aecebf4a(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_highlight_7f0c2e92 === 'function') {
-    await nuxt_plugin_highlight_7f0c2e92(app.context, inject)
+  if (typeof nuxt_plugin_moment_d7499cdc === 'function') {
+    await nuxt_plugin_moment_d7499cdc(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_player_30f7e402 === 'function') {
-    await nuxt_plugin_player_30f7e402(app.context, inject)
+  if (typeof nuxt_plugin_Util_927bffd4 === 'function') {
+    await nuxt_plugin_Util_927bffd4(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_tippy_3c8c24f2 === 'function') {
-    await nuxt_plugin_tippy_3c8c24f2(app.context, inject)
+  if (process.client && typeof nuxt_plugin_Firebase_3a08d81b === 'function') {
+    await nuxt_plugin_Firebase_3a08d81b(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_Tippy_216b0650 === 'function') {
+    await nuxt_plugin_Tippy_216b0650(app.context, inject)
   }
 
   // Lock enablePreview in context
@@ -283,29 +262,28 @@ async function createApp(ssrContext, config = {}) {
     }
   }
 
-  // If server-side, wait for async component to be resolved first
-  if (process.server && ssrContext && ssrContext.url) {
-    await new Promise((resolve, reject) => {
-      router.push(ssrContext.url, resolve, (err) => {
-        // https://github.com/vuejs/vue-router/blob/v3.4.3/src/util/errors.js
-        if (!err._isRouter) return reject(err)
-        if (err.type !== 2 /* NavigationFailureType.redirected */) return resolve()
+  // Wait for async component to be resolved first
+  await new Promise((resolve, reject) => {
+    router.push(app.context.route.fullPath, resolve, (err) => {
+      // https://github.com/vuejs/vue-router/blob/v3.4.3/src/util/errors.js
+      if (!err._isRouter) return reject(err)
+      if (err.type !== 2 /* NavigationFailureType.redirected */) return resolve()
 
-        // navigated to a different route in router guard
-        const unregister = router.afterEach(async (to, from) => {
+      // navigated to a different route in router guard
+      const unregister = router.afterEach(async (to, from) => {
+        if (process.server && ssrContext && ssrContext.url) {
           ssrContext.url = to.fullPath
-          app.context.route = await getRouteData(to)
-          app.context.params = to.params || {}
-          app.context.query = to.query || {}
-          unregister()
-          resolve()
-        })
+        }
+        app.context.route = await getRouteData(to)
+        app.context.params = to.params || {}
+        app.context.query = to.query || {}
+        unregister()
+        resolve()
       })
     })
-  }
+  })
 
   return {
-    store,
     app,
     router
   }

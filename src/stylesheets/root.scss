@@ -1,3 +1,6 @@
-@import "tippy.scss";
-@import "animations.scss";
 @import "body.scss";
+@import "transitions.scss";
+
+/* Modules */
+@import "./modules/tippy.scss";
+@import "./modules/disqus.scss";

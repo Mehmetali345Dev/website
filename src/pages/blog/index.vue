@@ -1,178 +1,337 @@
 <template>
-  <div>
-    <v-row no-gutters :class="{ 'justify-space-between': true, 'row-mobile': $device.isMobile }">
-      <v-card
-        :width="$device.isMobile ? '100%' : index === 0 ? 'calc(30%)' : 'calc(22.5% - 4px)'"
-        @click="$router.push(`/blog/gonderi/${post.slug}`)"
-        @click.middle="open(`/blog/gonderi/${post.slug}`)"
-        v-for="(post, index) in galleryPosts"
-        :title="post.title"
-        :class="{ 'post d-sm-block': true, 'mb-4': $device.isMobile && index !== galleryPosts.length }"
-        :key="index"
-        ripple
+  <div class="pt-6">
+    <div v-if="getFilteredPosts === false">
+      <h3
+        class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100"
       >
-        <v-img
-          class="white--text align-end"
-          :lazy-src="post.image"
-          :src="post.image"
-          height="250px"
-        >
-          <v-card-title>
-            <span
-              :class="{ 'first-card-title': index === 0 || $device.isMobile, 'card-title': index !== 0 && !$device.isMobile }"
-            >{{ post.title }}</span>
-          </v-card-title>
-        </v-img>
-      </v-card>
-    </v-row>
+        Son gönderiler
+      </h3>
 
-    <div class="d-flex mt-md-6 mb-2">
-      <v-icon left>mdi-newspaper</v-icon>
-      <h3>Gönderiler</h3>
+      <div class="grid gap-4 mt-2 sm:grid-cols-2">
+        <template v-if="isFetchPending">
+          <SkeletonLoader v-for="i in 4" :key="i" type="repository" />
+        </template>
+
+        <template v-else>
+          <CardPost
+            v-for="(post, index) in posts.latest"
+            :key="`latest-${index}`"
+            :post="post"
+          />
+        </template>
+      </div>
+
+      <div class="grid gap-14 sm:gap-4 sm:grid-cols-2 mt-14">
+        <div class="grid grid-cols-1 gap-2">
+          <nuxt-link
+            :to="{
+              name: 'blog',
+              query: {
+                etiket: 'yazılım',
+              },
+            }"
+            title="Yazılım etiketli gönderileri gör"
+            class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
+          >
+            <icon name="computer" class="w-6 h-6" />
+            <h3 class="text-lg font-semibold">Yazılım</h3>
+          </nuxt-link>
+
+          <template v-if="isFetchPending">
+            <SkeletonLoader v-for="i in 3" :key="i" type="repository" />
+          </template>
+
+          <template v-else>
+            <CardPost
+              v-for="(post, index) in posts.yazılım"
+              :key="`yazılım-${index}`"
+              :post="post"
+              type="text"
+            />
+          </template>
+        </div>
+
+        <div class="grid grid-cols-1 gap-2">
+          <nuxt-link
+            :to="{
+              name: 'blog',
+              query: {
+                etiket: 'oyun',
+              },
+            }"
+            title="Oyun etiketli gönderileri gör"
+            class="flex items-center space-x-2 text-gray-900 dark:text-gray-100"
+          >
+            <icon name="controller" class="w-6 h-6" />
+            <h3 class="text-lg font-semibold">Oyun</h3>
+          </nuxt-link>
+
+          <template v-if="isFetchPending">
+            <SkeletonLoader v-for="i in 3" :key="i" type="repository" />
+          </template>
+
+          <template v-else>
+            <CardPost
+              v-for="(post, index) in posts.oyun"
+              :key="`oyun-${index}`"
+              :post="post"
+              type="text"
+            />
+          </template>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h3
+          class="space-x-2 text-lg font-semibold text-gray-900 dark:text-gray-100"
+        >
+          Diğer gönderiler
+        </h3>
+
+        <div class="grid gap-3 mt-4 sm:grid-cols-3">
+          <template v-if="isFetchPending">
+            <SkeletonLoader v-for="i in 18" :key="i" type="repository" />
+          </template>
+
+          <template v-else>
+            <CardPost
+              v-for="(post, index) in getPaginatedPosts"
+              :key="`oyun-${index}`"
+              :post="post"
+              type="text-only-title"
+            />
+          </template>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center mt-4 space-x-2">
+          <div
+            v-for="page in getTotalPages"
+            :key="`pagination-${page}`"
+            class="flex items-center justify-center w-10 h-10 font-medium text-gray-900 bg-gray-200 rounded-full cursor-pointer select-none ring-1 ring-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:ring-gray-800"
+            :class="{
+              'bg-gray-300 dark:bg-gray-700': pagination + 1 === page,
+            }"
+            @click="pagination = page - 1"
+          >
+            {{ page }}
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="cards mb-4">
-      <v-row no-gutters>
-        <v-col md="8" sm="12" :cols="$device.isMobile ? '12' : null">
-          <PostCard v-for="(post, index) in posts" :key="index" :post="post" />
+    <div v-else-if="getFilteredPosts">
+      <div
+        v-if="getFilteredPosts !== false && getFilteredPosts.length === 0"
+        class="space-y-4"
+      >
+        <h2
+          class="text-2xl font-semibold text-gray-900 sm:text-4xl dark:text-gray-100"
+        >
+          Aramanıza uygun herhangi bir gönderi bulunamadı.
+        </h2>
 
-          <div :class="{ 'show-more-container mt-4': true, 'mb-2': $device.isMobile }">
-            <v-btn
-              @click="showMore"
-              :loading="loading"
-              :disabled="full"
-            >{{ full ? 'Başka Gönderi Yok' :'Daha Fazla Göster' }}</v-btn>
-          </div>
-        </v-col>
+        <div class="sm:w-4/6">
+          <h3 class="text-lg text-gray-900 dark:text-gray-100">
+            Deneyebileceğiniz yöntemler:
+          </h3>
 
-        <v-col md="4" sm="12" class="pl-md-4" :cols="$device.isMobile ? '12' : null">
-          <Sidebar />
-        </v-col>
-      </v-row>
+          <ul class="pl-4 text-gray-700 list-disc dark:text-gray-300">
+            <li>Aramanızda anahtar kelimeler kullanmayı deneyin.</li>
+            <li>Etiketler kullanmayı deneyin.</li>
+            <li>
+              Gönderinin başlığında veya açıklamasında olan kelimelerle arama
+              yapmayı deneyin.
+            </li>
+          </ul>
+        </div>
+
+        <nuxt-link
+          :to="{ name: 'blog' }"
+          class="flex items-center justify-center px-4 py-2 space-x-2 text-gray-900 bg-gray-100 rounded ring-1 ring-gray-200 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:ring-gray-700 sm:w-max dark:text-gray-100"
+        >
+          <icon name="home" class="w-6 h-6" />
+          <span>Bloga Dön</span>
+        </nuxt-link>
+      </div>
+
+      <div v-else class="space-y-4">
+        <CardPost
+          v-for="(post, index) in getFilteredPosts"
+          :key="`oyun-${index}`"
+          :post="post"
+          type="text"
+        />
+      </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
-.post {
-  transition: opacity 0.2s;
-
-  .first-card-title {
-    width: 100%;
-    text-align: center;
-    word-break: break-word;
-  }
-
-  .card-title {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  &:hover {
-    opacity: 0.75;
-  }
-}
-
-.show-more-container {
-  width: 100%;
-  text-align: center;
-}
-
-.row-mobile {
-  max-height: fit-content;
-}
-</style>
-
 <script>
 export default {
-  layout: "blog",
-  head: {
-    title: "Blog",
-    meta: [
-      {
-        hid: "og:site_name",
-        name: "og:site_name",
-        content: "Mehmetali_345 | Blog",
-      },
-      { hid: "og:title", name: "og:title", content: "Mehmetali_345 | Blog" },
-      {
-        hid: "twitter:title",
-        name: "twitter:title",
-        content: "Mehmetali_345 | Blog",
-      },
-      {
-        hid: "twitter:description",
-        name: "twitter:description",
-        content:
-          "Haberlerin veya yazılımla alakalı içerikler olan  blog.",
-      },
-      {
-        hid: "og:description",
-        name: "og:description",
-        content:
-          "Haberlerin veya yazılımla alakalı içerikler olan  blog.",
-      },
-      {
-        hid: "description",
-        name: "description",
-        content:
-          "Haberlerin veya yazılımla alakalı içerikler olan  blog.",
-      },
-      { name: "premid-details", content: "Viewing a blog page:" },
-      { name: "premid-state", content: "Homepage" },
-    ],
-    link: [
-      {
-        rel: "canonical",
-        href: "https://mehmetali345.ml/blog",
-      },
-    ],
-  },
-  async asyncData({ $content, $device }) {
-    const galleryPosts = await $content()
-      .limit($device.isMobile ? 1 : 4)
-      .sortBy("createdAt", "desc")
-      .fetch();
-
-    const posts = await $content()
-      .skip($device.isMobile ? 1 : 4)
-      .limit(5)
-      .sortBy("createdAt", "desc")
-      .fetch();
-
-    return {
-      galleryPosts,
-      posts,
-    };
-  },
   data() {
     return {
-      search: this.$route.query.q || this.$route.query.search || "",
-      postCount: 5,
-      full: false,
-      loading: false,
-    };
+      query: {},
+      pagination: 0,
+      posts: {
+        latest: [],
+        yazılım: [],
+        oyun: [],
+        rest: [],
+      },
+    }
+  },
+  async fetch() {
+    const latestPosts = await this.$content()
+      .sortBy("createdAt", "desc")
+      .limit(4)
+      .without(["body"])
+      .fetch()
+
+    const yazılımPosts = await this.$content()
+      .where({ tags: { $contains: "yazılım" } })
+      .sortBy("createdAt", "desc")
+      .limit(3)
+      .without(["body"])
+      .fetch()
+
+    const oyunPosts = await this.$content()
+      .where({ tags: { $contains: "oyun" } })
+      .sortBy("createdAt", "desc")
+      .limit(3)
+      .without(["body"])
+      .fetch()
+
+    const allPosts = await this.$content()
+      .sortBy("createdAt", "desc")
+      .skip(4)
+      .without(["body"])
+      .fetch()
+
+    this.posts = {
+      latest: latestPosts || [],
+      yazılım: yazılımPosts || [],
+      oyun: oyunPosts || [],
+      rest: allPosts || [],
+    }
+  },
+  head() {
+    const title = "Mehmetali_345's Blog"
+    const description =
+      "Mehmetali_345'in bahsetmek istediği ve gündemdeki konularla alakalı blog."
+
+    return {
+      title: "Blog",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: description,
+        },
+        // Twitter
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: title,
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content: description,
+        },
+        // Open-Graph
+        { hid: "og:title", name: "og:title", content: title },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: description,
+        },
+        // PreMiD
+        { name: "premid-details", content: "Viewing a blog page:" },
+        { name: "premid-state", content: "Home" },
+      ].map((i) => {
+        i.property = i.property || i.name || null
+        return i
+      }),
+    }
+  },
+  computed: {
+    /**
+     * Checks if fetch state is pending or error.
+     * @returns {boolean}
+     */
+    isFetchPending() {
+      return this.$fetchState?.pending || this.$fetchState.error
+    },
+    /**
+     * Filters posts with a query variable.
+     * @returns {boolean|object[]} False if no query set, filtered posts array if there are results.
+     */
+    getFilteredPosts() {
+      let { q, search, query, ara, sorgu, etiket } = this.query
+
+      if (!q && !search && !query && !ara && !sorgu && !etiket) return false
+
+      q = q?.toLowerCase()
+      search = search?.toLowerCase()
+      query = query?.toLowerCase()
+      ara = ara?.toLowerCase()
+      sorgu = sorgu?.toLowerCase()
+      etiket = etiket?.toLowerCase()
+
+      const { latest, yazılım, oyun, rest } = this.posts
+      const allPosts = [...latest, ...yazılım, ...oyun, ...rest]
+
+      if (etiket)
+        return allPosts.filter(
+          (post) =>
+            post.tags?.filter((tag) => tag?.toLowerCase()?.includes(etiket))
+              ?.length
+        )
+      else {
+        const filteredPosts = allPosts.filter(
+          (post) =>
+            post.title
+              ?.toLowerCase()
+              ?.includes(q || search || query || ara || sorgu) ||
+            post.description
+              ?.toLowerCase()
+              ?.includes(q || search || query || ara || sorgu)
+        )
+
+        return filteredPosts
+      }
+    },
+    /**
+     * Returns the number of pages for the posts.
+     * @returns {number} Page amount.
+     */
+    getTotalPages() {
+      return Math.ceil(this.posts?.rest?.length / 15)
+    },
+    /**
+     * Returns paginated, sliced posts.
+     * @returns {object[]} The posts array.
+     */
+    getPaginatedPosts() {
+      const sliceStart = this.pagination * 15
+      const sliceEnd = sliceStart + 15
+
+      return this.posts.rest.slice(sliceStart, sliceEnd)
+    },
+  },
+  watch: {
+    "$route.query": "setQuery",
+  },
+  mounted() {
+    this.setQuery()
   },
   methods: {
-    open(url) {
-      window.open(url, "_blank");
-    },
-    async showMore() {
-      this.loading = true;
-      this.postCount += 5;
-
-      const newPosts = await this.$content()
-        .skip(4)
-        .limit(this.postCount)
-        .sortBy("createdAt", "desc")
-        .fetch();
-
-      if (this.posts.length === newPosts.length) this.full = true;
-      this.posts = newPosts;
-
-      this.loading = false;
+    /**
+     * Updates the query variable in Vue data from Vue Router.
+     */
+    setQuery() {
+      this.query = this.$route.query
     },
   },
-};
+}
 </script>
