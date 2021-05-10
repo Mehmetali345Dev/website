@@ -190,7 +190,7 @@ export default {
   },
   fetchOnServer: false,
   async fetch() {
-    const filter = ["Mehmetali345Dev", "basic-chat","discord-rpc", "katilcivciv-site", "345teamsite", "launcher-site", "anakinium"]
+    const filter = ["Mehmetali345Dev", "basic-chat","discord-rpc", "katilcivciv-site", "345teamsite", "launcher-site", "anakinium", "music-app", "dcutilities", "gzb"]
     const { data: repos } = await this.$axios.get(
       "https://api.github.com/users/Mehmetali345Dev/repos"
     )
