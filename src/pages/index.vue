@@ -172,7 +172,7 @@ export default {
           description:
             "Fast and Advanced Minecraft Launcher!",
           image: "https://i.vgy.me/4oVLsP.png",
-          href: "https://launcher.mehmetali345.xyz",
+          href: "https://github.com/Mehmetali345Dev/345-Launcher",
         },     
       ],
       skills: [
