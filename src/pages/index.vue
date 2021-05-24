@@ -11,8 +11,7 @@
           </div>
 
           <p class="text-gray-800 dark:text-gray-200">
-Hello, I am Mehmet Ali (aka Mehmetali_345) I am a young developer. I write desktop programs and web applications using javascript and C#.
-How much it takes to share my code with people and how to code or write software for people? I like to explain that it's fun.
+Hello, I am Mehmet Ali (aka Mehmetali_345) I am a young developer. I write desktop programs and web applications using javascript and C#. I love to tell coding is beatiful to people. I work OSS projects in my freetime.
           </p>
         </div>
 
