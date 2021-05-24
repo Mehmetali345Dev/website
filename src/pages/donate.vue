@@ -109,7 +109,7 @@ export default {
           revealed: false,
         },
         {
-          image: "https://crosstech.com.tr/wp-content/uploads/2020/08/Papara-780x675.png"
+          image: "https://crosstech.com.tr/wp-content/uploads/2020/08/Papara-780x675.png",
           name: "Papara",
           iban: "1212538229",
           revealed: false,
