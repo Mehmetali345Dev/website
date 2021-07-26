@@ -103,12 +103,6 @@ export default {
     return {
       accounts: [
         {
-          image: "https://i.vgy.me/42NHsZ.png",
-          name: "İninal",
-          iban: "4 002270 031421",
-          revealed: false,
-        },
-        {
           image: "https://crosstech.com.tr/wp-content/uploads/2020/08/Papara-780x675.png",
           name: "Papara",
           iban: "1212538229",
