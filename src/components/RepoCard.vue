@@ -16,16 +16,9 @@
 
       <div class="flex items-center space-x-1">
         <div class="flex items-center space-x-1">
-          <span>{{ stars + " Star" }}</span>
+          <span >{{ stars }}</span>
+          <icon name="star-filled" class="w-5 h-5 text-yellow-400"/>
         </div>
-
-       <!-- <icon
-          v-if="getLanguageIcon"
-          :name="getLanguageIcon"
-          :title="language"
-          class="w-5 h-5"
-        />
-        -->
       </div>
     </div>
 
