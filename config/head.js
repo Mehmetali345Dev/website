@@ -1,8 +1,8 @@
 const description =
-  "Young developer from Turkey, interested in languages, gaming, and programming, trying to improve his C# skills!"
+  "Young developer from Turkey, interested in languages, gaming, and programming, trying to improve his JavaScript skills!"
 
 export default {
-  title: "Mehmetali_345",
+  title: "Mehmetali345Dev",
   meta: [
     { charset: "utf-8" },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -44,6 +44,11 @@ export default {
     },
     /* Open-Graph */
     {
+      hid: "og:title",
+      name:"og:title",
+      content:"Mehmetali345Dev"
+    },
+    {
       hid: "og:type",
       name: "og:type",
       content: "website",
@@ -77,13 +82,7 @@ export default {
     {
       rel: "icon",
       type: "image/x-icon",
-      href: "https://mehmetali345.xyz/favicon.ico",
-    },
-    {
-      rel: "search",
-      type: "application/opensearchdescription+xml",
-      title: "Mehmetali_345's Blog",
-      href: "https://mehmetali345.xyz/opensearch.xml",
+      href: "/favicon.ico",
     },
   ],
 }

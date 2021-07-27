@@ -13,6 +13,7 @@
             :key="`project-featured-${index}`"
             :projectName="project.title"
             :projectImage="project.image"
+            :link="project.link"
             :description="project.description"
           />
         </div>
@@ -20,6 +21,7 @@
         <div class="grid w-full gap-2 sm:grid-cols-2">
           <ProjectCard
             v-for="(project, index) in getProjects.rest"
+            :link="project.link"
             :key="`project-rest-${index}`"
             :projectName="project.title"
             :description="project.description"
@@ -50,29 +52,16 @@ export default {
     return {
       projects: [
         {
-          title: "Bruh",
+          title: "345 Launcher",
           image: "https://i.vgy.me/4oVLsP.png",
-          description: "Hi Guys",
+          description: "Lightweight and advanced Minecraft Launcher",
+          link: "https://github.com/mehmetali345dev/345-launcher",
         },
         {
-          title: "Bruh",
-          image: "https://i.vgy.me/4oVLsP.png",
-          description: "Hi Guys",
-        },
-        {
-          title: "Bruh",
-          image: "https://i.vgy.me/4oVLsP.png",
-          description: "Hi Guys",
-        },
-        {
-          title: "Bruh",
-          image: "https://i.vgy.me/4oVLsP.png",
-          description: "Hi Guys",
-        },
-         {
-          title: "Bruh",
-          image: "https://i.vgy.me/4oVLsP.png",
-          description: "Hi Guys",
+          title: "Reponse",
+          image: "https://i.vgy.me/QI8XPM.png",
+          description: "Make the chat app that respects your privacy",
+          link: "https://reponse.netlify.app",
         },
       ],
     };

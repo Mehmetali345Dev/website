@@ -1,11 +1,11 @@
 <template>
-  <a>
+  <a :href="link" target="_blank">
   <div
     class="
       bg-gray-300
       dark:(text-gray-100
       bg-gray-800)
-      w-full
+      w-min
       h-full
       grid
       p-3
@@ -14,10 +14,10 @@
       justify-items-center
     "
   >
-    <img :src="projectImage" class="mt-2" />
+    <img :src="projectImage" class="my-2 rounded-md" />
      <div class="grid justify-items-center space-y-3">
         <h1 class="font-bold text-xl">{{ projectName }}</h1>
-        <p class="w-max-[20rem]">{{ description }}</p>
+        <p class="w-max-[15rem]">{{ description }}</p>
     </div>
   </div>
   </a>
@@ -36,6 +36,9 @@ export default {
     description: {
       type: String,
     },
+    link:{
+      type: String,
+    }
   },
 };
 </script>
