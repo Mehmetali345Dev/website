@@ -21,9 +21,14 @@
 
 <script>
 export default {
+  computed: {
+    getUser() {
+      return this.$config.config;
+    },
+  },
   async fetch() {
     const { data: repos } = await this.$axios.get(
-      "https://gh-pinned-repos-5l2i19um3.vercel.app/?username=mehmetali345dev"
+      "https://gh-pinned-repos-5l2i19um3.vercel.app/?username=" + this.getUser.user
     );
     this.repos = repos?.sort((a, b) => b?.stars - a?.stars);
   },

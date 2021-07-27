@@ -1,17 +1,20 @@
 <template>
   <div class="grid justify-items-center dark:bg-gray-900">
-    <Navbar :username="userinfo.login" />
+    <Navbar />
     <AboutMe />
     <section class="grid justify-items-center" id="repos">
+      <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
+        My Projects
+      </h2>
+      <ProjectSection />
+    </section>
+    <section class="grid justify-items-center w-8/12" id="repos">
       <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
         My GitHub repositories
       </h2>
       <RepoSection />
     </section>
-    <section
-      id="donate"
-      class="grid w-8/12 justify-items-center mb-16"
-    >
+    <section id="donate" class="grid w-8/12 justify-items-center mb-16">
       <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
         My Donate Links
       </h2>
@@ -22,24 +25,7 @@
 </template>
 
 <script>
-export default {
-  async fetch() {
-    const info = await this.$axios.$get(
-      "https://api.github.com/users/" + this.getUser.user
-    );
-    this.userinfo = info;
-  },
-  data() {
-    return {
-      userinfo: [],
-    };
-  },
-  computed: {
-    getUser() {
-      return this.$config.config;
-    },
-  },
-};
+export default {};
 </script>
 
 <style>

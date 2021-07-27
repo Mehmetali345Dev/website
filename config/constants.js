@@ -5,7 +5,7 @@ export default {
     github: "https://github.com/Mehmetali345Dev/?utm_source=mehmetali345.xyz",
   },
   config:{
-    user:"mehmetali345dev",
+    user: "mehmetali345dev",
     patreon:"https://patreon.com/mehmetali345"
   },
 

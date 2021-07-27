@@ -26,7 +26,7 @@
         w-8/12
       "
     >
-      <a href="/" class="font-bold text-lg">{{ username }}</a>
+      <a href="/" class="font-bold text-lg">{{ userinfo.login }}</a>
       <div class="flex items-center space-x-4">
         <nuxt-link
           v-for="(link, index) in getCurrentRouteLinks"
@@ -62,15 +62,24 @@ export default {
           },
         ],
       },
+      userinfo: [],
     };
   },
   computed: {
     getCurrentRouteLinks() {
       return this.links.default;
     },
+    getUser() {
+      return this.$config.config;
+    },
   },
 
-  methods: {},
+  async fetch() {
+    const info = await this.$axios.$get(
+      "https://api.github.com/users/" + this.getUser.user
+    );
+    this.userinfo = info;
+  },
 };
 </script>
 
