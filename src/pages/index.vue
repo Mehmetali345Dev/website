@@ -2,12 +2,12 @@
   <div class="grid justify-items-center dark:bg-gray-900">
     <Navbar />
     <AboutMe />
-    <section class="grid justify-items-center w-8/12" id="projects">
+    <section class="grid justify-items-center w-10/12" id="projects">
       <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
         My Projects
       </h2>
-      <div class="grid gap-2 mt-4">
-        <div class="grid gap-2 w-full justify-items-center sm:grid-cols-3">
+      <div class="mx-2 grid gap-2 mt-4">
+        <div class="grid gap-4 w-full justify-items-center sm:grid-cols-3">
           <ProjectCard
             v-for="(project, index) in getProjects.featured"
             :key="`project-featured-${index}`"
