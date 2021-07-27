@@ -10,7 +10,7 @@
     </section>
     <section
       id="donate"
-      class="grid justify-items-center mb-16"
+      class="grid w-8/12 justify-items-center mb-16"
     >
       <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
         My Donate Links
