@@ -2,7 +2,7 @@ const options = {
   rootDir: "./",
   srcDir: "src",
   target: "static",
-  ssr: false,
+  ssr: true,
 }
 import publicRuntimeConfig from "./config/publicRuntimeConfig"
 import head from "./config/head"
@@ -37,10 +37,14 @@ export default {
   components: true,
   buildModules: [
     'nuxt-windicss',
+    "@nuxtjs/color-mode",
+
   ],
+  colorMode: {
+    classSuffix: ''
+  },
   modules: [
     "@nuxtjs/svg",
-    "@nuxtjs/color-mode",
     '@nuxtjs/axios'
   ],
   build: {

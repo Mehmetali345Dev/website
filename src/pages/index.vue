@@ -1,5 +1,5 @@
 <template>
-  <div class="grid justify-items-center">
+  <div class="grid justify-items-center dark:bg-gray-900">
     <Navbar :username="userinfo.login" />
     <AboutMe />
     <section class="grid justify-items-center" id="repos">

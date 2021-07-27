@@ -10,7 +10,7 @@
     "
     @click="switchTheme"
   >
-    <h1 v-if="getSelectedTheme == 'light'">Light</h1>
+    <h1 v-if="getSelectedTheme === 'light'">Light</h1>
     <h1 v-else>Dark</h1>
   </div>
 </template>
@@ -32,8 +32,7 @@ export default {
      * @param {'light'|'dark'} option The color mode option.
      */
     switchTheme() {
-      this.$colorMode.preference =
-        this.getSelectedTheme = "dark" ? "light" : "dark";
+      this.$colorMode.preference = this.getSelectedTheme === "dark" ? "light" : "dark";
     },
   },
 };

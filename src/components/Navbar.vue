@@ -6,6 +6,7 @@
       items-center
       justify-center
       flex
+      dark:text-gray-100
       w-9/12
       shadow-lg
       h-auto

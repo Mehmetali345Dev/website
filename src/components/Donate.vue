@@ -1,14 +1,16 @@
 <template>
-  <div class="grid grid-cols-2 md:space-x-2 w-full items-center">
+  <div class="grid md:flex md:space-x-2 w-full items-center">
     <div
       class="
         flex
         w-full
         bg-gray-300
+        dark:bg-gray-800
         p-6
         flex-grow
         justify-items-center
         items-center
+        dark:text-gray-100
         rounded-xl
       "
     >
@@ -19,16 +21,18 @@
         />
         <div class="grid justify-items-start ml-4">
           <h1 class="font-semibold text-lg">Papara</h1>
-          <h1 class="text-md">1212538229</h1>
+          <h1 class="text-md ">1212538229</h1>
         </div>
       </div>
     </div>
-     <div
+    <div
       class="
-         flex
+        flex
         w-full
         bg-gray-300
+        dark:bg-gray-800
         p-6
+        dark:text-gray-100
         justify-items-center
         items-center
         flex-grow
@@ -38,7 +42,7 @@
       <div class="flex items-center">
         <img
           src="https://www.audiosocket.com/wp-content/uploads/2020/11/patreon-creators-patreon.png"
-          class="h-16 "
+          class="h-16"
         />
         <div class="grid justify-items-start ml-4">
           <h1 class="font-semibold text-lg">Patreon</h1>
@@ -51,11 +55,11 @@
 
 <script>
 export default {
-  computed:{
-    getPatreonLink(){
-      return this.$config.config
-    }
-  }
+  computed: {
+    getPatreonLink() {
+      return this.$config.config;
+    },
+  },
 };
 </script>
 

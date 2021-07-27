@@ -2,6 +2,7 @@
   <div
     class="
       bg-gray-300
+      dark:(bg-gray-800 text-gray-100)
       items-center
       justify-center
       flex
