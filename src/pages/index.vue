@@ -17,7 +17,7 @@
           />
         </div>
 
-        <div class="grid w-full sm:grid-cols-2">
+        <div class="grid w-full gap-2 sm:grid-cols-2">
           <ProjectCard
             v-for="(project, index) in getProjects.rest"
             :key="`project-rest-${index}`"
@@ -65,6 +65,11 @@ export default {
           description: "Hi Guys",
         },
         {
+          title: "Bruh",
+          image: "https://i.vgy.me/4oVLsP.png",
+          description: "Hi Guys",
+        },
+         {
           title: "Bruh",
           image: "https://i.vgy.me/4oVLsP.png",
           description: "Hi Guys",
