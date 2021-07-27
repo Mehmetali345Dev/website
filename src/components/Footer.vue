@@ -1,24 +1,39 @@
 <template>
   <div
-    class="w-full py-4 text-gray-900 bg-gray-200 dark:bg-gray-800 dark:text-gray-100"
+    class="
+      bg-gray-300
+      items-center
+      justify-center
+      flex
+      w-9/12
+      shadow-lg
+      h-16
+      .rounded-xl
+      space-x-2
+      mt-4
+    "
   >
-    <div class="w-11/12 mx-auto sm:w-9/12 md:w-7/12">
-      <div
-        class="items-center justify-between space-y-4 text-center sm:text-left sm:flex sm:space-y-0 sm:space-x-6"
+    <div class="grid md:flex justify-items-center md:justify-between w-8/12">
+      <a href="/" class="font-bold text-sm"
+        >This website is open source on Github</a
       >
+      <div class="md:flex hidden items-center space-x-4">
         <a
-          href="https://github.com/Mehmetali345Dev/personal-site"
-          class="text-center sm:truncate hover:underline"
+          :href="getSocialLinks.twitter"
           target="_blank"
           rel="noreferrer"
+          title="Follow me on twitter"
         >
-          {{ getLocalizedNotice }}
+          Twitter
         </a>
-
-        <Socials
-          v-if="$route.name !== 'index'"
-          class="justify-center flex-shrink-0 sm:justify-start"
-        />
+        <a
+          :href="getSocialLinks.discord"
+          target="_blank"
+          rel="noreferrer"
+          title="Join my Discord server!"
+        >
+          Discord
+        </a>
       </div>
     </div>
   </div>
@@ -27,15 +42,12 @@
 <script>
 export default {
   computed: {
-    /**
-     * Returns localized GitHub notice string in Turkish/English according to current route.
-     * @returns {string}
-     */
-    getLocalizedNotice() {
-      if (this.$route.name.includes("blog"))
-        return "Bu site GitHub üzerinde açık kaynak olarak paylaşılmıştır."
-      else return "This website is open-source on GitHub"
+    getSocialLinks() {
+      return this.$config.contact;
     },
   },
-}
+};
 </script>
+
+<style>
+</style>

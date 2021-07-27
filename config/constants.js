@@ -1,13 +1,15 @@
 export default {
-  social: {
+  contact: {
     discord: "https://discord.gg/syprbuqGSw",
     twitter: "https://twitter.com/AnakinS07677978/?utm_source=mehmetali345.xyz",
     github: "https://github.com/Mehmetali345Dev/?utm_source=mehmetali345.xyz",
   },
-  sponsor: {
-    patreon: "https://www.patreon.com/Mehmetali345/?utm_source=mehmetali345.xyz",
+  config:{
+    user:"mehmetali345dev",
+    patreon:"https://patreon.com/mehmetali345"
   },
-  links: {
+
+  projects: {
     launcher345: {
       website: "https://launcher.mehmetali345.xyz/?utm_source=mehmetali345.xyz",
     },

@@ -1,20 +1,39 @@
 <template>
-  <SkeletonLoader
+  <div
     v-if="
       finished === false ||
       !getStatusDetails ||
       Object.keys(lanyard).length === 0
     "
     class="w-6/12 h-[17.5px]"
-  />
+  >
+    Unable to get status
+  </div>
 
   <div
     v-else
-    class="flex items-center space-x-2 text-gray-700 rounded-md dark:text-gray-300"
+    class="
+      flex
+      items-center
+      space-x-2
+      text-gray-700
+      rounded-md
+      dark:text-gray-300
+    "
   >
     <div :class="`h-3 w-3 rounded-full flex-shrink-0 ${getDiscordStatus}`" />
-    <div class="text-sm leading-tight truncate" :title="getStatusDetails">
+    <div
+      class="text-sm hidden md:flex leading-tight truncate"
+      :title="getStatusDetails"
+    >
       {{ getStatusDetails }}
+    </div>
+    <!-- Mobile status -->
+    <div
+      class="text-sm md:hidden leading-tight truncate"
+      :title="getStatusDetails"
+    >
+      {{ getStatusDetailsMob }}
     </div>
   </div>
 </template>
@@ -26,7 +45,7 @@ export default {
       finished: false,
       lanyard: {},
       socket: null,
-    }
+    };
   },
   computed: {
     /**
@@ -34,29 +53,27 @@ export default {
      * @returns {string}
      */
     getStatusDetails() {
-      const lanyard = this.lanyard
-      if (!lanyard) return {}
+      const lanyard = this.lanyard;
+      if (!lanyard) return {};
 
       const filtered =
         lanyard.activities?.filter((activity) => activity.type !== 4)?.pop() ||
-        {}
+        {};
 
       // Offline
-      if (this.lanyard?.discord_status === "offline") return "Offline"
+      if (this.lanyard?.discord_status === "offline") return "Offline";
       // Visual Studio Code
       else if (filtered.name === "Visual Studio Code") {
         const replaced =
-          filtered.state?.replace("📁 ", "")?.split(" | ")?.[0] || "a file"
-        return `Editing ${replaced} in Visual Studio Code`
-      }
-      // YouTube Music
-      else if (
-        filtered.name === "YouTube Music" &&
+          filtered.state?.replace("📁 ", "")?.split(" | ")?.[0] || "a file";
+        return `Editing ${replaced} in Visual Studio Code`;
+      } else if (
+        filtered.name === "Spotify" &&
         filtered.details &&
         filtered.state
       ) {
-        const song = filtered.details || "something"
-        return `Listening to ${song} on YouTube Music`
+        const song = filtered.details || "something";
+        return `Listening to ${song} on Spotify`;
       }
       // YouTube
       else if (
@@ -64,47 +81,54 @@ export default {
         filtered.details &&
         filtered.state
       ) {
-        const name = filtered.details || "a video"
-        return `Watching ${name} on YouTube`
+        const name = filtered.details || "a video";
+        return `Watching ${name} on YouTube`;
       }
       // Default values
       else
         switch (filtered.name) {
-          case "Google Meet":
-            return "In a Google Meet meeting"
-          case "Twitch":
-            return "Watching a stream on Twitch"
-          case "Prime Video":
-            return "Watching something on Prime Video"
+          case "Netflix":
+            return "Watching something on Netflix";
           default:
-            return "Online"
+            return "Online";
         }
     },
     /**
      * Returns Discord status colors.
      * @returns {string} Tailwind color classes
      */
+    getStatusDetailsMob() {
+      const lanyard = this.lanyard;
+      if (!lanyard) return {};
+      switch (this.lanyard.discord_status) {
+        case "offline":
+          return "Offline";
+        default:
+          return "Online";
+      }
+    },
+
     getDiscordStatus() {
       switch (this.lanyard.discord_status) {
         case "online":
-          return "bg-green-500"
+          return "bg-green-500";
         case "idle":
-          return "bg-yellow-500"
+          return "bg-yellow-500";
         case "dnd":
-          return "bg-red-500"
+          return "bg-red-500";
         default:
-          return "bg-gray-500 dark:bg-gray-200"
+          return "bg-gray-500 dark:bg-gray-200";
       }
     },
   },
   beforeDestroy() {
-    this.socket?.close()
+    this.socket?.close();
   },
   mounted() {
     /**
      * Connect to Lanyard Socket API, send heartbeat every 30 seconds and replace the Vue data value with the message
      */
-    this.socket = new WebSocket("wss://api.lanyard.rest/socket")
+    this.socket = new WebSocket("wss://api.lanyard.rest/socket");
 
     this.socket.addEventListener("open", () => {
       // Subscribe to ID
@@ -115,7 +139,7 @@ export default {
             subscribe_to_id: "404360912460578816",
           },
         })
-      )
+      );
 
       // Send heartbeat every 30 seconds
       setInterval(() => {
@@ -123,18 +147,21 @@ export default {
           JSON.stringify({
             op: 3,
           })
-        )
-      }, 30000)
-    })
+        );
+      }, 30000);
+    });
 
     this.socket.addEventListener("message", ({ data }) => {
-      const { t: type, d: status } = JSON.parse(data)
+      const { t: type, d: status } = JSON.parse(data);
 
       if (type === "INIT_STATE" || type === "PRESENCE_UPDATE")
-        this.lanyard = status || {}
+        this.lanyard = status || {};
 
-      this.finished = true
-    })
+      this.finished = true;
+    });
   },
-}
+};
 </script>
+
+<style>
+</style>
