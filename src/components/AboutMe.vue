@@ -8,9 +8,7 @@
       mt-16
       justify-items-center
       h-auto
-      grid
-      md:flex
-      flex-wrap
+      flex flex-wrap
       justify-center
       rounded-md
     "
@@ -24,6 +22,7 @@
         justify-items-center
         md:justify-items-start
         text-center
+        aboutme
         md:text-left
       "
     >
@@ -60,5 +59,9 @@ export default {
 </script>
 
 <style>
-
+@media screen and (max-device-width: 950px) {
+  .aboutme {
+    @apply text-center justify-items-center;
+  }
+}
 </style>
