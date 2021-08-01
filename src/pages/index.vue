@@ -7,7 +7,7 @@
         My Projects
       </h2>
       <div class="mx-2 grid gap-2 mt-4">
-        <div class="grid gap-4 w-full justify-items-center sm:grid-cols-3">
+        <div class="grid gap-4 w-full justify-items-center sm:grid-cols-3 projects">
           <ProjectCard
             v-for="(project, index) in getProjects.featured"
             :key="`project-featured-${index}`"
@@ -86,5 +86,10 @@ export default {
 <style>
 html {
   scroll-behavior: smooth;
+}
+@media screen and (max-device-width: 950px) {
+  .projects {
+    @apply sm:grid-cols-2;
+  }
 }
 </style>

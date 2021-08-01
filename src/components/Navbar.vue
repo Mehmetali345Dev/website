@@ -28,8 +28,8 @@
         md:w-8/12
       "
     >
-      <a href="/" class="font-bold text-lg">{{ userinfo.login }}</a>
-      <div class="flex items-center space-x-4">
+      <a href="/" class="font-bold md:mr-4 text-lg">{{ userinfo.login }}</a>
+      <div class="flex items-center space-x-2 md:space-x-4">
         <nuxt-link
           v-for="(link, index) in getCurrentRouteLinks"
           :key="`link-${index}`"
