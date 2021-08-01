@@ -63,6 +63,12 @@ export default {
           description: "Make the chat app that respects your privacy",
           link: "https://reponse.netlify.app",
         },
+        {
+          title: "mehmetali345.xyz",
+          image: "https://mehmetali345.xyz/icon.png",
+          description: "My personal portfolio made by NuxtJS and WindiCSS",
+          link: "/",
+        },
       ],
     };
   },
@@ -78,4 +84,7 @@ export default {
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
 </style>

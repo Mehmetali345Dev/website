@@ -10,6 +10,7 @@
       w-9/12
       shadow-lg
       h-auto
+      gruvbox:bg-yellow-300
       p-4
       .rounded-xl
       space-x-2
@@ -53,12 +54,12 @@ export default {
       links: {
         default: [
           {
-            title: "Donate",
-            link: "#donate",
-          },
-          {
             title: "Projects",
             link: "/#projects",
+          },
+          {
+            title: "Donate",
+            link: "#donate",
           },
         ],
       },
