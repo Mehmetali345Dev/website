@@ -43,3 +43,6 @@ For build and compile:
 and open [localhost:3000](http://localhost:3000) on your browser and your app is ready.
 
 If you are want host on **paid or free services**. I recommend Vercel or Netlify. My app is hosted by [Vercel](https://vercel.com).
+
+# Preview 
+![Preview](https://raw.githubusercontent.com/Mehmetali345Dev/mehmetali345.xyz/master/screenshots/website.png) Light Theme preview
