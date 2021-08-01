@@ -60,7 +60,7 @@ export default {
         {
           title: "Reponse",
           image: "https://i.vgy.me/QI8XPM.png",
-          description: "Make the chat app that respects your privacy",
+          description: "Meet the chat app that respects your privacy",
           link: "https://reponse.netlify.app",
         },
         {
