@@ -30,7 +30,7 @@
         </div>
       </div>
     </section>
-    <section class="grid justify-items-center w-8/12" id="repos">
+    <section class="grid justify-items-center w-10/12" id="repos">
       <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
         My GitHub repositories
       </h2>

@@ -24,7 +24,8 @@
         justify-items-center
         items-center
         md:justify-between
-        w-8/12
+        w-10/12
+        md:w-8/12
       "
     >
       <a href="/" class="font-bold text-lg">{{ userinfo.login }}</a>
