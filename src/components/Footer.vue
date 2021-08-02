@@ -15,7 +15,7 @@
     "
   >
     <div class="grid md:flex justify-items-center md:justify-between w-8/12">
-      <a href="/" class="font-bold text-sm"
+      <a href="https://github.com/mehmetali345dev/mehmetali345.xyz" target="_blank" class="font-bold text-sm"
         >This website is open source on Github</a
       >
       <div class="md:flex hidden items-center space-x-4">

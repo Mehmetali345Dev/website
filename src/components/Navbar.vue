@@ -36,7 +36,6 @@
           :to="link.link"
           >{{ link.title }}</nuxt-link
         >
-        <a href="https://blog.mehmetali345.xyz" target="_blank">Blog</a>
         <ColorSwitcher class="" />
       </div>
     </div>
@@ -61,6 +60,10 @@ export default {
           {
             title: "Donate",
             link: "#donate",
+          },
+                   {
+            title: "Blog",
+            link: "/blog",
           },
         ],
       },
