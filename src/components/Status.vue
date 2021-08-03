@@ -84,6 +84,13 @@ export default {
         const name = filtered.details || "a video";
         return `Watching ${name} on YouTube`;
       }
+            else if (
+        filtered.name === "Sleeping" &&
+        filtered.details &&
+        filtered.state
+      ) {
+        return `Sleeping`;
+      }
       // Default values
       else
         switch (filtered.name) {
