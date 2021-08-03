@@ -2,12 +2,26 @@
   <div class="grid justify-items-center dark:bg-gray-900">
     <Navbar />
     <AboutMe />
+    <section id="skills" class="grid w-8/12 justify-items-center">
+      <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
+        My Skills
+      </h2>
+      <div class="grid grid-cols-5 skills mt-4 gap-2">
+        <Skills
+          v-for="(skill, index) in skills"
+          :key="`skill-${index}`"
+          :skill="skill"
+        />
+      </div>
+    </section>
     <section class="grid justify-items-center w-10/12" id="projects">
       <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
         My Projects
       </h2>
       <div class="mx-2 grid gap-2 mt-4">
-        <div class="grid gap-4 w-full justify-items-center sm:grid-cols-3 projects">
+        <div
+          class="grid gap-4 w-full justify-items-center sm:grid-cols-3 projects"
+        >
           <ProjectCard
             v-for="(project, index) in getProjects.featured"
             :key="`project-featured-${index}`"
@@ -70,6 +84,18 @@ export default {
           link: "/",
         },
       ],
+      skills: [
+        "Vue.js",
+        "Javascript",
+        "C#",
+        "Nuxt.js",
+        "WindiCSS",
+        "Node.js",
+        "Sass",
+        "Dotnet",
+        "Github",
+        "Figma",
+      ],
     };
   },
   computed: {
@@ -90,6 +116,9 @@ html {
 @media screen and (max-device-width: 950px) {
   .projects {
     @apply sm:grid-cols-2;
+  }
+  .skills {
+    @apply sm:grid-cols-3;
   }
 }
 </style>
