@@ -32,8 +32,14 @@ export default {
   },
   modules: [
     "@nuxtjs/svg",
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-webfontloader',
   ],
+  webfontloader: {
+    google: {
+      families: ['Noto Sans:400,700'] //Loads Lato font with weights 400 and 700
+    }
+  },
   build: {
   }
 }

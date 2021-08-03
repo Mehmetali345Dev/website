@@ -112,6 +112,7 @@ export default {
 <style>
 html {
   scroll-behavior: smooth;
+  font-family: "Noto Sans", sans-serif;
 }
 @media screen and (max-device-width: 950px) {
   .projects {
