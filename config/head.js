@@ -1,5 +1,5 @@
 const description =
-  "Young developer from Turkey, interested in languages, gaming, and programming, trying to improve his JavaScript skills!"
+  "I hate opengraph tags"
 
 export default {
   title: "Mehmetali345Dev",
