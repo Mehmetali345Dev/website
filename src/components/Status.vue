@@ -91,11 +91,16 @@ export default {
       ) {
         return `Sleeping`;
       }
+      else if (filtered.name === "Netflix" &&
+        filtered.details &&
+        filtered.state)
+      {
+       const name = filtered.details || "something";
+      return 'Watching  ${name} on Netflix'
+      }
       // Default values
       else
         switch (filtered.name) {
-          case "Netflix":
-            return "Watching something on Netflix";
           default:
             return "Online";
         }
