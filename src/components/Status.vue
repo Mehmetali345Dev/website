@@ -96,7 +96,7 @@ export default {
         filtered.state)
       {
        const name = filtered.details || "something";
-      return 'Watching  ${name} on Netflix'
+      return `Watching  ${name} on Netflix`;
       }
       // Default values
       else
