@@ -4,7 +4,7 @@
     <AboutMe />
     <section id="skills" class="grid w-8/12 justify-items-center">
       <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
-        My Skills
+        I use
       </h2>
       <div class="grid grid-cols-5 skills mt-4 gap-2">
         <Skills
@@ -72,10 +72,10 @@ export default {
           link: "https://github.com/mehmetali345dev/345-launcher",
         },
         {
-          title: "Reponse",
-          image: "https://i.vgy.me/QI8XPM.png",
-          description: "Meet the chat app that respects your privacy",
-          link: "https://reponse.netlify.app",
+          title: "RepeatPay",
+          image: "https://repeatpay.ga/icon.png",
+          description: "New open-source donate system for community. Easy, fast and secure.",
+          link: "https://repeatpay.ga",
         },
         {
           title: "mehmetali345.xyz",
