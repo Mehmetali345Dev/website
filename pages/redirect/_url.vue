@@ -40,11 +40,11 @@ export default {
     };
   },
   mounted() {
-    /*
+   
     this.timeout = setTimeout(() => {
       window.location.href = this.redirect[this.params].href || "/";
     }, 3000);
-    */
+  
   },
   computed: {
     getTitle() {
