@@ -45,7 +45,7 @@
     <section class="mt-2 w-9/12 grid justify-items-center">
       <h1 class="text-xl mb-4 font-bold">I use</h1>
 
-      <div class="grid sm:grid-cols-5 grid-cols-2 gap-3">
+      <div class="grid md:grid-cols-5 grid-cols-2 gap-3">
         <CardUse
           v-for="(technology, index) in technologies"
           :key="`technology-${index}`"
@@ -53,7 +53,7 @@
         />
       </div>
     </section>
-    <section class="mt-2 grid w-9/12 justify-items-center" id="projects">
+    <section class="grid w-9/12 mb-8 mt-6 justify-items-center" id="projects">
       <h1 class="text-xl mb-4 font-bold">My Projects</h1>
       <div class="grid justify-items-start space-y-3 w-full">
         <CardProject
@@ -67,6 +67,11 @@
         />
       </div>
     </section>
+    <nuxt-link
+      class="w-9/12 text-center dark:bg-gray-800 bg-gray-300 p-4 rounded-md"
+      to="/repos"
+      >See my repositories</nuxt-link
+    >
   </div>
 </template>
 

@@ -21,11 +21,11 @@
       </div>
       <div class="hidden sm:flex items-center space-x-5">
         <nuxt-link
-          v-for="(link, index) in links"
-          :key="`link-${index}`"
-          class="text-lg font-bold"
-          :to="link.to"
-          >{{ link.name }}</nuxt-link
+          v-if="$route.params.slug"
+          class="text-lg font-bold w-max"
+          to="/blog"
+        >
+          Geri Dön</nuxt-link
         >
       </div>
       <div @click="showMenu()" class="text-lg font-bold md:hidden">Menu</div>
@@ -44,11 +44,11 @@
       v-if="menu"
     >
       <nuxt-link
-        v-for="(link, index) in links"
-        :key="`link-${index}`"
+        v-if="$route.params.slug"
         class="text-lg font-bold w-max"
-        :to="link.to"
-        >{{ link.name }}</nuxt-link
+        to="/blog"
+      >
+        Geri Dön</nuxt-link
       >
     </div>
   </div>
