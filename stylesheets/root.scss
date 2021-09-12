@@ -4,4 +4,34 @@ html {
 }
   ::-webkit-scrollbar {
     display: none;
+}
+
+.nuxt-content {
+  h1 {
+    @apply text-2xl text-green-500 font-bold;
   }
+  h2 {
+    @apply text-xl text-green-500 font-bold;
+  }
+  h3,
+  h4,
+  h5 {
+    @apply text-lg text-green-500;
+  }
+
+  p {
+    @apply text-gray-900 dark:text-gray-200;
+  }
+  img {
+    @apply rounded my-2;
+  }
+  &:not(:last-child) {
+    @apply mb-5;
+  }
+  &.text-center {
+    @apply flex justify-center;
+  }
+  strong {
+    @apply font-medium text-gray-900 dark:text-gray-100;
+  }
+}

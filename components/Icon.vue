@@ -81,8 +81,8 @@
         x2="69.4833"
         y2="-17.2068"
       >
-        <stop offset="0" style="stop-color:#E14A55" />
-        <stop offset="1" style="stop-color:#8E278F" />
+        <stop offset="0" style="stop-color: #e14a55" />
+        <stop offset="1" style="stop-color: #8e278f" />
       </linearGradient>
       <path
         id="Logo_7_"
@@ -97,6 +97,38 @@
       <g></g>
       <g></g>
     </svg>
+    <svg
+      v-if="name === 'comment-light'"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#ffffff"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path
+        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+      ></path>
+    </svg>
+    <svg
+      v-if="name === 'comment-dark'"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path
+        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+      ></path>
+    </svg>
   </div>
 </template>
 
@@ -104,9 +136,9 @@
 export default {
   props: {
     name: {
-      type: String
-    }
-  }
+      type: String,
+    },
+  },
 };
 </script>
 

@@ -19,14 +19,49 @@
         {{ getReadableDate(post.date) }}
       </div>
     </header>
-    <nuxt-content :document="post" class="mt-4 w-full px-4" />
+    <nuxt-content :document="post" class="mt-6 w-full px-4" />
+    <div class="grid w-full">
+      <button
+        @click="showComment()"
+        class="
+          p-4
+          w-full
+          flex
+          items-center
+          bg-gray-300
+          dark:bg-gray-800
+          rounded-md
+          space-x-3
+          justify-center
+        "
+      >
+        <Icon v-if="$colorMode.value === 'light'" name="comment-dark" />
+        <Icon v-else name="comment-light" />
+        <h1 class="text-2xl font-bold">{{ commentBut }}</h1>
+      </button>
+      <Disqus
+        v-if="comments"
+        shortname="mehmetali345"
+        :title="post.title"
+        :url="`https://mehmetali345.xyz/blog/${post.slug}`"
+        :identifier="`/blog/${post.slug}`"
+        :slug="post.slug"
+        lang="tr"
+        class="mt-10 w-full"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import { Disqus } from "vue-disqus";
 export default {
+  components: {
+    Disqus,
+  },
   data() {
     return {
+      comments: false,
       post: {},
       related: [],
     };
@@ -49,14 +84,25 @@ export default {
         return `${Math.floor(diff / 30)} ay önce`;
       else return createdAt.format("DD/MM/YYYY");
     },
+    showComment() {
+      if (this.comments === true) {
+        this.comments = false;
+      } else {
+        this.comments = true;
+      }
+    },
+  },
+  computed: {
+    commentBut() {
+      if (this.comments === true) {
+        return "Close Comments";
+      } else {
+        return "See Comments";
+      }
+    },
   },
 };
 </script>
 
 <style lang="scss">
-.nuxt-content {
-  h1 {
-    @apply text-2xl text-green-500 font-bold;
-  }
-}
 </style>

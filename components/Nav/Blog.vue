@@ -51,11 +51,17 @@
         Geri Dön</nuxt-link
       >
     </div>
+    <vue-scroll-progress-bar @complete="handleComplete" v-if="$route.params.slug" />
   </div>
 </template>
 
 <script>
+import { VueScrollProgressBar } from "@guillaumebriday/vue-scroll-progress-bar";
+
 export default {
+  components: {
+    VueScrollProgressBar,
+  },
   data() {
     return {
       menu: false,
