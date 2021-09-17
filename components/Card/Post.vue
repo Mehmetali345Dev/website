@@ -79,13 +79,6 @@ export default {
         image,
       };
     },
-    /**
-     * Returns post formatted post date that is nicer than the pure way.
-     * @returns {string} The formatted date.
-     */
-    getPostDate() {
-      return this.$getReadableDate(this.post.createdAt);
-    },
   },
 };
 </script>

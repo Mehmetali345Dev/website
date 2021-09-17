@@ -1,12 +1,18 @@
 <template>
-  <div class="grid justify-items-center">
+  <div
+    class="grid rounded-md bg-gray-300 dark:bg-gray-800 justify-items-center"
+  >
     <header
       class="
         grid
         text-center
         justify-items-center
         sm:justify-items-start
-        w-full
+        m-8
+        dark:bg-gray-700
+        bg-gray-400
+        p-4
+        rounded-md
         sm:text-left
       "
     >
@@ -19,36 +25,47 @@
         {{ getReadableDate(post.date) }}
       </div>
     </header>
-    <nuxt-content :document="post" class="mt-6 w-full px-4" />
+    <nuxt-content :document="post" class="mx-4 px-4" />
     <div class="grid w-full">
       <button
         @click="showComment()"
         class="
           p-4
-          w-full
+          m-4
           flex
           items-center
-          bg-gray-300
-          dark:bg-gray-800
+          bg-green-600
           rounded-md
           space-x-3
           justify-center
+          focus:outline-none
         "
       >
         <Icon v-if="$colorMode.value === 'light'" name="comment-dark" />
         <Icon v-else name="comment-light" />
         <h1 class="text-2xl font-bold">{{ commentBut }}</h1>
       </button>
-      <Disqus
-        v-if="comments"
-        shortname="mehmetali345"
-        :title="post.title"
-        :url="`https://mehmetali345.xyz/blog/${post.slug}`"
-        :identifier="`/blog/${post.slug}`"
-        :slug="post.slug"
-        lang="tr"
-        class="mt-10 w-full"
-      />
+      <div class="m-8" v-if="comments">
+        <Disqus
+          shortname="mehmetali345"
+          :title="post.title"
+          :url="`https://mehmetali345.xyz/blog/${post.slug}`"
+          :identifier="`/blog/${post.slug}`"
+          :slug="post.slug"
+          lang="tr"
+          class="w-full"
+        />
+      </div>
+    </div>
+    <div v-if="srelated" class="grid w-full justify-items-center mb-4 p-4">
+      <h1 class="text-xl mb-2 font-bold">İlginizi çekebilecek gönderiler</h1>
+      <div class="grid w-full sm:grid-cols-2">
+        <CardRelated
+          v-for="(related, index) in related"
+          :post="related"
+          :key="index"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -64,12 +81,23 @@ export default {
       comments: false,
       post: {},
       related: [],
+      srelated: true,
     };
   },
   async fetch() {
     const post = await this.$content(this.$route.params.slug).fetch();
     if (!post) return this.$router.push("/blog");
     this.post = post;
+
+    if (!this.post.related) {
+      this.srelated = false;
+    }
+    const array = [];
+    for (let key of this.post.related.split(", ") || []) {
+      const content = await this.$content(key).only(["title", "slug"]).fetch();
+      array.push(content);
+    }
+    this.related = array;
   },
   methods: {
     getReadableDate(data) {
@@ -91,6 +119,7 @@ export default {
         this.comments = true;
       }
     },
+    async getRelatedPost() {},
   },
   computed: {
     commentBut() {

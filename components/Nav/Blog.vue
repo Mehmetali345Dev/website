@@ -51,7 +51,7 @@
         Geri Dön</nuxt-link
       >
     </div>
-    <vue-scroll-progress-bar @complete="handleComplete" v-if="$route.params.slug" />
+    <vue-scroll-progress-bar v-if="$route.params.slug" backgroundColor="#059669" />
   </div>
 </template>
 
