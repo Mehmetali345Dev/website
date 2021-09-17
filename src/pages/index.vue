@@ -9,9 +9,10 @@
         bg-opacity-25
         w-9/12
         my-2
+        py-4
       "
     >
-      <h1 class="ml-3 font-bold">
+      <h1 class="ml-3 font-bold dark:text-gray-50 ">
         See my website's new version from
         <a href="https://wtf.is.going.on.mehmetali345.xyz" class="text-blue-500"
           >here</a
