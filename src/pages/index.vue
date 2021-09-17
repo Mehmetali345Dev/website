@@ -1,6 +1,7 @@
 <template>
   <div class="grid justify-items-center dark:bg-gray-900">
-  <div
+    <Navbar />
+      <div
       class="
         flex
         bg-blue-500
@@ -19,7 +20,6 @@
         >
       </h1>
     </div>
-    <Navbar />
     <AboutMe />
     <section id="skills" class="grid w-8/12 justify-items-center">
       <h2 class="mt-10 text-xl font-semibold text-gray-900 dark:text-gray-100">
