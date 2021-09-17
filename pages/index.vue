@@ -16,7 +16,7 @@
       "
     >
       <div class="sm:(flex text-left) text-center items-center">
-        <img src="/icon.png" class="w-64 mr-4" alt="Mehmetali345Dev" />
+        <img src="/profile.webp" class="w-64 mr-4" alt="Mehmetali345Dev" />
         <h1
           class="
             font-semibold
