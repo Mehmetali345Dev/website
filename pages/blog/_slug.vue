@@ -94,7 +94,7 @@ export default {
     }
     const array = [];
     for (let key of this.post.related.split(", ") || []) {
-      const content = await this.$content(key).only(["title", "slug"]).fetch();
+      const content = await this.$content(key).only(["title", "slug", "description"]).fetch();
       array.push(content);
     }
     this.related = array;

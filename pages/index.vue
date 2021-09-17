@@ -9,16 +9,26 @@
         sm:flex-row
         items-center
         sm:items-start
-        bg-gray-300 dark:bg-gray-800
+        bg-gray-300
+        dark:bg-gray-800
         p-8
         rounded-md
       "
     >
-      <div class="sm:(flex text-left)  text-center items-center">
-        <img src="/icon.png" class="w-64 mr-4" alt="" />
-        <h1 class="font-semibold text-xl grid">
+      <div class="sm:(flex text-left) text-center items-center">
+        <img src="/icon.png" class="w-64 mr-4" alt="Mehmetali345Dev" />
+        <h1
+          class="
+            font-semibold
+            text-xl
+            grid
+            sm:justify-items-start
+            justify-items-center
+          "
+        >
+          <Discord class="my-2" />
           Hello, my name is
-          <span class="text-lime-500 text-2xl"
+          <span class="text-green-500 text-2xl"
             >Mehmet Ali (aka Mehmetali345Dev)</span
           >
           <p>
@@ -79,7 +89,7 @@
 
 <style>
 .biolinks {
-  text-decoration: underline 0.1rem #84cc16;
+  text-decoration: underline 0.1rem #10b981;
 }
 </style>
 

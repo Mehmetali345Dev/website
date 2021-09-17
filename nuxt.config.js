@@ -1,20 +1,11 @@
+import head from './meta'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   layout: 'default',
   // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: 'mehmetali345.xyz',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
-  },
+  head,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
