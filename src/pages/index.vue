@@ -1,5 +1,23 @@
 <template>
   <div class="grid justify-items-center dark:bg-gray-900">
+  <div
+      class="
+        flex
+        bg-blue-500
+        items-center
+        border-l-5 border-blue-600
+        bg-opacity-25
+        w-9/12
+        my-2
+      "
+    >
+      <h1 class="ml-3 font-bold">
+        See my website's new version from
+        <a href="https://wtf.is.going.on.mehmetali345.xyz" class="text-blue-500"
+          >here</a
+        >
+      </h1>
+    </div>
     <Navbar />
     <AboutMe />
     <section id="skills" class="grid w-8/12 justify-items-center">
