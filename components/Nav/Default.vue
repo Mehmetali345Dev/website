@@ -70,7 +70,7 @@ export default {
         },
         {
           name: "Donate",
-          to: "/redirect/donate",
+          to: "/donate",
         },
         {
           name: "Blog",

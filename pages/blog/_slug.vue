@@ -27,8 +27,10 @@
         </div>
       </div>
     </header>
-    <nuxt-content :document="post" class="mx-4 px-4" />
-    <div class="grid w-full">
+    <div class="w-full">
+      <nuxt-content :document="post" class="mx-4 px-4" />
+    </div>
+    <div class="grid w-full mt-8">
       <button
         @click="showComment()"
         class="
@@ -60,9 +62,7 @@
       </div>
     </div>
     <div v-if="!related.loaded && post.related" class="w-full">
-      <div
-        class="grid space-y-3 justify-items-center mx-4 mb-4 p-4"
-      >
+      <div class="grid space-y-3 justify-items-center mx-4 mb-4 p-4">
         <h1 class="text-xl font-bold">İlginizi çekebilecek gönderiler</h1>
         <div class="grid w-full sm:grid-cols-2">
           <CardRelated
@@ -104,6 +104,79 @@ export default {
       this.related = array;
     }
   },
+  head() {
+    const title = this.post?.title;
+    const description =
+      this.post?.description || "Bu yazıyı okumaya davet edildin..";
+    const image = this.getPostImage || false;
+    const href = `https://mehmetali345.xyz${this.$route?.path}`;
+    const object = {
+      title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: description,
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: `mehmetali345, mehmetali345 blog, blog, teknoloji, vue, yazılım, discord, mehmetali_345, gönderi`,
+        },
+        // Open-Graph
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: title,
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: description,
+        },
+        {
+          hid: "og:url",
+          name: "og:url",
+          content: href,
+        },
+        {
+          hid: "og:image",
+          name: "og:image",
+          content: image,
+        },
+        // Twitter
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: title,
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content: description,
+        },
+        {
+          hid: "twitter:image",
+          name: "twitter:image",
+          content: image,
+        },
+        {
+          name: "article:published-time",
+          content: this.post?.date || null,
+        },
+      ].map((i) => {
+        if (i.name && !i.property) i.property = i.name;
+        return i;
+      }),
+      link: [
+        {
+          rel: "canonical",
+          href,
+        },
+      ],
+    };
+    return object;
+  },
   methods: {
     getReadableDate(data) {
       const now = this.$moment();
@@ -128,9 +201,9 @@ export default {
   computed: {
     commentBut() {
       if (this.comments === true) {
-        return "Close Comments";
+        return "Yorumları kapa";
       } else {
-        return "See Comments";
+        return "Yorumları gör";
       }
     },
   },

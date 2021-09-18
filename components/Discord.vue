@@ -5,9 +5,8 @@
       !getStatusDetails ||
       Object.keys(lanyard).length === 0
     "
-    class="w-6/12 h-[17.5px]"
+    class="w-6/12 animate-pulse  h-[17.5px]"
   >
-    Unable to get status
   </div>
 
   <div

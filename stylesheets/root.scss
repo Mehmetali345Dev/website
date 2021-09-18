@@ -1,12 +1,13 @@
 html {
-    scrollbar-width: none;
-    scroll-behavior: smooth
+  scrollbar-width: none;
+  scroll-behavior: smooth;
 }
-  ::-webkit-scrollbar {
-    display: none;
+::-webkit-scrollbar {
+  display: none;
 }
 
 .nuxt-content {
+  @apply space-y-2;
   h1 {
     @apply text-2xl text-green-500 font-bold;
   }
@@ -18,7 +19,12 @@ html {
   h5 {
     @apply text-lg text-green-500;
   }
-
+  li {
+  @apply py-1; 
+  }
+  a{
+    @apply text-green-500 underline;
+  }
   p {
     @apply text-gray-900 dark:text-gray-200;
   }
