@@ -16,7 +16,7 @@
         sm:text-left
       "
     >
-      <h1 class="text-3xl font-bold">{{ post.slug }}</h1>
+      <h1 class="text-3xl font-bold">{{ post.title }}</h1>
       <p class="mt-2">{{ post.description }}</p>
       <div
         v-if="post.date"
