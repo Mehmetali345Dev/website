@@ -3,6 +3,8 @@
 
 My personal portfolio made with Nuxt.js, Vue.js, WindiCSS. Main webpage design is owned by [Eggsy](https://github.com/eggsy).
 
+[See new website](https://github.com/mehmetali345dev/mehmetali345.xyz)
+
 # What it have?
 
 - Custom 10 components
