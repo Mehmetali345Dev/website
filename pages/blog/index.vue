@@ -1,7 +1,5 @@
 <template>
   <div class="grid justify-items-center">
-    <h1>Şuanlık aktif değil</h1>
-    <!--
     <div v-if="$fetchState.pending" class="items-center">
       Gönderiler alınıyor
     </div>
@@ -27,7 +25,6 @@
         />
       </div>
     </div>
-    -->
   </div>
 </template>
 
