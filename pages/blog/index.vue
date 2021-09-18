@@ -33,7 +33,6 @@ export default {
   data() {
     return {
       query: {},
-      pagination: 0,
       posts: {
         latest: [],
         all: [],
@@ -42,12 +41,12 @@ export default {
   },
   async fetch() {
     const latestPosts = await this.$content()
-      .sortBy("createdAt", "desc")
+      .sortBy("date", "desc")
       .limit(3)
       .without(["body"])
       .fetch();
     const allPosts = await this.$content()
-      .sortBy("createdAt", "desc")
+      .sortBy("date", "desc")
       .skip(3)
       .without(["body"])
       .fetch();

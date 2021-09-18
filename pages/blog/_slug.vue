@@ -10,7 +10,8 @@
           justify-items-center
           sm:justify-items-start
           m-8
-          rounded-md sm:text-left 
+          rounded-md
+          sm:text-left
           p-4
           dark:bg-gray-700
           bg-gray-400
@@ -58,14 +59,18 @@
         />
       </div>
     </div>
-    <div v-if="srelated" class="grid w-full justify-items-center mb-4 p-4">
-      <h1 class="text-xl mb-2 font-bold">İlginizi çekebilecek gönderiler</h1>
-      <div class="grid w-full sm:grid-cols-2">
-        <CardRelated
-          v-for="(related, index) in related"
-          :post="related"
-          :key="index"
-        />
+    <div v-if="!related.loaded && post.related" class="w-full">
+      <div
+        class="grid space-y-3 justify-items-center mx-4 mb-4 p-4"
+      >
+        <h1 class="text-xl font-bold">İlginizi çekebilecek gönderiler</h1>
+        <div class="grid w-full sm:grid-cols-2">
+          <CardRelated
+            v-for="(related, index) in related"
+            :post="related"
+            :key="index"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -82,25 +87,22 @@ export default {
       comments: false,
       post: {},
       related: [],
-      srelated: true,
     };
   },
   async fetch() {
     const post = await this.$content(this.$route.params.slug).fetch();
     if (!post) return this.$router.push("/blog");
     this.post = post;
-
-    if (!this.post.related) {
-      this.srelated = false;
+    if (this.post.related) {
+      const array = [];
+      for (let key of this.post.related.split(", ") || []) {
+        const content = await this.$content(key)
+          .only(["title", "slug", "description"])
+          .fetch();
+        array.push(content);
+      }
+      this.related = array;
     }
-    const array = [];
-    for (let key of this.post.related.split(", ") || []) {
-      const content = await this.$content(key)
-        .only(["title", "slug", "description"])
-        .fetch();
-      array.push(content);
-    }
-    this.related = array;
   },
   methods: {
     getReadableDate(data) {
@@ -122,7 +124,6 @@ export default {
         this.comments = true;
       }
     },
-    async getRelatedPost() {},
   },
   computed: {
     commentBut() {
