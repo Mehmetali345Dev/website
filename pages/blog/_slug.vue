@@ -2,27 +2,28 @@
   <div
     class="grid rounded-md bg-gray-300 dark:bg-gray-800 justify-items-center"
   >
-    <header
-      class="
-        grid
-        text-center
-        justify-items-center
-        sm:justify-items-start
-        m-8
-        dark:bg-gray-700
-        bg-gray-400
-        p-4
-        rounded-md
-        sm:text-left
-      "
-    >
-      <h1 class="text-3xl font-bold">{{ post.title }}</h1>
-      <p class="mt-2">{{ post.description }}</p>
+    <header class="w-full">
       <div
-        v-if="post.date"
-        class="py-2 px-4 mt-2 rounded-md w-max dark:bg-gray-800 bg-gray-300"
+        class="
+          grid
+          text-center
+          justify-items-center
+          sm:justify-items-start
+          m-8
+          rounded-md sm:text-left 
+          p-4
+          dark:bg-gray-700
+          bg-gray-400
+        "
       >
-        {{ getReadableDate(post.date) }}
+        <h1 class="text-3xl font-bold">{{ post.title }}</h1>
+        <p class="mt-2">{{ post.description }}</p>
+        <div
+          v-if="post.date"
+          class="py-2 px-4 mt-2 rounded-md w-max dark:bg-gray-800 bg-gray-300"
+        >
+          {{ getReadableDate(post.date) }}
+        </div>
       </div>
     </header>
     <nuxt-content :document="post" class="mx-4 px-4" />
@@ -94,7 +95,9 @@ export default {
     }
     const array = [];
     for (let key of this.post.related.split(", ") || []) {
-      const content = await this.$content(key).only(["title", "slug", "description"]).fetch();
+      const content = await this.$content(key)
+        .only(["title", "slug", "description"])
+        .fetch();
       array.push(content);
     }
     this.related = array;
