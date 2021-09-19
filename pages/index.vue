@@ -28,7 +28,7 @@
         >
           <Discord class="my-2" />
           Hello, my name is
-          <span class="text-green-500 text-2xl"
+          <span class="text-green-600 text-2xl"
             >Mehmet Ali (aka Mehmetali345Dev)</span
           >
           <p>
