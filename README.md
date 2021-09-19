@@ -1,7 +1,7 @@
 # mehmetali345.xyz
 [![CodeFactor](https://www.codefactor.io/repository/github/mehmetali345dev/mehmetali345.xyz/badge)](https://www.codefactor.io/repository/github/mehmetali345dev/mehmetali345.xyz)
 
-My personal portfolio made with Nuxt.js, Vue.js, WindiCSS. Main webpage design is owned by [Eggsy](https://github.com/eggsy).
+My personal portfolio made with Nuxt.js, Vue.js, WindiCSS.
 
 # What it have?
 
