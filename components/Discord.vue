@@ -7,6 +7,7 @@
     "
     class="w-6/12 animate-pulse  h-[17.5px]"
   >
+Unable to load Status
   </div>
 
   <div
