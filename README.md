@@ -44,3 +44,5 @@ and open [localhost:3000](http://localhost:3000) on your browser and your app is
 
 If you are want host on **paid or free services**. I recommend Vercel or Netlify. My app is hosted by [Vercel](https://vercel.com).
 
+# Special Thanks
+to [Eggsy](https://github.com/eggsy) and [Tarık Coşkun](https://github.com/tarikcoskun). I'm very inspired by them, and i used some of their code.
