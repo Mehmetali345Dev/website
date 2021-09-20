@@ -5,10 +5,9 @@
       p-4
       text-gray-900
 backdrop-filter
-      bg-gray-300
 backdrop-blur-md
       shadow-lg shadow-gray-900
-      dark:(bg-gray-800
+      dark:(
       shadow-gray-300
       text-gray-50)
       rounded-b-xl
