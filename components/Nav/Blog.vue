@@ -7,6 +7,8 @@
       bg-gray-300
       shadow-lg shadow-gray-900
       dark:(bg-gray-800
+backdrop-filter
+backdrop-blur-md
       shadow-gray-300
       text-gray-50)
       rounded-b-xl
@@ -19,7 +21,7 @@
         >
         <Color />
       </div>
-      <div class="hidden sm:flex items-center space-x-5">
+      <div class="items-center space-x-5">
         <nuxt-link
           v-if="$route.params.slug"
           class="text-lg font-bold w-max"
@@ -28,28 +30,6 @@
           Geri Dön</nuxt-link
         >
       </div>
-      <div @click="showMenu()" class="text-lg font-bold md:hidden">Menu</div>
-    </div>
-    <div
-      class="
-        grid
-        mt-4
-        animated
-        animate-zoom-in
-        items-center
-        space-y-2
-        dark:bg-gray-800
-        rounded-b-md
-      "
-      v-if="menu"
-    >
-      <nuxt-link
-        v-if="$route.params.slug"
-        class="text-lg font-bold w-max"
-        to="/blog"
-      >
-        Geri Dön</nuxt-link
-      >
     </div>
     <vue-scroll-progress-bar v-if="$route.params.slug" backgroundColor="#059669" />
   </div>
