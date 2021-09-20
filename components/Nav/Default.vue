@@ -4,7 +4,9 @@
       w-11/12
       p-4
       text-gray-900
+backdrop-filter
       bg-gray-300
+backdrop-blur-md
       shadow-lg shadow-gray-900
       dark:(bg-gray-800
       shadow-gray-300
