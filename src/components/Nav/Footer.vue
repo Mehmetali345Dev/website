@@ -68,7 +68,7 @@
 export default {
   computed: {
     getText() {
-      if (this.$route.name.includes("blog")) {
+      if (this.$route.path.includes("blog")) {
         return {
           text: "Mehmetali345Dev tarafından sevgi ile yapıldı",
           donate: "RepeatPay ile bağış yapın",

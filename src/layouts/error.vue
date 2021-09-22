@@ -5,26 +5,26 @@
 
             <p class="text-lg text-gray-700 dark:text-gray-300">Maybe this'd help:</p>
         </div>
-        <img
-            :src="`https://http.cat/${error.statusCode}.jpg`"
-            class="rounded md:h-50 md:w-50"
-        />
+
         <div
-            class="flex flex-col px-4 py-2 space-y-4 whitespace-normal bg-gray-200 rounded dark:text-gray-200 dark:bg-gray-800"
+            class="flex flex-col px-4 py-2  bg-gray-200 rounded dark:text-gray-200 dark:bg-gray-800"
         >
-            <div class="flex flex-col">
-                <h3 class="font-semibold text-gray-800 dark:text-gray-200">Title:</h3>
-                <code>{{ getErrorMeta.title }}</code>
-            </div>
+            <img :src="`https://http.cat/${error.statusCode}.jpg`" class="rounded mb-2" />
+            <div class="flex flex-col justify-center space-y-4 whitespace-normal ml-4">
+                <div class="flex flex-col">
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-200">Title:</h3>
+                    <code>{{ getErrorMeta.title }}</code>
+                </div>
 
-            <div class="flex flex-col">
-                <h3 class="font-semibold text-gray-800 dark:text-gray-200">Description:</h3>
-                <code>{{ getErrorMeta.description }}</code>
-            </div>
+                <div class="flex flex-col">
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-200">Description:</h3>
+                    <code>{{ getErrorMeta.description }}</code>
+                </div>
 
-            <div class="flex flex-col">
-                <h3 class="font-semibold text-gray-800 dark:text-gray-200">Details:</h3>
-                <code>{{ JSON.stringify(error) }}</code>
+                <div class="flex flex-col">
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-200">Details:</h3>
+                    <code>{{ JSON.stringify(error) }}</code>
+                </div>
             </div>
         </div>
 

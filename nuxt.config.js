@@ -6,6 +6,7 @@ export default {
   srcDir: "src",
   target: "static",
   ssr: true,
+  
   social,
   head,
   css: [
