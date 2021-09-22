@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid rounded-md bg-gray-300 dark:bg-gray-800 justify-items-center"
+    class="grid sm:w-9/12 rounded-md bg-gray-300 dark:bg-gray-800 justify-items-center"
   >
     <header class="w-full">
       <div
