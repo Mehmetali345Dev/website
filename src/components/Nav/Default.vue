@@ -1,24 +1,10 @@
 <template>
   <div
-    class="
-      w-11/12
-      p-4
-      text-gray-900
-backdrop-filter
-backdrop-blur-md
-      shadow-lg shadow-gray-900
-      dark:(
-      shadow-gray-300
-      text-gray-50)
-      rounded-b-xl
-    "
+    class="w-full p-4 flex flex-col items-center text-gray-900 shadow-lg shadow-gray-900 backdrop-filter backdrop-blur-md dark:(shadow-gray-50 text-gray-50)"
   >
-    <div class="flex items-center justify-between">
+    <div class="flex items-center md:w-9/12 w-full justify-between">
       <div class="flex items-center space-x-4">
-        <nuxt-link class="text-xl sm:text-2xl font-bold" to="/"
-          >Mehmetali345Dev</nuxt-link
-        >
-        <Color />
+        <nuxt-link class="text-xl sm:text-2xl font-bold" to="/">Mehmetali345Dev</nuxt-link>
       </div>
       <div class="hidden sm:flex items-center space-x-5">
         <nuxt-link
@@ -26,22 +12,16 @@ backdrop-blur-md
           :key="`link-${index}`"
           class="text-lg font-bold"
           :to="link.to"
-          >{{ link.name }}</nuxt-link
-        >
+        >{{ link.name }}</nuxt-link>
+        <Color/>
       </div>
-      <div @click="showMenu()" class="text-lg font-bold md:hidden">Menu</div>
+      <div class="sm:hidden flex items-center space-x-3">
+        <div @click="showMenu()" class="text-lg font-bold md:hidden">Menu</div>
+        <Color />
+      </div>
     </div>
     <div
-      class="
-        grid
-        mt-4
-        animated
-        animate-zoom-in
-        items-center
-        space-y-2
-        dark:bg-gray-800
-        rounded-b-md
-      "
+      class="grid mt-4 animated animate-zoom-in items-center space-y-2 dark:bg-gray-800 rounded-b-md"
       v-if="menu"
     >
       <nuxt-link
@@ -49,8 +29,7 @@ backdrop-blur-md
         :key="`link-${index}`"
         class="text-lg font-bold w-max"
         :to="link.to"
-        >{{ link.name }}</nuxt-link
-      >
+      >{{ link.name }}</nuxt-link>
     </div>
   </div>
 </template>

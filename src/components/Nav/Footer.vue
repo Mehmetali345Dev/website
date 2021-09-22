@@ -22,6 +22,7 @@
     >
       {{getText.text}}
       <div class="hidden sm:flex items-center space-x-3">
+        <Social/>
         <a
           href="https://github.com/mehmetali345dev/mehmetali345.xyz"
           target="_blank"
