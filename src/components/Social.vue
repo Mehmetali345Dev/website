@@ -5,7 +5,7 @@
       v-for="(social, index) in socials"
       :key="`social-${index}`"
       target="_blank"
-      href="social.link"
+      :href="social.link"
       rel="noopener noreferrer"
     >{{ social.name }}</a>
     <div class="bg-gray-400 w-[0.1rem] h-6 hidden md:flex dark:bg-gray-900"></div>
