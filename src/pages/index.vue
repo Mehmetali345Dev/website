@@ -34,18 +34,20 @@
           <p>
             I am a young developer(I'm 14 years old) from Turkey. I write
             desktop programs and web applications using
-            <a href="https://www.vuejs.org/" class="biolinks" target="_blank"
+            <a href="https://www.vuejs.org/" rel="noopener noreferrer" class="biolinks" target="_blank"
               >Vue.js,</a
             >
             <a
               href="https://www.javascript.com/"
               class="biolinks"
               target="_blank"
+              rel="noopener noreferrer"
               >JavaScript</a
             >
             and
             <a
               href="https://github.com/topics/csharp"
+              rel="noopener noreferrer"
               class="biolinks"
               target="_blank"
               >C#</a

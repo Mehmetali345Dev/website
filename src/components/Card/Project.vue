@@ -2,6 +2,7 @@
   <a
     :href="link"
     target="_blank"
+    rel="noopener noreferrer"
     class="
       sm:flex
       grid
