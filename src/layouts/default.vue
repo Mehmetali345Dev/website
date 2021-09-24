@@ -11,7 +11,8 @@
     </div>
 
     <div class="flex w-11/12 my-8 z-10 flex-grow items-center justify-center">
-      <Nuxt />
+      <Nuxt v-if="$route.path.includes('donate')" class="w-full"/>
+      <Nuxt v-else />
     </div>
 
     <NavFooter class="h-max" />
