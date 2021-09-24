@@ -1,75 +1,55 @@
 <template>
-  <div
-    class="grid sm:w-9/12 rounded-md bg-gray-300 dark:bg-gray-800 justify-items-center"
-  >
-    <header class="w-full">
-      <div
-        class="
-          grid
-          text-center
-          justify-items-center
-          sm:justify-items-start
-          m-8
-          rounded-md
-          sm:text-left
-          p-4
-          dark:bg-gray-700
-          bg-gray-400
-        "
-      >
-        <h1 class="text-3xl font-bold">{{ post.title }}</h1>
-        <p class="mt-2">{{ post.description }}</p>
+  <div class="grid sm:w-9/12 rounded-md bg-gray-300 dark:bg-gray-800 justify-items-center">
+    <div v-if="$fetchState.error" class="p-4 space-y-4">
+      <h1>Gönderi bulunamadı...</h1>
+      <nuxt-link
+        to="/blog"
+        class="dark:bg-gray-700 rounded-md p-4 w-full bg-gray-400 flex justify-center text-xl font-bold"
+      >Geri dönim</nuxt-link>
+    </div>
+    <div v-else>
+      <header class="w-full">
         <div
-          v-if="post.date"
-          class="py-2 px-4 mt-2 rounded-md w-max dark:bg-gray-800 bg-gray-300"
+          class="grid text-center justify-items-center sm:justify-items-start m-8 rounded-md sm:text-left p-4 dark:bg-gray-700 bg-gray-400"
         >
-          {{ getReadableDate(post.date) }}
+          <h1 class="text-3xl font-bold">{{ post.title }}</h1>
+          <p class="mt-2">{{ post.description }}</p>
+          <div
+            v-if="post.date"
+            class="py-2 px-4 mt-2 rounded-md w-max dark:bg-gray-800 bg-gray-300"
+          >{{ getReadableDate(post.date) }}</div>
+        </div>
+      </header>
+      <div class="w-full">
+        <nuxt-content :document="post" class="mx-4 px-4" />
+      </div>
+      <div class="grid w-full mt-8">
+        <button
+          @click="showComment()"
+          class="p-4 m-4 flex items-center bg-green-600 rounded-md space-x-3 justify-center focus:outline-none"
+        >
+          <Icon v-if="$colorMode.value === 'light'" name="comment-dark" />
+          <Icon v-else name="comment-light" />
+          <h1 class="text-2xl font-bold">{{ commentBut }}</h1>
+        </button>
+        <div class="m-8" v-if="comments">
+          <Disqus
+            shortname="mehmetali345"
+            :title="post.title"
+            :url="`https://mehmetali345.xyz/blog/${post.slug}`"
+            :identifier="`/blog/${post.slug}`"
+            :slug="post.slug"
+            lang="tr"
+            class="w-full"
+          />
         </div>
       </div>
-    </header>
-    <div class="w-full">
-      <nuxt-content :document="post" class="mx-4 px-4" />
-    </div>
-    <div class="grid w-full mt-8">
-      <button
-        @click="showComment()"
-        class="
-          p-4
-          m-4
-          flex
-          items-center
-          bg-green-600
-          rounded-md
-          space-x-3
-          justify-center
-          focus:outline-none
-        "
-      >
-        <Icon v-if="$colorMode.value === 'light'" name="comment-dark" />
-        <Icon v-else name="comment-light" />
-        <h1 class="text-2xl font-bold">{{ commentBut }}</h1>
-      </button>
-      <div class="m-8" v-if="comments">
-        <Disqus
-          shortname="mehmetali345"
-          :title="post.title"
-          :url="`https://mehmetali345.xyz/blog/${post.slug}`"
-          :identifier="`/blog/${post.slug}`"
-          :slug="post.slug"
-          lang="tr"
-          class="w-full"
-        />
-      </div>
-    </div>
-    <div v-if="!related.loaded && post.related" class="w-full">
-      <div class="grid space-y-3 justify-items-center mx-4 mb-4 p-4">
-        <h1 class="text-xl font-bold">İlginizi çekebilecek gönderiler</h1>
-        <div class="grid w-full sm:grid-cols-2">
-          <CardRelated
-            v-for="(related, index) in related"
-            :post="related"
-            :key="index"
-          />
+      <div v-if="!related.loaded && post.related" class="w-full">
+        <div class="grid space-y-3 justify-items-center mx-4 mb-4 p-4">
+          <h1 class="text-xl font-bold">İlginizi çekebilecek gönderiler</h1>
+          <div class="grid w-full sm:grid-cols-2">
+            <CardRelated v-for="(related, index) in related" :post="related" :key="index" />
+          </div>
         </div>
       </div>
     </div>

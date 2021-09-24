@@ -1,8 +1,6 @@
 <template>
   <div class="grid justify-items-center">
-    <div v-if="$fetchState.pending" class="items-center">
-      Gönderiler alınıyor
-    </div>
+    <div v-if="$fetchState.pending" class="items-center">Gönderiler alınıyor</div>
     <div v-else class="flex flex-col items-center w-full md:w-10/12">
       <h1 class="font-bold text-xl">Son Gönderiler</h1>
       <div class="grid md:grid-cols-3 w-full gap-3 mt-4">
@@ -14,8 +12,8 @@
           class="w-full"
         />
       </div>
-      <h1 class="font-bold text-xl mt-4">Diğer Gönderiler</h1>
-      <div class="grid md:grid-cols-3 w-full gap-3 mt-4">
+      <h1 v-if="posts.all.length > 0" class="font-bold text-xl mt-4">Diğer Gönderiler</h1>
+      <div v-if="posts.all.length > 0" class="grid md:grid-cols-3 w-full gap-3 mt-4">
         <CardPost
           type="rest"
           v-for="(post, index) in posts.all"
@@ -50,11 +48,15 @@ export default {
       .skip(3)
       .without(["body"])
       .fetch();
+
     this.posts = {
       latest: latestPosts || [],
       all: allPosts || [],
     };
   },
+  computed: {
+
+  }
 };
 </script>
 

@@ -1,8 +1,9 @@
 <template>
   <div class="dark:(bg-gray-900 text-gray-50) bg-gray-200 flex flex-col items-center min-h-[100vh]">
     <div class="w-full sticky top-0 z-40">
+
       <NavBlog
-        v-if="$route.name.includes('blog')"
+        v-if="$route.path.includes('blog')"
         class="sticky top-0 animated z-40 animate-slide-in-down"
       />
 
