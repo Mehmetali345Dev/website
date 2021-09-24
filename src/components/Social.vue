@@ -1,5 +1,5 @@
 <template>
-  <div class="md:(flex space-x-4 space-y-0) justify-items-center grid space-y-4">
+  <div class="flex justify-center space-x-4">
     <div class="bg-gray-400 h-[0.1rem] w-full flex md:hidden dark:bg-gray-900"></div>
     <a
       v-for="(social, index) in socials"
