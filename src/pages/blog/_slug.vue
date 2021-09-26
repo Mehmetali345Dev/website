@@ -52,6 +52,9 @@
           </div>
         </div>
       </div>
+      <div class="mb-4 mx-4">
+        <Share :link="$route.path" />
+      </div>
     </div>
   </div>
 </template>
