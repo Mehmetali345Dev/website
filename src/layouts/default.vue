@@ -1,21 +1,18 @@
 <template>
   <div class="dark:(bg-gray-900 text-gray-50) bg-gray-200 flex flex-col items-center min-h-[100vh]">
-    <div class="w-full sticky top-0 z-40">
+    <transition name="fade" mode="out-in">
+      <NavBlog v-if="$route.path.includes('blog')" class="sticky top-0 z-40" />
 
-      <NavBlog
-        v-if="$route.path.includes('blog')"
-        class="sticky top-0 animated z-40 animate-slide-in-down"
-      />
-
-      <NavDefault v-else class="sticky top-0 animated z-40 animate-slide-in-down" />
-    </div>
+      <NavDefault v-else class="sticky top-0 z-40" />
+    </transition>
 
     <div class="flex w-11/12 my-8 z-10 flex-grow items-center justify-center">
-      <Nuxt v-if="$route.path.includes('donate')" class="w-full"/>
+      <Nuxt v-if="$route.path.includes('donate')" class="w-full" />
       <Nuxt v-else />
     </div>
-
-    <NavFooter class="h-max" />
+    <transition name="fade" mode="out-in">
+      <NavFooter class="h-max" />
+    </transition>
   </div>
 </template>
 

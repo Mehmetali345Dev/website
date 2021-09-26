@@ -2,7 +2,7 @@
   <div
     class="p-4 text-gray-900 bg-gray-300 flex justify-center dark:(bg-gray-800 text-gray-50) w-full"
   >
-    <div class="sm:flex justify-between w-8/12 footermobile items-center">
+    <div class="sm:flex justify-between w-10/12 footermobile items-center">
       {{ getText.text }}
       <div class="social sm:flex items-center space-x-3">
         <Social class="social" />

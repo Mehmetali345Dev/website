@@ -1,3 +1,5 @@
+@import "animations";
+
 html {
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -20,7 +22,7 @@ html {
     @apply text-lg text-green-500;
   }
   li {
-  @apply py-1; 
+  @apply py-1;
   }
   a{
     @apply text-green-500 underline;
