@@ -101,7 +101,7 @@ export default {
   },
   head() {
     const title = "Support me"
-    const description = "You can see my supporters from this page and you can support me"
+    const description = "You can see my supporters from this page and you can support me."
     const href = `https://mehmetali345.xyz/donate`;
     const object = {
       title,
