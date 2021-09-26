@@ -1,57 +1,35 @@
 <template>
   <div class="flex flex-col items-center">
     <header
-      class="
-        flex
-        w-9/12
-        h-max
-        flex-col
-        sm:flex-row
-        items-center
-        sm:items-start
-        bg-gray-300
-        dark:bg-gray-800
-        p-8
-        rounded-md
-      "
+      class="flex w-9/12 h-max flex-col sm:flex-row items-center sm:items-start bg-gray-300 dark:bg-gray-800 p-8 rounded-md"
     >
       <div class="sm:(flex text-left) text-center items-center">
         <img src="/profile.webp" class="w-64 mr-4" alt="Mehmetali345Dev" />
-        <h1
-          class="
-            font-semibold
-            text-xl
-            grid
-            sm:justify-items-start
-            justify-items-center
-          "
-        >
-          <Discord class="my-2" />
-          Hello, my name is
-          <span class="text-green-500 text-2xl"
-            >Mehmet Ali (aka Mehmetali345Dev)</span
-          >
+        <h1 class="font-semibold text-xl grid sm:justify-items-start justify-items-center">
+          <Discord class="my-2" />Hello, my name is
+          <span class="text-green-500 text-2xl">Mehmet Ali (aka Mehmetali345Dev)</span>
           <p>
             I am a young developer(I'm 14 years old) from Turkey. I write
             desktop programs and web applications using
-            <a href="https://www.vuejs.org/" rel="noopener noreferrer" class="biolinks" target="_blank"
-              >Vue.js,</a
-            >
+            <a
+              href="https://www.vuejs.org/"
+              rel="noopener noreferrer"
+              class="biolinks"
+              target="_blank"
+            >Vue.js,</a>
             <a
               href="https://www.javascript.com/"
               class="biolinks"
               target="_blank"
               rel="noopener noreferrer"
-              >JavaScript</a
-            >
+            >JavaScript</a>
             and
             <a
               href="https://github.com/topics/csharp"
               rel="noopener noreferrer"
               class="biolinks"
               target="_blank"
-              >C#</a
-            >.
+            >C#</a>.
           </p>
         </h1>
       </div>
@@ -71,6 +49,7 @@
       <h1 class="text-xl mb-4 font-bold">My Projects</h1>
       <div class="grid justify-items-start space-y-3 w-full">
         <CardProject
+          v-animate-onscroll="'animated animate-fade-in'"
           v-for="(project, index) in projects"
           :link="project.link"
           :key="`project-${index}`"
@@ -84,8 +63,7 @@
     <nuxt-link
       class="w-9/12 text-center dark:bg-gray-800 bg-gray-300 p-4 rounded-md"
       to="/repos"
-      >See my repositories</nuxt-link
-    >
+    >See my repositories</nuxt-link>
   </div>
 </template>
 

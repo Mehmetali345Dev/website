@@ -21,7 +21,7 @@
               :name="pin.repo"
               :stars="pin.stars"
               :description="pin.description"
-              class="h-full"
+              class="h-full "
             />
           </a>
 

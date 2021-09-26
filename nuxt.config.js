@@ -6,7 +6,7 @@ export default {
   srcDir: "src",
   target: "static",
   ssr: true,
-  
+
   social,
   head,
   css: [
@@ -14,6 +14,7 @@ export default {
   ],
 
   plugins: [
+    '@/plugins/aos.js'
   ],
 
   components: true,
