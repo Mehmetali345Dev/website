@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-center">
-    <div class="bg-gray-800 grid justify-items-center p-4 rounded-lg">
+    <div class="bg-gray-300 dark:bg-gray-800 grid justify-items-center p-4 rounded-lg">
       <div class="h-1 w-full bg-green-500">
         <div class="h-full bg-green-800 loadingbar"></div>
       </div>
@@ -13,7 +13,8 @@
             text-center
             font-bold
             text-md
-            bg-gray-700
+            bg-gray-400
+            dark:bg-gray-700
             rounded-lg
             mt-2
           "
@@ -40,11 +41,11 @@ export default {
     };
   },
   mounted() {
-   
+
     this.timeout = setTimeout(() => {
       window.location.href = this.redirect[this.params].href || "/";
     }, 3000);
-  
+
   },
   computed: {
     getTitle() {
