@@ -1,9 +1,11 @@
 <template>
-  <div class="w-11/12 p-4 text-gray-900 bg-gray-300 dark:(bg-gray-800 text-gray-50) rounded-t-xl">
-    <div class="sm:flex grid justify-items-center items-center justify-center sm:justify-between">
+  <div
+    class="p-4 text-gray-900 bg-gray-300 flex justify-center dark:(bg-gray-800 text-gray-50) w-full"
+  >
+    <div class="sm:flex footermobile items-center justify-center">
       {{ getText.text }}
-      <div class="hidden sm:flex items-center space-x-3">
-        <Social class="sm:hidden" />
+      <div class="social sm:flex items-center space-x-3">
+        <Social class="social" />
         <a
           href="https://github.com/mehmetali345dev/mehmetali345.xyz"
           target="_blank"
@@ -25,7 +27,7 @@
           />
         </a>
       </div>
-      <div class="grid grid-cols-2 justify-items-center mt-2 gap-2 sm:hidden">
+      <div class="grid grid-cols-2 justify-items-center mt-2 gap-2 md:hidden socmobile">
         <a
           href="https://github.com/mehmetali345dev/mehmetali345.xyz"
           target="_blank"
@@ -43,7 +45,7 @@
           <img src="https://repeatpay.ga/icon.png" class="ml-2 w-5" alt="on RepeatPay" />
         </a>
       </div>
-      <Social class="mt-4 md:hidden" />
+      <Social class="mt-4 socmobile md:hidden" />
     </div>
   </div>
 </template>
@@ -71,4 +73,18 @@ export default {
 </script>
 
 <style>
+@media screen and (max-device-width: 950px) {
+  .social {
+    @apply hidden;
+  }
+  .center {
+    @apply justify-center;
+  }
+  .socmobile {
+    @apply flex;
+  }
+  .footermobile {
+    @apply grid justify-items-center;
+  }
+}
 </style>

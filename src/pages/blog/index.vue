@@ -56,7 +56,64 @@ export default {
   },
   computed: {
 
-  }
+  },
+    head() {
+    const title = "Mehmetali345Dev - Blog"
+    const description = "Mehmetali345Dev'in projelerini konuştuğu ve boş yaptığı blog sayfası."
+    const href = `https://mehmetali345.xyz/blog`;
+    const object = {
+      title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: description,
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: `mehmetali345, mehmetali345 blog, blog, teknoloji, vue, yazılım, discord, mehmetali_345, gönderi`,
+        },
+        // Open-Graph
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: title,
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: description,
+        },
+        {
+          hid: "og:url",
+          name: "og:url",
+          content: href,
+        },
+        // Twitter
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: title,
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content: description,
+        },
+      ].map((i) => {
+        if (i.name && !i.property) i.property = i.name;
+        return i;
+      }),
+      link: [
+        {
+          rel: "canonical",
+          href,
+        },
+      ],
+    };
+    return object;
+  },
 };
 </script>
 
