@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center">
     <header
-      class="flex w-9/12 h-max flex-col sm:flex-row items-center sm:items-start bg-gray-300 dark:bg-gray-800 p-8 rounded-md"
+      class="flex w-11/12 h-max flex-col sm:flex-row items-center sm:items-start bg-gray-300 dark:bg-gray-800 p-8 rounded-md"
     >
       <div class="sm:(flex text-left) text-center items-center">
         <img src="/profile.webp" class="w-64 mr-4" alt="Mehmetali345Dev" />
@@ -34,36 +34,34 @@
         </h1>
       </div>
     </header>
-    <section class="mt-2 w-9/12 grid justify-items-center">
-      <h1 class="text-xl mb-4 font-bold">I use</h1>
+    <div class="grid mt-4 md:grid-cols-2 w-11/12 gap-3">
+      <section class="grid h-full justify-items-center">
+        <h1 class="text-xl mb-4 font-bold">Technologies I use</h1>
+        <div class="grid grid-cols-2 w-full gap-3">
+          <CardTechnology
+            v-for="(technology, index) in technologies"
+            :key="`technology-${index}`"
+            :name="technology"
+          />
+        </div>
+      </section>
+      <section class="grid justify-items-center h-max" id="projects">
+        <h1 class="text-xl mb-4 font-bold">My Projects</h1>
+        <div class="grid justify-items-start space-y-3 w-full">
+          <CardProject
+            v-animate-onscroll="'animated animate-fade-in'"
+            v-for="(project, index) in projects"
+            :link="project.link"
+            :key="`project-${index}`"
+            :name="project.title"
+            :image="project.image"
+            :description="project.description"
+            class="w-full"
+          />
+        </div>
+      </section>
+    </div>
 
-      <div class="grid md:grid-cols-5 grid-cols-2 gap-3">
-        <CardUse
-          v-for="(technology, index) in technologies"
-          :key="`technology-${index}`"
-          :name="technology"
-        />
-      </div>
-    </section>
-    <section class="grid w-9/12 mb-8 mt-6 justify-items-center" id="projects">
-      <h1 class="text-xl mb-4 font-bold">My Projects</h1>
-      <div class="grid justify-items-start space-y-3 w-full">
-        <CardProject
-          v-animate-onscroll="'animated animate-fade-in'"
-          v-for="(project, index) in projects"
-          :link="project.link"
-          :key="`project-${index}`"
-          :name="project.title"
-          :image="project.image"
-          :description="project.description"
-          class="w-full"
-        />
-      </div>
-    </section>
-    <nuxt-link
-      class="w-9/12 text-center dark:bg-gray-800 bg-gray-300 p-4 rounded-md"
-      to="/repos"
-    >See my repositories</nuxt-link>
   </div>
 </template>
 
