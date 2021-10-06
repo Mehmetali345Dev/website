@@ -1,7 +1,11 @@
 <template>
-  <div class="p-4 w-full flex dark:bg-gray-800 bg-gray-400 justify-center">
-    <div class="hidden md:flex justify-between">
-      <h1 class="font-bold">{{ getText.text }}</h1>
+  <div class="p-4 w-full flex dark:bg-gray-800 bg-gray-300 md:justify-center">
+    <div class="w-10/12">
+      <a
+        href="https://github.com/mehmetali345dev/mehmetali345.xyz"
+        rel="noopener noreferrer"
+        class="font-bold"
+      >{{ getText.text }}</a>
     </div>
   </div>
 </template>
@@ -12,15 +16,14 @@ export default {
     getText() {
       if (this.$route.path.includes("blog")) {
         return {
-          text: "Mehmetali345Dev tarafından sevgi ile yapıldı",
-          donate: "RepeatPay ile bağış yapın",
-          sourcecode: "Kaynak kodu",
+          text: "Bu site Github üzerinde açık kaynak olarak paylaşılmıştır",
+
+
         };
       } else {
         return {
-          text: "Made by Mehmetali345Dev with love",
-          donate: "Donate on",
-          sourcecode: "Source code",
+          text: "This website is open-source on GitHub",
+
         };
       }
     },

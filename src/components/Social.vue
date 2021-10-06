@@ -3,7 +3,7 @@
     class="grid w-full justify-items-center rounded-xl space-x-4 dark:bg-gray-700 bg-gray-400 p-2"
   >
     <div
-      class="grid md:flex dark:bg-gray-700 bg-gray-400 rounded-xl justify-items-start gap-2"
+      class="grid dark:bg-gray-700 bg-gray-400 rounded-xl justify-items-start gap-2"
     >
       <a
         v-for="(social, index) in socials"

@@ -11,7 +11,7 @@
       <Nuxt v-else />
     </div>
     <div
-      class="fixed bottom-5 items-end md:items-stretch flex animated animate-slide-in-right space-x-3 right-5 z-50"
+      class="fixed bottom-2 items-end grid animated animate-slide-in-right space-y-3 right-2 z-50"
     >
       <Color class />
       <Social />
