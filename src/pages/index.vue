@@ -40,7 +40,7 @@
           <h1 class="text-xl mb-4 font-bold">My Projects</h1>
           <div class="grid justify-items-start space-y-3 w-full">
             <CardProject
-              v-animate-onscroll="'animated animate-fade-in'"
+              v-animate-onscroll="'animated animate-slide-in-left'"
               v-for="(project, index) in projects"
               :link="project.link"
               :key="`project-${index}`"
@@ -57,7 +57,7 @@
           <h1 class="text-xl mb-4 font-bold">Technologies I use</h1>
           <div class="grid grid-cols-2 w-full gap-3">
             <CardTechnology
-              v-animate-onscroll="'animated animate-fade-in'"
+              v-animate-onscroll="'animated animate-slide-in-right'"
               v-for="(technology, index) in technologies"
               :key="`technology-${index}`"
               :name="technology"

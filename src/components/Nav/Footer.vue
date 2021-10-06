@@ -1,51 +1,7 @@
 <template>
-  <div
-    class="p-4 text-gray-900 bg-gray-300 flex justify-center dark:(bg-gray-800 text-gray-50) w-full"
-  >
-    <div class="sm:flex justify-between w-10/12 footermobile items-center">
-      {{ getText.text }}
-      <div class="social sm:flex items-center space-x-3">
-        <Social class="social" />
-        <a
-          href="https://github.com/mehmetali345dev/mehmetali345.xyz"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="This website is open source on GitHub"
-        >{{ getText.sourcecode }}</a>
-        <a
-          href="https://repeatpay.ga/mehmetali345dev"
-          target="_blank"
-          class="flex"
-          rel="noopener noreferrer"
-          title="Donate me on RepeatPay"
-        >
-          {{ getText.donate }}
-          <img
-            src="https://repeatpay.ga/icon.png"
-            class="ml-2 w-5"
-            alt="on RepeatPay"
-          />
-        </a>
-      </div>
-      <div class="grid grid-cols-2 justify-items-center mt-2 gap-2 md:hidden socmobile">
-        <a
-          href="https://github.com/mehmetali345dev/mehmetali345.xyz"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="This website is open source on GitHub"
-        >Source code</a>
-        <a
-          href="https://repeatpay.ga/mehmetali345dev"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex"
-          title="Donate me on RepeatPay"
-        >
-          Donate on
-          <img src="https://repeatpay.ga/icon.png" class="ml-2 w-5" alt="on RepeatPay" />
-        </a>
-      </div>
-      <Social class="mt-4 socmobile md:hidden" />
+  <div class="p-4 w-full flex dark:bg-gray-800 bg-gray-400 justify-center">
+    <div class="hidden md:flex justify-between">
+      <h1 class="font-bold">{{ getText.text }}</h1>
     </div>
   </div>
 </template>
