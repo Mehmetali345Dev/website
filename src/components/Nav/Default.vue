@@ -40,10 +40,6 @@ export default {
           to: "/#projects",
         },
         {
-          name: "Repos",
-          to: "/repos",
-        },
-        {
           name: "Donate",
           to: "/donate",
         },
