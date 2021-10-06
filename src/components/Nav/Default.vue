@@ -13,11 +13,9 @@
           class="text-lg font-bold"
           :to="link.to"
         >{{ link.name }}</nuxt-link>
-        <Color />
       </div>
       <div class="sm:hidden flex items-center space-x-3">
         <div @click="showMenu()" class="text-lg font-bold md:hidden">Menu</div>
-        <Color />
       </div>
     </div>
     <div class="grid mt-4 w-full items-center space-y-2 rounded-b-md" v-if="menu">

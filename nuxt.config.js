@@ -1,5 +1,6 @@
 import head from './config/meta'
 import social from './config/social'
+import sitemap from './config/sitemap'
 
 export default {
   rootDir: "./",
@@ -28,8 +29,12 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/robots',
     '@nuxt/content',
+    ['@nuxtjs/sitemap', sitemap],
+
   ],
+
 
   axios: {},
 

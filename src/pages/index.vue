@@ -35,33 +35,59 @@
       </div>
     </header>
     <div class="grid mt-4 md:grid-cols-2 w-11/12 gap-3">
-      <section class="grid h-full justify-items-center">
-        <h1 class="text-xl mb-4 font-bold">Technologies I use</h1>
-        <div class="grid grid-cols-2 w-full gap-3">
-          <CardTechnology
-            v-for="(technology, index) in technologies"
-            :key="`technology-${index}`"
-            :name="technology"
-          />
-        </div>
-      </section>
-      <section class="grid justify-items-center h-max" id="projects">
-        <h1 class="text-xl mb-4 font-bold">My Projects</h1>
-        <div class="grid justify-items-start space-y-3 w-full">
-          <CardProject
-            v-animate-onscroll="'animated animate-fade-in'"
-            v-for="(project, index) in projects"
-            :link="project.link"
-            :key="`project-${index}`"
-            :name="project.title"
-            :image="project.image"
-            :description="project.description"
-            class="w-full"
-          />
-        </div>
-      </section>
+      <div class="grid gap-2 rounded-md">
+        <section class="grid justify-items-center h-max" id="projects">
+          <h1 class="text-xl mb-4 font-bold">My Projects</h1>
+          <div class="grid justify-items-start space-y-3 w-full">
+            <CardProject
+              v-animate-onscroll="'animated animate-fade-in'"
+              v-for="(project, index) in projects"
+              :link="project.link"
+              :key="`project-${index}`"
+              :name="project.title"
+              :image="project.image"
+              :description="project.description"
+              class="w-full"
+            />
+          </div>
+        </section>
+      </div>
+      <div class="flex flex-col rounded-md w-full items-center">
+        <section class="grid h-full w-full justify-items-center">
+          <h1 class="text-xl mb-4 font-bold">Technologies I use</h1>
+          <div class="grid grid-cols-2 w-full gap-3">
+            <CardTechnology
+              v-animate-onscroll="'animated animate-fade-in'"
+              v-for="(technology, index) in technologies"
+              :key="`technology-${index}`"
+              :name="technology"
+            />
+          </div>
+        </section>
+      </div>
     </div>
-
+    <div class="grid justify-items-center mt-4 gap-2 w-11/12">
+      <h1 class="text-xl font-bold mb-4">My Repositories</h1>
+      <div class="grid md:grid-cols-3 gap-2">
+        <a
+          v-for="(repo, index) in repos"
+          :key="`repo-${index}`"
+          :href="repo.html_url"
+          target="_blank"
+          class="w-full"
+          v-animate-onscroll="'animated animate-slide-in-right'"
+          rel="noreferrer"
+          title="Click here to visit this repository"
+        >
+          <CardRepo
+            :name="repo.name"
+            :stars="repo.stargazers_count"
+            :description="repo.description"
+            class="h-full w-full"
+          />
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -75,6 +101,7 @@
 export default {
   data() {
     return {
+      repos: [],
       projects: [
         {
           title: "345 Launcher",
@@ -111,5 +138,14 @@ export default {
       ],
     };
   },
+  async fetch() {
+    const { data: repos } = await this.$axios.get(
+      "https://api.github.com/users/mehmetali345dev/repos?per_page=100"
+    );
+
+    this.repos = repos
+      ?.filter(repo => repo.fork === false)
+      ?.sort((a, b) => b?.stargazers_count - a?.stargazers_count);
+  }
 };
 </script>

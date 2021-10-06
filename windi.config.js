@@ -2,6 +2,7 @@ export default {
   darkMode: 'class',
   plugins: [
     require('@windicss/plugin-scrollbar'),
+    require('windicss/plugin/aspect-ratio'),
     require('windicss/plugin/line-clamp'),
     require('@windicss/animations')({
       settings: {

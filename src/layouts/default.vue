@@ -13,6 +13,7 @@
     <transition name="fade" mode="out-in">
       <NavFooter class="h-max" />
     </transition>
+    <Color class="fixed bottom-5 right-5 z-50"/>
   </div>
 </template>
 

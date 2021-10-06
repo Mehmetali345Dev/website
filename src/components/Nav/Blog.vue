@@ -8,11 +8,9 @@
       </div>
       <div class="hidden sm:flex items-center space-x-5">
         <nuxt-link v-if="$route.params.slug" class="text-lg font-bold w-max" to="/blog">Geri Dön</nuxt-link>
-        <Color class="ml-2" />
       </div>
       <div class="flex items-center sm:hidden space-x-3">
         <nuxt-link v-if="$route.params.slug" class="text-lg font-bold" to="/blog">Geri Dön</nuxt-link>
-        <Color />
       </div>
     </div>
     <vue-scroll-progress-bar v-if="$route.params.slug" backgroundColor="#059669" />

@@ -5,8 +5,6 @@
       bg-gray-300
       rounded-md
       dark:bg-gray-800
-      ring-1 ring-gray-200
-      dark:ring-gray-900
     "
   >
     <div class="flex items-center space-x-1 text-gray-900 dark:text-gray-100">

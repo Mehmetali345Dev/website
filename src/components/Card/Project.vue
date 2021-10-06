@@ -3,19 +3,9 @@
     :href="link"
     target="_blank"
     rel="noopener noreferrer"
-    class="
-      sm:flex
-      grid
-      justify-items-center
-      sm:text-left
-      text-center
-      p-4
-      rounded-md
-      bg-gray-300
-      dark:bg-gray-800
-    "
+    class="sm:flex grid justify-items-center sm:text-left text-center p-4 rounded-md bg-gray-300 dark:bg-gray-800"
   >
-    <img :src="image" class="w-24" alt="" />
+    <img :src="image" class="w-24" alt />
     <div class="flex flex-col ml-2 justify-center">
       <h1 class="text-xl font-bold">{{ name }}</h1>
       <p>{{ description }}</p>
@@ -34,5 +24,5 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 </style>
