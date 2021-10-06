@@ -1,39 +1,42 @@
 <template>
   <div class="flex flex-col items-center">
-    <header
-      class="flex w-11/12 h-max flex-col sm:flex-row items-center sm:items-start bg-gray-300 dark:bg-gray-800 p-8 rounded-md"
-    >
-      <div class="sm:(flex text-left) text-center items-center">
-        <img src="/profile.webp" class="w-64 mr-4" alt="Mehmetali345Dev" />
-        <h1 class="font-semibold text-xl grid sm:justify-items-start justify-items-center">
-          <Discord class="my-2" />Hello, my name is
-          <span class="text-green-500 text-2xl">Mehmet Ali (aka Mehmetali345Dev)</span>
-          <p>
-            I am a young developer(I'm 14 years old) from Turkey. I write
-            desktop programs and web applications using
-            <a
-              href="https://www.vuejs.org/"
-              rel="noopener noreferrer"
-              class="biolinks"
-              target="_blank"
-            >Vue.js,</a>
-            <a
-              href="https://www.javascript.com/"
-              class="biolinks"
-              target="_blank"
-              rel="noopener noreferrer"
-            >JavaScript</a>
-            and
-            <a
-              href="https://github.com/topics/csharp"
-              rel="noopener noreferrer"
-              class="biolinks"
-              target="_blank"
-            >C#</a>.
-          </p>
-        </h1>
-      </div>
-    </header>
+    <div class="flex justify-center bg-green-600 morphing">
+      <header
+        class="flex w-11/12 h-max flex-col sm:flex-row items-center sm:items-start p-8 rounded-md"
+      >
+        <div class="sm:(flex text-left) text-center items-center">
+          <img src="/profile.webp" class="w-64 mr-4" alt="Mehmetali345Dev" />
+          <h1 class="font-semibold text-xl grid sm:justify-items-start justify-items-center">
+            <Discord class="my-2" />Hello, my name is
+            <span class="text-blue-800 text-2xl">Mehmet Ali (aka Mehmetali345Dev)</span>
+            <p>
+              I am a young developer(I'm 14 years old) from Turkey. I write
+              desktop programs and web applications using
+              <a
+                href="https://www.vuejs.org/"
+                rel="noopener noreferrer"
+                class="biolinks"
+                target="_blank"
+              >Vue.js,</a>
+              <a
+                href="https://www.javascript.com/"
+                class="biolinks"
+                target="_blank"
+                rel="noopener noreferrer"
+              >JavaScript</a>
+              and
+              <a
+                href="https://github.com/topics/csharp"
+                rel="noopener noreferrer"
+                class="biolinks"
+                target="_blank"
+              >C#</a>.
+            </p>
+          </h1>
+        </div>
+      </header>
+    </div>
+
     <div class="grid mt-4 md:grid-cols-2 w-11/12 gap-3">
       <div class="grid gap-2 rounded-md">
         <section class="grid justify-items-center h-max" id="projects">
@@ -94,6 +97,27 @@
 <style>
 .biolinks {
   text-decoration: underline 0.1rem #10b981;
+}
+.morphing {
+  animation: morphing 10s ease-in-out infinite;
+}
+@keyframes morphing {
+  0% {
+    border-radius: 40% 70% 70% 30%/30% 30% 70% 70%;
+    -webkit-box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
+  }
+  25% {
+    border-radius: 58% 42% 75% 25%/76% 46% 54% 24%;
+  }
+  50% {
+    border-radius: 50% 50% 33% 67%/55% 27% 73% 45%;
+    -webkit-box-shadow: -10px -5px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: -10px -5px 50px rgba(0, 0, 0, 0.2);
+  }
+  75% {
+    border-radius: 33% 67% 58% 42%/63% 68% 32% 37%;
+  }
 }
 </style>
 

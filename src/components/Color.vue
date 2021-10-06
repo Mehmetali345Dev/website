@@ -1,7 +1,7 @@
 
 <template>
   <div
-    class="text-gray-900 cursor-pointer p-3 font-bold flex items-center select-none focus:outline-none dark:bg-gray-700 bg-gray-300 hover:(animated animate-head-shake) rounded-xl dark:text-gray-50"
+    class="text-gray-900 cursor-pointer p-3 font-bold flex items-center select-none focus:outline-none dark:bg-gray-800 bg-gray-300 hover:(animated animate-head-shake) rounded-xl dark:text-gray-50"
     @click="switchTheme"
   >
     <h1>
