@@ -17,7 +17,7 @@
       <Social />
     </div>
     <transition name="fade" mode="out-in">
-      <NavFooter class="h-max" />
+      <NavFooter class="h-max bottom-0 z-60" />
     </transition>
   </div>
 </template>
