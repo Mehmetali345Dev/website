@@ -21,7 +21,7 @@
           :src="`https://cdn.discordapp.com/avatars/404360912460578816/${this.lanyard.discord_user.avatar}`"
           class="w-9 h-9 rounded-full"
           alt=""
-          v-tooltip="'Its me MARIO'"
+          v-tooltip="'Its me MARIO!'"
         />
         <div
           :class="`h-3 w-3 rounded-full flex-shrink-0 ${getDiscordStatus}`"
@@ -51,12 +51,13 @@
 
       <div v-else class="flex mt-2">
         <img
-          class="w-16 h-16 rounded-md mr-4 bg-gray-900 outline-none"
+          class="w-16 h-16 relative rounded-md bg-gray-900 outline-none"
           alt=""
           :src="getStatusImage"
           v-tooltip="getStatusDetails.assets.large_text"
         />
-        <div class="flex flex-col space-y-1 justify-center">
+
+        <div class="flex flex-col space-y-1 ml-2 justify-center">
           <div
             class="text-sm font-bold leading-tight truncate"
             :title="getStatusDetails"

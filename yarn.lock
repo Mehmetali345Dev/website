@@ -2141,6 +2141,11 @@
     jiti "^1.12.9"
     windicss "^3.2.1"
 
+"@windicss/plugin-scrollbar@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@windicss/plugin-scrollbar/-/plugin-scrollbar-1.2.3.tgz#4796e999e98a4bca6c269fa1faffd2e9b5452cac"
+  integrity sha512-+cqv1pEmaNPITeBJ/lO6tc8IjBzRhQ+V9G8r249MMXivYoxUO4DtModBrRGHVvBgsYZgPXDsIv2jqtxc4NqYEg==
+
 "@windicss/plugin-utils@1.5.1", "@windicss/plugin-utils@^1.1.1", "@windicss/plugin-utils@^1.5.1":
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.5.1.tgz#9750bb72e8c14585e011d46a33351d47d8519e31"

@@ -6,6 +6,7 @@
       flex-col
       items-center
       bg-gray-200
+      scrollbar
       text-black
       dark:(bg-black
       text-gray-50)

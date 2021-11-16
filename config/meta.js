@@ -30,7 +30,7 @@ export default {
     {
       hid: "twitter:title",
       name: "twitter:title",
-      content: "mehmetali345.xyz",
+      content: "345dev.me",
     },
     {
       hid: "twitter:description",
@@ -56,7 +56,7 @@ export default {
     {
       hid: "og:site_name",
       name: "og:site_name",
-      content: "mehmetali345.xyz",
+      content: "345dev.me",
     },
     {
       hid: "og:description",
