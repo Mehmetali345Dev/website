@@ -1,4 +1,4 @@
-import meta from './config/meta'
+import head from './config/meta'
 import sitemap from './config/sitemap'
 import publicRuntimeConfig from './config/publicRuntimeConfig'
 
@@ -13,7 +13,7 @@ export default {
   publicRuntimeConfig,
 
   // Meta tags imported from ./config/meta.js
-  meta,
+  head,
 
   buildModules: [
     'nuxt-windicss',

@@ -19,7 +19,6 @@
           :href="repo.html_url"
           target="_blank"
           class="w-full"
-          v-animate-onscroll="'animated animate-slide-in-right'"
           rel="noreferrer"
           title="Click here to visit this repository"
         >

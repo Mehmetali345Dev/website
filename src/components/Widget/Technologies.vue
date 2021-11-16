@@ -43,7 +43,7 @@ export default {
         'Dotnet',
         'Github',
         'Figma',
-      ],
+      ], // afk
     }
   },
 }
