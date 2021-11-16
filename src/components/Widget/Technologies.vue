@@ -21,7 +21,7 @@
       </div>
     </div>
     <nuxt-link to="/projects" class="bg-green-600 font-bold p-4 rounded-md">
-      See my all projects and repos
+      See my all works, projects and repos
     </nuxt-link>
   </div>
 </template>
@@ -33,6 +33,7 @@ export default {
       technologies: [
         'JavaScript',
         'C#',
+        'Python',
         'Vue.js',
         'Nuxt.js',
         'WindiCSS',

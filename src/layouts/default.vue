@@ -16,7 +16,7 @@
     </transition>
 
     <div class="flex flex-col w-11/12 md:w-9/12 my-6 z-10 flex-grow items-start justify-center">
-      <Nuxt />
+      <Nuxt class="flex-grow" />
     </div>
   </div>
 </template>
