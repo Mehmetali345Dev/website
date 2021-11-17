@@ -54,7 +54,6 @@
           class="w-16 h-16 relative rounded-md bg-gray-900 outline-none"
           alt=""
           :src="getStatusImage"
-          v-tooltip="getStatusDetails.assets.large_text"
         />
 
         <div class="flex flex-col space-y-1 ml-2 justify-center">
