@@ -70,6 +70,7 @@ export default {
       }
     },
   },
+  fetchOnServer: false,
   async fetch() {
     const { data: repos } = await this.$axios.get(
       "https://api.github.com/users/mehmetali345dev/repos?per_page=100"
