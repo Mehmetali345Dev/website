@@ -2,14 +2,11 @@
   <div class="flex flex-col items-start">
     <div class="space-y-2">
       <h1 class="text-xl font-bold">Donate me</h1>
-      <p
-        class="md:w-3/6"
-        v-tooltip="
-          'But if you dont give me your money, one night I come to your house and I kill you and get your all money (jk). '
-        "
-      >
+      <p class="md:w-3/6">
         You can support me for my projects' maintainment cost and for developing
-        new projects.
+        new projects. 
+        But if you dont give me your money, one night I come to
+        your house after that I kill you and get your all money (just kidding).
       </p>
     </div>
     <a
