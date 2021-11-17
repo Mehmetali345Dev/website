@@ -12,7 +12,7 @@
       text-gray-50)
     "
   >
-    <transition name="fade" mode="enter-leave">
+    <transition name="fade" mode="out-in">
       <NavDefault class="sticky top-0 z-40" />
     </transition>
 
