@@ -12,11 +12,22 @@
       text-gray-50)
     "
   >
-    <transition name="fade" mode="out-in">
+    <transition name="fade" mode="enter-leave">
       <NavDefault class="sticky top-0 z-40" />
     </transition>
 
-    <div class="flex flex-col w-11/12 md:w-9/12 my-6 z-10 flex-grow items-start justify-center">
+    <div
+      class="
+        flex flex-col
+        w-11/12
+        md:w-9/12
+        my-6
+        z-10
+        flex-grow
+        items-start
+        justify-center
+      "
+    >
       <Nuxt class="flex-grow" />
     </div>
   </div>
