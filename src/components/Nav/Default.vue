@@ -3,7 +3,7 @@
     class="
       w-full
       flex flex-col
-      bg-gray-300
+      bg-gray-200
       dark:bg-black
       bg-opacity-60
       items-end
