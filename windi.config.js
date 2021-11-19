@@ -3,5 +3,6 @@ module.exports = {
   plugins: [
     // ...
     require('@windicss/plugin-scrollbar'),
-],
+    require('windicss/plugin/line-clamp'),
+  ],
 }

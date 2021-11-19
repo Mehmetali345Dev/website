@@ -1,12 +1,5 @@
 <template>
-  <div
-    class="
-      p-4
-      rounded-md
-    bg-gray-900
-      bg-opacity-30
-    "
-  >
+  <div class="p-4 rounded-md bg-gray-900 bg-opacity-30">
     <div class="flex items-center space-x-1 text-gray-900 dark:text-gray-100">
       <span class="flex-grow space-x-2 truncate hover:underline">
         {{ name }}
@@ -14,7 +7,7 @@
 
       <div class="flex items-center space-x-1">
         <div class="flex items-center space-x-1">
-          <span>{{ stars }} stars</span>
+          {{ stars }} <IconStar class="w-6 h-6 text-yellow-400" />
         </div>
       </div>
     </div>
@@ -41,9 +34,7 @@ export default {
       required: true,
     },
   },
-  
-};
+}
 </script>
 
-<style>
-</style>
+<style></style>
