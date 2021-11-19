@@ -10,28 +10,12 @@
       bg-gray-900 bg-opacity-30
     "
   >
-    <div
-      class="focus:outline-none"
-      :class="{
-        'bg-gray-100 dark:bg-gray-700 animate-pulse bg-no-repeat':
-          itemLoaded === false,
-      }"
-      :style="{
-        backgroundImage: itemLoaded === true ? `url('${project.image}')` : '',
-        backgroundPosition: 'center',
-        backgroundSize: itemLoaded === true ? backgroundSize : 'cover',
-      }"
-    >
-      <img
-        :src="project.image"
-        class="invisible"
-        draggable="false"
-        alt="image"
-        width="100%"
-        height="100%"
-        @load="itemLoaded = true"
-      />
-    </div>
+    <Skeleton
+      v-if="project.image"
+      type="image"
+      :image-url="project.image"
+      class="rounded-tl rounded-tr"
+    />
     <div class="grid items-center">
       <h1 class="text-lg font-bold">{{ project.title }}</h1>
       <p class="">{{ project.description }}</p>
@@ -50,7 +34,7 @@ export default {
   data() {
     return {
       itemLoaded: false,
-      backgroundSize: "cover"
+      backgroundSize: 'cover',
     }
   },
 }

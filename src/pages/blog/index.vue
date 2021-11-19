@@ -1,6 +1,6 @@
 <template>
-  <div class="flex justify-center items-center">
-      <h1 class="font-bold text-2xl">Coming soon...</h1>
+  <div class="flex w-full">
+      <h1 class="font-bold text-2xl">My Latest Posts</h1>
   </div>
 </template>
 

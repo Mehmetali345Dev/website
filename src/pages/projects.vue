@@ -10,10 +10,22 @@
         />
       </div>
     </div>
-    <div class="grid mt-2">
+    <div class="grid mt-2 w-full">
       <h1 class="text-xl font-bold">My repos</h1>
-      <div class="grid gap-3 sm:grid-cols-3 mt-2">
-       <a
+      <div v-if="$fetchState.pending" class="grid gap-3 sm:grid-cols-3 mt-2">
+        <Skeleton
+          type="repository"
+          v-for="index in 9"
+          :key="index"
+          class="w-full h-full"
+        />
+      </div>
+      <div v-else-if="$fetchState.error">
+        Couldn't load GitHub repositories.
+      </div>
+
+      <div v-else-if="repos.length > 0" class="grid gap-3 sm:grid-cols-3 mt-2">
+        <a
           v-for="(repo, index) in repos"
           :key="`repo-${index}`"
           :href="repo.html_url"
@@ -73,12 +85,12 @@ export default {
   fetchOnServer: false,
   async fetch() {
     const { data: repos } = await this.$axios.get(
-      "https://api.github.com/users/mehmetali345dev/repos?per_page=100"
-    );
+      'https://api.github.com/users/mehmetali345dev/repos?per_page=100'
+    )
     this.repos = repos
-      ?.filter(repo => repo.fork === false)
-      ?.sort((a, b) => b?.stargazers_count - a?.stargazers_count);
-  }
+      ?.filter((repo) => repo.fork === false)
+      ?.sort((a, b) => b?.stargazers_count - a?.stargazers_count)
+  },
 }
 </script>
 
