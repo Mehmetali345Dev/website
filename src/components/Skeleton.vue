@@ -36,7 +36,7 @@
     :style="{
       backgroundImage: itemLoaded === true ? `url('${imageUrl}')` : '',
       backgroundPosition: 'center',
-      backgroundSize: itemLoaded === true ? backgroundSize : '',
+      backgroundSize: 'cover',
     }"
   >
     <img

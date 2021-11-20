@@ -18,6 +18,7 @@ export default {
   buildModules: [
     'nuxt-windicss',
     '@nuxtjs/color-mode',
+    '@nuxtjs/moment',
     '@nuxt/image',
   ],
 

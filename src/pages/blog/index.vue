@@ -1,6 +1,6 @@
 <template>
   <div class="lex flex-col space-y-2">
-    <h1 class="font-bold text-2xl">My Latest Posts</h1>
+    <h1 class="font-bold text-2xl">Son Gönderiler</h1>
     <div v-if="$fetchState.pending" class="items-center">
       Gönderiler alınıyor
     </div>

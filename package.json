@@ -31,6 +31,7 @@
     "@nuxt/image": "^0.6.0",
     "@nuxtjs/color-mode": "^2.1.1",
     "@nuxtjs/google-analytics": "^2.4.0",
+    "@nuxtjs/moment": "^1.6.1",
     "@windicss/plugin-scrollbar": "^1.2.3",
     "nuxt-windicss": "^2.0.12",
     "prettier": "^2.3.2"
