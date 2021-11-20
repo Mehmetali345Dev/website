@@ -4,8 +4,7 @@
       <h1 class="text-xl font-bold">Donate me</h1>
       <p class="md:w-3/6">
         You can support me for my projects' maintainment cost and for developing
-        new projects. 
-        But if you dont give me your money, one night I come to
+        new projects. But if you dont give me your money, one night I come to
         your house after that I kill you and get your all money (just kidding).
       </p>
     </div>
@@ -76,6 +75,64 @@ export default {
         },
       ],
     }
+  },
+  head() {
+    const title = 'Support me'
+    const description =
+      'You can see my supporters from this page and you can support me.'
+    const href = `https://mehmetali345.xyz/donate`
+    const object = {
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: description,
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: `mehmetali345, mehmetali345 blog, blog, teknoloji, vue, yazılım, discord, mehmetali_345, gönderi`,
+        },
+        // Open-Graph
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: title,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: href,
+        },
+        // Twitter
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: title,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: description,
+        },
+      ].map((i) => {
+        if (i.name && !i.property) i.property = i.name
+        return i
+      }),
+      link: [
+        {
+          rel: 'canonical',
+          href,
+        },
+      ],
+    }
+    return object
   },
 }
 </script>
