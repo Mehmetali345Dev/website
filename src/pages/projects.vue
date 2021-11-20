@@ -91,6 +91,64 @@ export default {
       ?.filter((repo) => repo.fork === false)
       ?.sort((a, b) => b?.stargazers_count - a?.stargazers_count)
   },
+  head() {
+    const title = 'My projects'
+    const description =
+      'You can see my projects, works and repos from here.'
+    const href = `https://345dev.me/projects`
+    const object = {
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: description,
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: `mehmetali345, mehmetali345 blog, blog, teknoloji, vue, yazılım, discord, mehmetali_345, gönderi`,
+        },
+        // Open-Graph
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: title,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: href,
+        },
+        // Twitter
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: title,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: description,
+        },
+      ].map((i) => {
+        if (i.name && !i.property) i.property = i.name
+        return i
+      }),
+      link: [
+        {
+          rel: 'canonical',
+          href,
+        },
+      ],
+    }
+    return object
+  },
 }
 </script>
 
