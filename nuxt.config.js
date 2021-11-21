@@ -38,7 +38,7 @@ export default {
   css: ['~/stylesheets/root.scss'],
 
   // Imports Animate-on-scroll and v-tooltip plugin
-  plugins: ['@/plugins/spotify.js', '@/plugins/aos.client.js', '@plugins/v-tooltip.client.js'],
+  plugins: ['@/plugins/aos.client.js', '@plugins/v-tooltip.client.js'],
 
   // Configuration for modules
 

@@ -72,35 +72,6 @@
         </div>
       </div>
     </div>
-
-    <div
-      v-if="this.lanyard.listening_to_spotify"
-      class="
-        bg-green-500
-        dark:bg-green-500
-        mt-2
-        bg-opacity-30
-        flex
-        p-4
-        rounded-md
-      "
-    >
-      <div class="flex mt-2">
-        <img
-          class="w-16 h-16 rounded-md mr-4 bg-gray-900 outline-none"
-          alt=""
-          :src="this.lanyard.spotify.album_art_url"
-        />
-        <div class="flex flex-col space-y-1 justify-center">
-          <div class="text-sm font-bold leading-tight truncate-ellipsis">
-            {{ this.lanyard.spotify.song }}
-          </div>
-          <div class="text-sm leading-tight truncate-ellipsis">
-            {{ 'by ' + this.lanyard.spotify.artist }}
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 

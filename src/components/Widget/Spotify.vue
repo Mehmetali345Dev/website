@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="$fetchState.pending"
+    v-if="Object.keys(spotify).length === 0"
     class="bg-green-500 w-full flex animate-pulse p-4 rounded-md"
   >
     <img class="w-16 h-16 rounded-md mr-4 bg-gray-900 outline-none" alt="" />
@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <div v-else class="w-full">
+  <div v-else-if="isPlaying" class="w-full">
     <div
       class="
         bg-green-500
@@ -22,23 +22,21 @@
         rounded-md
       "
     >
-      {{ spotify }}
-      <!-- <div class="flex mt-2">
+      <div class="flex mt-2">
         <img
           class="w-16 h-16 rounded-md mr-4 bg-gray-900 outline-none"
           alt=""
-          :src="this.lanyard.spotify.album_art_url"
+          :src="this.spotify.image[1]['#text']"
         />
         <div class="flex flex-col space-y-1 justify-center">
           <div class="text-sm font-bold leading-tight truncate-ellipsis">
-            {{ this.lanyard.spotify.song }}
+            {{ this.spotify.name }}
           </div>
           <div class="text-sm leading-tight truncate-ellipsis">
-            {{ 'by ' + this.lanyard.spotify.artist }}
+            {{ 'by ' + this.spotify.artist['#text'] }}
           </div>
         </div>
       </div>
-      -->
     </div>
   </div>
 </template>
@@ -47,11 +45,16 @@
 export default {
   data() {
     return {
-      spotify: {},
+      spotify: [],
+      isPlaying: true,
     }
   },
-  async fetch() {
-    this.spotify = this.$getNowPlaying('/me/currently-playing')
+  async mounted() {
+    const { data: music } = await this.$axios.get(
+      'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=Mehmetali345Dev&api_key=8f397e39b6d189cff1da808c7b971737&format=json&limit=1'
+    )
+
+    this.spotify = music.recenttracks.track[0]
   },
 }
 </script>

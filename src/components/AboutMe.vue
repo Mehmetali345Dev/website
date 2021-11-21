@@ -12,6 +12,7 @@
     </div>
 
     <WidgetDiscord />
+    <WidgetSpotify/>
   </header>
 </template>
 
