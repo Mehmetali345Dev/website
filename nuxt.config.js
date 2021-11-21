@@ -1,6 +1,7 @@
 import head from './config/meta'
 import sitemap from './config/sitemap'
 import publicRuntimeConfig from './config/publicRuntimeConfig'
+import privateRuntimeConfig from './config/privateRuntimeConfig'
 
 export default {
   rootDir: './',
@@ -9,13 +10,15 @@ export default {
   ssr: true,
   components: true,
 
-
   publicRuntimeConfig,
+
+  privateRuntimeConfig,
 
   // Meta tags imported from ./config/meta.js
   head,
 
   buildModules: [
+    '@nuxtjs/dotenv',
     'nuxt-windicss',
     '@nuxtjs/color-mode',
     '@nuxtjs/moment',
@@ -35,7 +38,7 @@ export default {
   css: ['~/stylesheets/root.scss'],
 
   // Imports Animate-on-scroll and v-tooltip plugin
-  plugins: ['@/plugins/aos.js', '@plugins/v-tooltip.js'],
+  plugins: ['@/plugins/spotify.js', '@/plugins/aos.client.js', '@plugins/v-tooltip.client.js'],
 
   // Configuration for modules
 
@@ -56,5 +59,4 @@ export default {
     // Specifies blog posts' directory
     dir: '../posts',
   },
-
 }
