@@ -39,6 +39,9 @@
       </div>
     </div>
   </div>
+  <div v-else class="w-full bg-gray-900 bg-opacity-30 p-4 rounded-md">
+    <h1 class="font-bold text-xl">Nothing is playing</h1>
+  </div>
 </template>
 
 <script>
@@ -46,7 +49,7 @@ export default {
   data() {
     return {
       spotify: [],
-      isPlaying: true,
+      isPlaying: false,
     }
   },
   async mounted() {
@@ -55,6 +58,10 @@ export default {
     )
 
     this.spotify = music.recenttracks.track[0]
+
+    if (music.recenttracks.track[0]['@attr']) {
+      this.isPlaying = true
+    }
   },
 }
 </script>
