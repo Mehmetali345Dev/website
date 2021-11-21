@@ -24,7 +24,7 @@
         <Skeleton
           type="image"
           :imageUrl="post.banner"
-          class="h-60 rounded -mx-[4.25vw] filter dark:brightness-75"
+          class="h-60 rounded -mx-[4.25vw] md:-mx-0 filter dark:brightness-75"
         />
         <div class="absolute -mx-[4.25vw] md:-mx-0 bottom-5 left-5">
           <div class="bg-gray-900 bg-opacity-30 font-bold p-4 rounded">
