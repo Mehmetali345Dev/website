@@ -57,9 +57,4 @@ export default {
     dir: '../posts',
   },
 
-  webfontloader: {
-    google: {
-      families: ['JetBrains Mono:400,700'], //Loads Lato font with weights 400 and 700
-    },
-  },
 }

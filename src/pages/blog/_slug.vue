@@ -18,7 +18,7 @@
       >Nası ya?</nuxt-link
     >
   </div>
-  <div v-else class="flex-col w-full flex">
+  <div v-else class="flex-col items-center w-full flex">
     <header>
       <div class="relative">
         <Skeleton
@@ -33,8 +33,8 @@
         </div>
       </div>
       <div class="mt-4 bg-gray-900 bg-opacity-30 p-4 rounded">
-        <h1 class=" text-2xl font-bold">{{post.title}}</h1>
-        <p>{{post.description}}</p>
+        <h1 class="text-2xl font-bold">{{ post.title }}</h1>
+        <p>{{ post.description }}</p>
       </div>
     </header>
     <article><nuxt-content :document="post" class="mt-8" /></article>
@@ -161,4 +161,41 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+
+.nuxt-content {
+  @apply space-y-2;
+  h1 {
+    @apply text-2xl text-green-500 font-bold;
+  }
+  h2 {
+    @apply text-xl text-green-500 font-bold;
+  }
+  h3,
+  h4,
+  h5 {
+    @apply text-lg text-green-500;
+  }
+  li {
+    @apply py-1;
+  }
+  a {
+    @apply text-green-500 underline;
+  }
+  p {
+    @apply text-gray-900 dark:text-gray-200;
+  }
+  img {
+    @apply rounded my-2;
+  }
+  &:not(:last-child) {
+    @apply mb-5;
+  }
+  &.text-center {
+    @apply flex justify-center;
+  }
+  strong {
+    @apply font-medium text-gray-900 dark:text-gray-100;
+  }
+}
+</style>
