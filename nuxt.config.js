@@ -24,6 +24,7 @@ export default {
   ],
 
   modules: [
+    'nuxt-webfontloader',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     'nuxt-helmet',
@@ -57,4 +58,10 @@ export default {
     // Specifies blog posts' directory
     dir: '../posts',
   },
+
+  webfontloader:{
+    google:{
+      families: ['JetBrains Mono:400,700']
+    }
+  }
 }
