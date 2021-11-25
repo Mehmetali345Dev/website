@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-2">
+  <div>
     <h1 class="font-bold text-xl">Contact Me</h1>
     <div class="flex space-x-3">
       <a
