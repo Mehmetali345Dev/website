@@ -17,7 +17,6 @@ export default {
   head,
 
   buildModules: [
-    '@nuxtjs/dotenv',
     'nuxt-windicss',
     '@nuxtjs/color-mode',
     '@nuxtjs/moment',
