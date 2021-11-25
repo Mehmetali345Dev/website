@@ -59,14 +59,13 @@
         <div class="flex flex-col space-y-1 ml-2 justify-center">
           <div
             class="text-sm font-bold leading-tight truncate"
-            :title="getStatusDetails"
           >
             {{ getStatusDetails.name }}
           </div>
-          <div class="text-sm leading-tight truncate" :title="getStatusDetails">
+          <div class="text-sm leading-tight truncate">
             {{ getStatusDetails.details }}
           </div>
-          <div class="text-sm leading-tight truncate" :title="getStatusDetails">
+          <div class="text-sm leading-tight truncate">
             {{ getStatusDetails.state }}
           </div>
         </div>
