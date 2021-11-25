@@ -1,5 +1,5 @@
 <template>
-  <div class="lex flex-col space-y-2">
+  <div class="flex flex-col space-y-2">
     <h1 class="font-bold text-2xl">Son Gönderiler</h1>
     <div v-if="$fetchState.pending" class="items-center">
       Gönderiler alınıyor

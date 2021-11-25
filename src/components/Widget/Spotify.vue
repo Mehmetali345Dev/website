@@ -50,19 +50,32 @@ export default {
     return {
       spotify: [],
       isPlaying: false,
+      timer: '',
     }
   },
-  async mounted() {
-    const { data: music } = await this.$axios.get(
-      'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=Mehmetali345Dev&api_key=8f397e39b6d189cff1da808c7b971737&format=json&limit=1'
-    )
+  async created() {
+    await this.fetchInfo()
+    this.timer = setInterval(this.fetchInfo, 5000)
+  },
+  methods: {
+    async fetchInfo() {
+      const { data: music } = await this.$axios.get(
+        'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=Mehmetali345Dev&api_key=8f397e39b6d189cff1da808c7b971737&format=json&limit=1'
+      )
 
-    this.spotify = music.recenttracks.track[0]
+      this.spotify = music.recenttracks.track[0]
 
-    if (music.recenttracks.track[0]['@attr']) {
-      this.isPlaying = true
+      if (music.recenttracks.track[0]['@attr'] !== undefined) {
+        this.isPlaying = true
+      }
+      else{
+        this.isPlaying = false
+      }
     }
   },
+  beforeDestroy() {
+    clearInterval(this.timer);
+  }
 }
 </script>
 <style></style>

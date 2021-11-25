@@ -31,6 +31,7 @@
     >
       <Nuxt class="flex-grow" />
     </div>
+    <NavFooter v-if='$route.path.includes("blog")'/>
   </div>
 </template>
 

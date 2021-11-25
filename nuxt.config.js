@@ -9,7 +9,6 @@ export default {
   target: 'static',
   ssr: true,
   components: true,
-
   publicRuntimeConfig,
 
   privateRuntimeConfig,

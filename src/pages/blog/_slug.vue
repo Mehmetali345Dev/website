@@ -19,7 +19,7 @@
     >
   </div>
   <div v-else class="flex-col items-center w-full flex">
-    <header>
+    <header class='flex flex-col items-center'>
       <div class="relative">
         <Skeleton
           type="image"
@@ -32,12 +32,12 @@
           </div>
         </div>
       </div>
-      <div class="mt-4 bg-gray-900 bg-opacity-30 p-4 rounded">
+      <div class=" w-9/12 mt-4 bg-gray-900 bg-opacity-30 p-4 rounded">
         <h1 class="text-2xl font-bold">{{ post.title }}</h1>
         <p>{{ post.description }}</p>
       </div>
     </header>
-    <article><nuxt-content :document="post" class="mt-8" /></article>
+    <article class='w-9/12'><nuxt-content :document="post" class="mt-8" /></article>
   </div>
 </template>
 
@@ -166,16 +166,26 @@ export default {
 .nuxt-content {
   @apply space-y-2;
   h1 {
-    @apply text-2xl text-green-500 font-bold;
+    @apply text-3xl text-green-500 font-bold;
+    &:before{
+      content: "# ";
+    }
   }
   h2 {
-    @apply text-xl text-green-500 font-bold;
+    @apply text-2xl text-green-500 font-bold;
+    &:before{
+      content: "# ";
+    }
   }
   h3,
   h4,
-  h5 {
+  h5{
     @apply text-lg text-green-500;
+    &:before{
+      content: "# ";
+    }
   }
+
   li {
     @apply py-1;
   }
