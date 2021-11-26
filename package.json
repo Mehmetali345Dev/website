@@ -35,6 +35,6 @@
     "@nuxtjs/moment": "^1.6.1",
     "@windicss/plugin-scrollbar": "^1.2.3",
     "nuxt-windicss": "^2.0.12",
-    "prettier": "^2.3.2"
+    "prettier": "^2.5.0"
   }
 }
