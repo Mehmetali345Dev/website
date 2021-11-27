@@ -19,7 +19,7 @@
     >
   </div>
   <div v-else class="flex-col items-center w-full flex">
-    <header class='flex flex-col items-center'>
+    <header class="flex flex-col items-center">
       <div class="relative">
         <Skeleton
           type="image"
@@ -32,17 +32,32 @@
           </div>
         </div>
       </div>
-      <div class=" w-9/12 mt-4 bg-gray-900 bg-opacity-30 p-4 rounded">
+      <div class="w-9/12 mt-4 bg-gray-900 bg-opacity-30 p-4 rounded">
         <h1 class="text-2xl font-bold">{{ post.title }}</h1>
         <p>{{ post.description }}</p>
       </div>
     </header>
-    <article class='w-9/12'><nuxt-content :document="post" class="my-8" /></article>
+    <article class="w-9/12">
+      <nuxt-content :document="post" class="my-8" />
+    </article>
+    <div class="w-9/12">
+      <Disqus
+        shortname="345dev"
+        :title="post.title"
+        :url="`https://345dev.me/blog/${post.slug}`"
+        :identifier="`/blog/${post.slug}`"
+        :slug="post.slug"
+        lang="tr"
+        class="w-full"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import Disqus from 'vue-disqus'
 export default {
+  components: { Disqus },
   data() {
     return {
       comments: false,
@@ -155,27 +170,26 @@ export default {
 </script>
 
 <style lang="scss">
-
 .nuxt-content {
   @apply space-y-2;
   h1 {
     @apply text-3xl text-green-500 font-bold;
-    &:before{
-      content: "# ";
+    &:before {
+      content: '# ';
     }
   }
   h2 {
     @apply text-2xl text-green-500 font-bold;
-    &:before{
-      content: "# ";
+    &:before {
+      content: '# ';
     }
   }
   h3,
   h4,
-  h5{
+  h5 {
     @apply text-lg text-green-500;
-    &:before{
-      content: "# ";
+    &:before {
+      content: '# ';
     }
   }
 
