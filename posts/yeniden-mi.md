@@ -25,6 +25,11 @@ Blog yazılarını elimden geldiğince sık atmaya çalışacağım belki haftad
 
 Şu an üzerinde çalıştığım iki projem var: [ModernaCSS](https://github.com/Mehmetali345Dev/modernacss) ve [RepeatPay](https://github.com/RepeatPay/RepeatPay). İkiside aktif ve geliştirme altında, ilerleyen zamanlarda yeni projeler gelecektir.
 
+```js
+
+const anan = require('express')
+```
+
 # Son olarak
 
 Eski siteme [buradan](https://is.my.subdomain.cool.mehmetali345.xyz) ulaşabilirsiniz.

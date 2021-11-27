@@ -57,6 +57,12 @@ export default {
 
     // Specifies blog posts' directory
     dir: '../posts',
+
+    markdown: {
+      prism: {
+        theme: "prism-themes/themes/prism-dracula.css",
+      },     
+    },
   },
 
   webfontloader:{

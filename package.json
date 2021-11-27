@@ -21,6 +21,7 @@
     "nuxt": "^2.15.7",
     "nuxt-helmet": "^2.0.1",
     "nuxt-webfontloader": "^1.1.0",
+    "prism-themes": "^1.9.0",
     "sass": "^1.43.5",
     "sass-loader": "10.1",
     "v-tooltip": "^3.0.0-beta.1",
