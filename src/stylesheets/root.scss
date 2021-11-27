@@ -1,7 +1,6 @@
 @import 'transitions';
 @import 'scrollbar';
 @import 'disqus';
-@import 'content';
 
 html {
   font-family: 'JetBrains Mono', monospace;
@@ -18,47 +17,42 @@ html {
 
 .nuxt-content {
   @apply space-y-2;
+  /** Apply styles for headings */
   h1 {
     @apply text-3xl text-green-500 font-bold;
-    &:before {
-      content: '# ';
-    }
   }
   h2 {
     @apply text-2xl text-green-500 font-bold;
-    &:before {
-      content: '# ';
-    }
   }
   h3,
   h4,
   h5 {
     @apply text-lg text-green-500;
-    &:before {
-      content: '# ';
-    }
   }
-  li {
-    @apply py-1;
-  }
-  a {
-    @apply text-green-500 underline;
-  }
+
   p {
     @apply text-gray-900 dark:text-gray-200;
+    & a {
+      @apply text-green-500 hover:underline;
+    }
+    & img {
+      @apply rounded my-2;
+    }
+    &.text-center {
+      @apply flex justify-center;
+    }
+    & strong {
+      @apply font-medium text-gray-900 dark:text-gray-100;
+    }
+    code {
+      @include code;
+    }
+    &:not(:last-child) {
+      @apply mb-6;
+    }
   }
-  img {
-    @apply rounded my-2;
-  }
-  &:not(:last-child) {
-    @apply mb-5;
-  }
-  &.text-center {
-    @apply flex justify-center;
-  }
-  strong {
-    @apply font-medium text-gray-900 dark:text-gray-100;
-  }
+
+  /** Apply style for codeblocks */
   .nuxt-content-highlight {
     @apply my-2 relative;
     .filename {
@@ -68,6 +62,37 @@ html {
       @apply rounded-md text-base py-4 px-6;
     }
   }
+
+  ol,
+  ul {
+    @apply text-black dark:text-white;
+    li a {
+      @apply text-green-500 dark:text-green-500 hover:underline;
+    }
+    li code {
+      @include code;
+    }
+    li:not(:last-child) {
+      @apply mb-1;
+    }
+  }
+  ol {
+    @apply list-decimal pl-4;
+    li:not(:last-child) {
+      @apply mb-5;
+    }
+  }
+  ul {
+    @apply list-disc pl-6;
+    &:not(:last-child) {
+      @apply mb-5;
+    }
+    li::marker {
+      @apply text-green-500;
+    }
+  }
+  /* Horizontal line */
+  hr {
+    @apply border-dashed border-gray-300 my-8 dark:border-gray-700;
+  }
 }
-
-

@@ -32,15 +32,15 @@
           </div>
         </div>
       </div>
-      <div class="w-9/12 mt-4 bg-gray-900 bg-opacity-30 p-4 rounded">
+      <div class="w-10/12 mt-4 bg-gray-900 bg-opacity-30 p-4 rounded">
         <h1 class="text-2xl font-bold">{{ post.title }}</h1>
         <p>{{ post.description }}</p>
       </div>
     </header>
-    <article class="w-9/12">
+    <article class="w-10/12">
       <nuxt-content :document="post" class="my-8" />
     </article>
-    <div class="w-9/12">
+    <div class="w-10/12">
       <Disqus
         shortname="345dev"
         :title="post.title"
@@ -51,7 +51,7 @@
         class="w-full"
       />
     </div>
-    <div class="w-9/12 mt-4" v-if="related.length > 0">
+    <div class="w-10/12 mt-4" v-if="related.length > 0">
       <h1 class="text-2xl font-bold">Benzer Gönderiler</h1>
       <div class="grid grid-cols-2">
         <CardPost
