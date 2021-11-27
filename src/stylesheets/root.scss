@@ -1,9 +1,73 @@
 @import 'transitions';
 @import 'scrollbar';
 @import 'disqus';
+@import 'content';
 
 html {
   font-family: 'JetBrains Mono', monospace;
   scroll-behavior: smooth;
 }
+
+@mixin code {
+  @apply bg-green-100 py-px px-1 text-green-600 dark:(bg-green-900 bg-opacity-50 text-green-400);
+  &::before,
+  &::after {
+    content: '`';
+  }
+}
+
+.nuxt-content {
+  @apply space-y-2;
+  h1 {
+    @apply text-3xl text-green-500 font-bold;
+    &:before {
+      content: '# ';
+    }
+  }
+  h2 {
+    @apply text-2xl text-green-500 font-bold;
+    &:before {
+      content: '# ';
+    }
+  }
+  h3,
+  h4,
+  h5 {
+    @apply text-lg text-green-500;
+    &:before {
+      content: '# ';
+    }
+  }
+  li {
+    @apply py-1;
+  }
+  a {
+    @apply text-green-500 underline;
+  }
+  p {
+    @apply text-gray-900 dark:text-gray-200;
+  }
+  img {
+    @apply rounded my-2;
+  }
+  &:not(:last-child) {
+    @apply mb-5;
+  }
+  &.text-center {
+    @apply flex justify-center;
+  }
+  strong {
+    @apply font-medium text-gray-900 dark:text-gray-100;
+  }
+  .nuxt-content-highlight {
+    @apply my-2 relative;
+    .filename {
+      @apply font-light mt-3 mr-3 text-sm right-0 text-gray-300 z-10 absolute;
+    }
+    pre {
+      @apply rounded-md text-base py-4 px-6;
+    }
+  }
+}
+
 

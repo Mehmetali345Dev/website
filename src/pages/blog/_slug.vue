@@ -182,49 +182,5 @@ export default {
 </script>
 
 <style lang="scss">
-.nuxt-content {
-  @apply space-y-2;
-  h1 {
-    @apply text-3xl text-green-500 font-bold;
-    &:before {
-      content: '# ';
-    }
-  }
-  h2 {
-    @apply text-2xl text-green-500 font-bold;
-    &:before {
-      content: '# ';
-    }
-  }
-  h3,
-  h4,
-  h5 {
-    @apply text-lg text-green-500;
-    &:before {
-      content: '# ';
-    }
-  }
 
-  li {
-    @apply py-1;
-  }
-  a {
-    @apply text-green-500 underline;
-  }
-  p {
-    @apply text-gray-900 dark:text-gray-200;
-  }
-  img {
-    @apply rounded my-2;
-  }
-  &:not(:last-child) {
-    @apply mb-5;
-  }
-  &.text-center {
-    @apply flex justify-center;
-  }
-  strong {
-    @apply font-medium text-gray-900 dark:text-gray-100;
-  }
-}
 </style>
