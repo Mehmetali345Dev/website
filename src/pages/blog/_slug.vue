@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import Disqus from 'vue-disqus'
+import { Disqus } from 'vue-disqus'
 export default {
   components: { Disqus },
   data() {
@@ -170,6 +170,33 @@ export default {
 </script>
 
 <style lang="scss">
+/* Tailwind Colors */
+$gray-100: rgb(243, 244, 246);
+$gray-200: rgb(229, 231, 235);
+
+$gray-700: rgb(55, 65, 81);
+$gray-900: rgb(17, 24, 39);
+
+#disqus_thread {
+  a {
+    color: black;
+
+    &:hover {
+      color: $gray-900;
+    }
+  }
+}
+
+.dark #disqus_thread {
+  a {
+    color: white;
+
+    &:hover {
+      color: $gray-200;
+    }
+  }
+}
+
 .nuxt-content {
   @apply space-y-2;
   h1 {
