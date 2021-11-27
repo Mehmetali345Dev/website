@@ -85,7 +85,7 @@ export default {
     const description =
       this.post?.description || 'Bu yazıyı okumaya davet edildin..'
     const image = this.getPostImage || false
-    const href = `https://mehmetali345.xyz${this.$route?.path}`
+    const href = `https://345dev.me${this.$route?.path}`
     const object = {
       title,
       meta: [
@@ -170,32 +170,6 @@ export default {
 </script>
 
 <style lang="scss">
-/* Tailwind Colors */
-$gray-100: rgb(243, 244, 246);
-$gray-200: rgb(229, 231, 235);
-
-$gray-700: rgb(55, 65, 81);
-$gray-900: rgb(17, 24, 39);
-
-#disqus_thread {
-  a {
-    color: black;
-
-    &:hover {
-      color: $gray-900;
-    }
-  }
-}
-
-.dark #disqus_thread {
-  a {
-    color: white;
-
-    &:hover {
-      color: $gray-200;
-    }
-  }
-}
 
 .nuxt-content {
   @apply space-y-2;
