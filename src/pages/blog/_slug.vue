@@ -51,6 +51,18 @@
         class="w-full"
       />
     </div>
+    <div class="w-9/12 mt-4" v-if="related.length > 0">
+      <h1 class="text-2xl font-bold">Benzer Gönderiler</h1>
+      <div class="grid grid-cols-2">
+        <CardPost
+          type="rest"
+          v-for="(post, index) in related"
+          :key="`related-${index}`"
+          :post="post"
+          class="w-full"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -170,7 +182,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .nuxt-content {
   @apply space-y-2;
   h1 {
