@@ -6,6 +6,7 @@
       bg-gray-200
       dark:bg-black
       bg-opacity-60
+      dark:bg-opacity-60
       items-end
       p-4
     "
