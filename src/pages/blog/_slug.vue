@@ -37,7 +37,7 @@
         <p>{{ post.description }}</p>
       </div>
     </header>
-    <article class='w-9/12'><nuxt-content :document="post" class="mt-8" /></article>
+    <article class='w-9/12'><nuxt-content :document="post" class="my-8" /></article>
   </div>
 </template>
 
@@ -149,13 +149,6 @@ export default {
       else if (diff >= 30 && diff <= 90)
         return `${Math.floor(diff / 30)} ay önce`
       else return createdAt.format('DD/MM/YYYY')
-    },
-    showComment() {
-      if (this.comments === true) {
-        this.comments = false
-      } else {
-        this.comments = true
-      }
     },
   },
 }
