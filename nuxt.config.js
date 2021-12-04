@@ -21,7 +21,11 @@ export default {
     '@nuxtjs/color-mode',
     '@nuxtjs/moment',
     '@nuxt/image',
+    '@nuxtjs/google-analytics'
   ],
+  googleAnalytics: {
+    id: 'UA-183921946-1'
+},
 
   modules: [
     'nuxt-webfontloader',
