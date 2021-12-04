@@ -1,7 +1,7 @@
-# mehmetali345.xyz
-[![CodeFactor](https://www.codefactor.io/repository/github/mehmetali345dev/mehmetali345.xyz/badge)](https://www.codefactor.io/repository/github/mehmetali345dev/mehmetali345.xyz)
+# 345dev.me
+[![CodeFactor](https://www.codefactor.io/repository/github/mehmetali345dev/website/badge)](https://www.codefactor.io/repository/github/mehmetali345dev/website)
 
-My personal portfolio made with Nuxt.js, Vue.js, WindiCSS.
+My personal portfolio and blog made with Nuxt.js, Vue.js, WindiCSS.
 
 # What it have?
 
@@ -15,6 +15,7 @@ My personal portfolio made with Nuxt.js, Vue.js, WindiCSS.
 
 - Nodejs 12.17.1 or higher version.
 - Yarn package manager (It not need but I prefer this.)
+
 ## Compiling Source Code
 
 ### First
@@ -26,6 +27,7 @@ Install packages with your preffered package manager
 Write these command CMD or Terminal
  - With Yarn: ```yarn```
  - With NPM: ```npm install```
+
 ### Third
 For running app on development server
 
@@ -45,4 +47,4 @@ and open [localhost:3000](http://localhost:3000) on your browser and your app is
 If you are want host on **paid or free services**. I recommend Vercel or Netlify. My app is hosted by [Vercel](https://vercel.com).
 
 # Special Thanks
-to [Eggsy](https://github.com/eggsy) and [Tarık Coşkun](https://github.com/tarikcoskun). I'm very inspired by them, and i used some of their code.
+to [Eggsy](https://github.com/eggsy), [Ven](https://ven.earth) and [Tarık Coşkun](https://github.com/tarikcoskun). I'm very inspired by them, and i used some of their code.
