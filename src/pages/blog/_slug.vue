@@ -6,15 +6,7 @@
     <h1 class="font-bold">Gönderi bulunamadı...</h1>
     <nuxt-link
       to="/blog"
-      class="
-        bg-gray-900 bg-opacity-30
-        rounded-md
-        p-4
-        flex
-        justify-center
-        text-xl
-        font-bold
-      "
+      class="bg-gray-900 bg-opacity-30 rounded-md p-4 flex justify-center text-xl font-bold"
       >Nası ya?</nuxt-link
     >
   </div>
@@ -32,15 +24,15 @@
           </div>
         </div>
       </div>
-      <div class="w-10/12 mt-4 bg-gray-900 bg-opacity-30 p-4 rounded">
+      <div class="w-full mt-4 bg-gray-900 bg-opacity-30 p-4 rounded">
         <h1 class="text-2xl font-bold">{{ post.title }}</h1>
         <p>{{ post.description }}</p>
       </div>
     </header>
-    <article class="w-10/12">
+    <article class="w-full">
       <nuxt-content :document="post" class="my-8" />
     </article>
-    <div class="w-10/12">
+    <div class="w-full">
       <Disqus
         shortname="345dev"
         :title="post.title"
@@ -181,6 +173,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
