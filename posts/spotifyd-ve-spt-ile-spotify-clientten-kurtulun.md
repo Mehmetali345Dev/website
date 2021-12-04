@@ -2,7 +2,7 @@
 title:  SpotifyD ve Spotify TUI ile Spotify Clientinden Kurtulun!
 description:  Spotify Client'inin hem çok kaynak harcamasından hem de kapalı kaynak olmasından bıktınız mı? Birde bunu deneyin!
 image:  https://miro.medium.com/max/1400/1*eSMLC7QAYGpBVTVrEdU9uA.png
-date:  2021-12-03
+date:  2021-12-04
 banner: https://repository-images.githubusercontent.com/202787876/9c461080-e9e9-11e9-9cf8-84e405f5f905
 ---
 
@@ -142,7 +142,7 @@ Enter'a bastıktan sonra artık oynatmaya hazır!
 
 ### Spotify TUI nasıl kullanılır?
 
-SPotify TUI tamamen tuş ile yönetilir. `?` tuşu ile hangi tuşlar kullanılabilir görebilirsiniz.
+Spotify TUI tamamen tuş ile yönetilir. `?` tuşu ile hangi tuşlar kullanılabilir görebilirsiniz.
 **Bazı Tuşlar:**
 - `d` oynatma cihazını seçer
 - `?` yardım menüsü açar
