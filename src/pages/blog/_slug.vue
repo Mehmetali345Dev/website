@@ -57,9 +57,9 @@
     </div>
     <div class="w-full mt-4" v-if="getTags.length > 0">
       <h1 class="text-2xl font-bold">Etiketler</h1>
-      <div class="flex flex-wrap space-x-3">
+      <div class="grid grid-cols-3 mt-2 gap-3">
         <div
-          class="bg-gray-900 rounded-md p-2 bg-opacity-30"
+          class="bg-gray-900 flex justify-center items-center rounded-md p-4 bg-opacity-30"
           v-for="{ tag, index } in getTags"
           :key="`tag-${index}`"
         >
