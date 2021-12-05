@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="w-full flex justify-center p-4 dark:(bg-gray-900 bg-opacity-30) bg-gray-300 bg-opacity-30"
-  >
+  <div class="w-full flex justify-center p-4">
     <div class="md:w-10/12 flex justify-between items-center">
       <a
         href="https://github.com/Mehmetali345Dev/website"
