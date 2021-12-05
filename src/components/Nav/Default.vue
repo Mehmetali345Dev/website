@@ -1,18 +1,9 @@
 <template>
   <div
-    class="
-      w-full
-      flex flex-col
-      bg-gray-200
-      dark:bg-black
-      bg-opacity-60
-      dark:bg-opacity-60
-      items-end
-      p-4
-    "
+    class="w-full flex flex-col bg-gray-200 dark:bg-black bg-opacity-60 dark:bg-opacity-60 items-end p-4"
   >
     <div class="w-full flex justify-center">
-      <div class="flex w-9/12 justify-between">
+      <div class="flex w-10/12 justify-between">
         <nuxt-link to="/">
           <div class="flex items-center">
             <nuxt-img
@@ -45,16 +36,7 @@
           <transition name="fade" mode="out-in">
             <div
               v-if="menu"
-              class="
-                bg-gray-900
-                absolute
-                top-10
-                bg-opacity-50
-                p-4
-                flex flex-col
-                items-end
-                rounded-md
-              "
+              class="bg-gray-900 absolute top-10 bg-opacity-50 p-4 flex flex-col items-end rounded-md"
             >
               <nuxt-link
                 v-for="(link, index) in links"
