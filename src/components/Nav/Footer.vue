@@ -1,14 +1,18 @@
 <template>
-  <div class='w-9/12 flex p-4 justify-between'>
-    <a href='https://github.com/Mehmetali345Dev/website' class='font-bold text-xl' target='_blank' rel='noreferrer noopener'>Bu website açık
-      kaynaklıdır.</a>
+  <div
+    class="w-full flex justify-center p-4 dark:(bg-gray-900 bg-opacity-30) bg-gray-300 bg-opacity-30"
+  >
+    <div class="w-9/12 flex justify-between items-center">
+      <a
+        href="https://github.com/Mehmetali345Dev/website"
+        class="font-bold text-xl"
+        target="_blank"
+        rel="noreferrer noopener"
+        >Bu website açık kaynaklıdır.</a
+      >
+      <WidgetContact />
+    </div>
   </div>
 </template>
 
-<script>
-export default {}
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

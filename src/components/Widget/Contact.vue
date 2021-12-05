@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1 class="font-bold text-xl">Contact Me</h1>
+    <h1 v-if="!$route.path.includes('blog')" class="font-bold text-xl">
+      Contact Me
+    </h1>
     <div class="flex space-x-3">
       <a
         v-for="(links, index) in getLinks"
@@ -19,8 +21,8 @@
       </a>
     </div>
     <a
+      v-if="!$route.path.includes('blog')"
       class="font-bold text-lg"
-  
       target="_blank"
       href="https://github.com/mehmetali345dev/website"
       >Also this website is open source!</a
