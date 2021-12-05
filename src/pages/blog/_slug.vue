@@ -43,7 +43,7 @@
         class="w-full"
       />
     </div>
-    <div class="w-10/12 mt-4" v-if="related.length > 0">
+    <div class="w-full mt-4" v-if="related.length > 0">
       <h1 class="text-2xl font-bold">Benzer Gönderiler</h1>
       <div class="grid grid-cols-2">
         <CardPost
@@ -55,16 +55,29 @@
         />
       </div>
     </div>
+    <div class="w-full mt-4" v-if="getTags.length > 0">
+      <h1 class="text-2xl font-bold">Etiketler</h1>
+      <div class="flex flex-wrap space-x-3">
+        <div
+          class="bg-gray-900 rounded-md p-2 bg-opacity-30"
+          v-for="{ tag, index } in getTags"
+          :key="`tag-${index}`"
+        >
+          {{ tag }}
+        </div>
+      </div>
+    </div>
+    <client-only><VueScrollProgressBar /></client-only>
   </div>
 </template>
 
 <script>
 import { Disqus } from 'vue-disqus'
+import { VueScrollProgressBar } from '@guillaumebriday/vue-scroll-progress-bar'
 export default {
-  components: { Disqus },
+  components: { Disqus, VueScrollProgressBar },
   data() {
     return {
-      comments: false,
       post: {},
       related: [],
     }
@@ -90,6 +103,8 @@ export default {
       this.post?.description || 'Bu yazıyı okumaya davet edildin..'
     const image = this.getPostImage || false
     const href = `https://345dev.me${this.$route?.path}`
+    const tags = this.getTags.join(', ') || title
+
     const object = {
       title,
       meta: [
@@ -101,7 +116,7 @@ export default {
         {
           hid: 'keywords',
           name: 'keywords',
-          content: `mehmetali345, mehmetali345 blog, blog, teknoloji, vue, yazılım, discord, mehmetali_345, gönderi`,
+          content: `${tags}, mehmetali345dev, blog, linux, 345dev, vue, nuxt`,
         },
         // Open-Graph
         {
@@ -168,6 +183,11 @@ export default {
       else if (diff >= 30 && diff <= 90)
         return `${Math.floor(diff / 30)} ay önce`
       else return createdAt.format('DD/MM/YYYY')
+    },
+  },
+  computed: {
+    getTags() {
+      return this.post?.tags || []
     },
   },
 }

@@ -3,6 +3,13 @@ title:  SpotifyD ve Spotify TUI ile Spotify Clientinden Kurtulun!
 description:  Spotify Client'inin hem çok kaynak harcamasından hem de kapalı kaynak olmasından bıktınız mı? Birde bunu deneyin!
 image:  https://miro.medium.com/max/1400/1*eSMLC7QAYGpBVTVrEdU9uA.png
 date:  2021-12-04
+tags:
+    - gnu/linux
+    - spotify
+    - spotifyd
+    - spotify-tui
+    - spt
+    - macOS
 banner: https://repository-images.githubusercontent.com/202787876/9c461080-e9e9-11e9-9cf8-84e405f5f905
 ---
 
