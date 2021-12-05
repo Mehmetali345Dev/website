@@ -16,10 +16,10 @@ $gray-900: rgb(17, 24, 39);
 
 .dark #disqus_thread {
   a {
-    color: white;
+    color: $gray-200;
 
     &:hover {
-      color: $gray-200;
+      color: white;
     }
   }
 }
