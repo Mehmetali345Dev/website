@@ -92,9 +92,8 @@ export default {
       ?.sort((a, b) => b?.stargazers_count - a?.stargazers_count)
   },
   head() {
-    const title = 'My projects'
-    const description =
-      'You can see my projects, works and repos from here.'
+    const title = 'Projects'
+    const description = 'You can see my projects, works and repos from here.'
     const href = `https://345dev.me/projects`
     const object = {
       title,

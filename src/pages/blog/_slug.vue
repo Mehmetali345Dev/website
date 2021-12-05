@@ -85,7 +85,7 @@ export default {
     }
   },
   head() {
-    const title = this.post?.title
+    const title = `${this.post?.title} | Blog`
     const description =
       this.post?.description || 'Bu yazıyı okumaya davet edildin..'
     const image = this.getPostImage || false

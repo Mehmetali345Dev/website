@@ -2,7 +2,8 @@ const description =
   "My name is Mehmet Ali. I'm full stack developer and student from Turkey. I love Vue.js and Nuxt.js. Visit website and learn more about me."
 
 export default {
-  title: 'Mehmetali345Dev',
+  title: "Mehmetali345Dev",
+  titleTemplate: "%s - Mehmetali345Dev",
   meta: [
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },

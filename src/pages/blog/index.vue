@@ -59,7 +59,7 @@ export default {
   },
   computed: {},
   head() {
-    const title = 'Mehmetali345Dev - Blog'
+    const title = 'Blog'
     const description =
       "Mehmetali345Dev'in projelerini konuştuğu ve boş yaptığı blog sayfası."
     const href = `https://345dev.me/blog`

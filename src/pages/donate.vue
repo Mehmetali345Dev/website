@@ -10,16 +10,7 @@
     </div>
     <a
       href="https://repeatpay.ga/mehmetali345dev"
-      class="
-        flex
-        p-4
-        rounded-md
-        mt-2
-        items-center
-        font-bold
-        text-lg
-        bg-purple-500
-      "
+      class="flex p-4 rounded-md mt-2 items-center font-bold text-lg bg-purple-500"
       >Look my
       <img class="w-12 h-12" src="https://repeatpay.ga/icon.png" /> account</a
     >
@@ -28,15 +19,7 @@
       <div
         v-for="(account, index) in accounts"
         :key="`account-${index}`"
-        class="
-          font-bold
-          flex
-          items-center
-          bg-gray-900 bg-opacity-50
-          p-4
-          rounded-md
-          space-x-2
-        "
+        class="font-bold flex items-center bg-gray-900 bg-opacity-50 p-4 rounded-md space-x-2"
       >
         <img :src="account.image" class="w-24" alt="" />
         <div>
@@ -77,7 +60,7 @@ export default {
     }
   },
   head() {
-    const title = 'Support me'
+    const title = 'Donate'
     const description =
       'You can see my supporters from this page and you can support me.'
     const href = `https://345dev.me/donate`
