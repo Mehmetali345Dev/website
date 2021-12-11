@@ -1,7 +1,7 @@
 ---
 title:  İlginç Cinayet (Kısa Hikaye)
 description:  Gelecekten gelen bir mesajı yanlış anlamak
-image: https://static.wikia.nocookie.net/istanbulkiyametvakti/images/5/59/Book-PNG-HD.png/revision/latest?cb=20171212205024&path-prefix=tr
+image: https://i.imgur.com/UvJa00a.png
 tags:
     - katil
     - hikaye
