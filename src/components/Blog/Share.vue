@@ -27,6 +27,7 @@
     </div>
     <div
       class="flex-grow flex items-center gap-2 rounded-lg bg-gray-900 ring-3 ring-green-600 text-lg bg-opacity-30"
+      v-tooltip="{ content: 'Kopyala!' }"
     >
       <input
         type="text"
@@ -36,7 +37,8 @@
         @click="copy()"
       />
       <div
-        class="p-4 rounded-r-lg bg-gray-900 bg-opacity-50 h-full flex items-center justify-center"
+        class="p-4 rounded-r-lg bg-gray-900 bg-opacity-30 h-full flex items-center justify-center"
+        @click="copy()"
       >
         <transition v-if="copied" name="fade" mode="out-in">
           <IconCheck class="text-green-600 h-7 w-7" />
