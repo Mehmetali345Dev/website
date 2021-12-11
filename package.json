@@ -1,7 +1,27 @@
 {
-  "name": "website",
-  "version": "1.0.0",
-  "private": true,
+  "name": "345dev.me",
+  "version": "4.0.0",
+  "license": "MIT",
+  "homepage": "https://345dev.me",
+  "author": {
+    "name": "Mehmet Ali Külahçı",
+    "email": "345m.ali2007@gmail.com",
+    "url": "https://345dev.me"
+  },
+  "bugs": {
+    "email": "345m.ali2007@gmail.com",
+    "url": "https://github.com/mehmetali345dev/website/issues"
+  },
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://345dev.me/donate"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/mehmetali345"
+    }
+  ],
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
