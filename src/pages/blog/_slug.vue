@@ -56,8 +56,12 @@
       </div>
     </div>
     <div class="w-full mt-4" v-if="getTags.length > 0">
+      <h1 class="text-2xl font-bold">Paylaş</h1>
+      <BlogShare :path="$route.path" />
+    </div>
+    <div class="w-full mt-4" v-if="getTags.length > 0">
       <h1 class="text-2xl font-bold">Etiketler</h1>
-      <div class="grid grid-cols-3 mt-2 gap-3 md:flex md:space-x-3">
+      <div class="flex flex-wrap mt-2 gap-2">
         <div
           class="bg-gray-900 flex justify-center items-center rounded-md p-4 bg-opacity-30"
           v-for="(tag, index) in getTags"
