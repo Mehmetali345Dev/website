@@ -1,5 +1,5 @@
 <template>
-  <div class="flex p-4 flex-wrap justify-start sm:justify-between">
+  <div class="flex gap-4 flex-wrap justify-start sm:justify-between">
     <div class="flex gap-3">
       <button
         @click="share('https://api.whatsapp.com/send?text=')"
@@ -26,7 +26,7 @@
       </button>
     </div>
     <div
-      class="mt-2 md:(ml-4 mt-0) flex-grow flex items-center gap-2 rounded-lg bg-gray-900 ring-3 ring-green-600 text-lg bg-opacity-30"
+      class="flex-grow flex items-center gap-2 rounded-lg bg-gray-900 ring-3 ring-green-600 text-lg bg-opacity-30"
     >
       <input
         type="text"

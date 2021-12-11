@@ -57,7 +57,7 @@
     </div>
     <div class="w-full mt-4" id="share">
       <h1 class="text-2xl font-bold">Paylaş</h1>
-      <BlogShare :path="$route.path" />
+      <BlogShare class="mt-2" :path="$route.path" />
     </div>
     <div class="w-full mt-4" v-if="getTags.length > 0">
       <h1 class="text-2xl font-bold">Etiketler</h1>
