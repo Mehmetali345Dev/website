@@ -18,10 +18,17 @@
           :imageUrl="post.banner"
           class="h-60 rounded -mx-[4.25vw] md:-mx-0 filter dark:brightness-75"
         />
-        <div class="absolute -mx-[4.25vw] md:-mx-0 bottom-5 left-5">
-          <div class="bg-gray-900 bg-opacity-30 font-bold p-4 rounded">
+        <div
+          class="absolute flex gap-2 text-white -mx-[4.25vw] md:-mx-0 bottom-5 left-5"
+        >
+          <div class="bg-black bg-opacity-50 font-bold p-4 rounded">
             {{ getReadableDate(post.date) }}
           </div>
+          <nuxt-link
+            :to="post.slug + '#share'"
+            class="bg-green-600 rounded p-4 bg-opacity-50 font-bold"
+            >Paylaş</nuxt-link
+          >
         </div>
       </div>
       <div class="w-full mt-4 bg-gray-900 bg-opacity-30 p-4 rounded">
