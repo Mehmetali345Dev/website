@@ -26,7 +26,7 @@
       </button>
     </div>
     <div
-      class="flex-grow mt-2 md:mt-0 sm:ml-4 flex items-center gap-2 rounded-lg bg-gray-900 ring-3 ring-green-600 text-lg bg-opacity-30"
+      class="mt-2 md:(ml-4 mt-0) flex-grow flex items-center gap-2 rounded-lg bg-gray-900 ring-3 ring-green-600 text-lg bg-opacity-30"
     >
       <input
         type="text"
