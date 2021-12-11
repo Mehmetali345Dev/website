@@ -3,7 +3,7 @@
     <h1 v-if="!$route.path.includes('blog')" class="font-bold text-xl">
       Contact Me
     </h1>
-    <div class="flex space-x-3">
+    <div class="flex items-center space-x-3">
       <a
         v-for="(links, index) in getLinks"
         :key="`links-${index}`"
@@ -19,6 +19,7 @@
       >
         <IconAt class="h-8 w-8" />
       </a>
+      <BlogGoTop v-if="$route.path.includes('blog')" />
     </div>
     <a
       v-if="!$route.path.includes('blog')"
