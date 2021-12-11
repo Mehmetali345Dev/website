@@ -51,7 +51,7 @@ and open [localhost:3000](http://localhost:3000) on your browser and your app is
 If you are want host on **paid or free services**. I recommend Vercel or Netlify. My app is hosted by [Vercel](https://vercel.com).
 
 # To-do
-- [ ] Add share options to blog posts (WIP)
+- [x] Add share options to blog posts (WIP)
 - [ ] Add works
 - [ ] Custom error pages
 
