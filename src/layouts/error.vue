@@ -1,6 +1,6 @@
 <template>
   <div class="flex gap-2 items-center md:grid grid-cols-2 flex-col w-full">
-    <img :src="`https://http.cat/${getErrorMeta.title}`" />
+    <img :src="`https://http.cat/${error.statusCode}`" />
     <div
       class="
         p-4
