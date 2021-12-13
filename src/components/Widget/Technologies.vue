@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col">
     <h1 class="font-bold text-lg">Technologies I use</h1>
-    <div class="grid-cols-3 h-full my-2 grid gap-3">
+    <div class="h-full my-2 grid grid-cols-6  gap-3">
       <div
         v-for="(tech, index) in technologies"
         :key="`tech-${index}`"
@@ -43,7 +43,7 @@ export default {
         'Dotnet',
         'Github',
         'Figma',
-      ], // afk
+      ],
     }
   },
 }
