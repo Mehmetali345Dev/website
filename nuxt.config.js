@@ -21,7 +21,8 @@ export default {
     '@nuxtjs/color-mode',
     '@nuxtjs/moment',
     '@nuxt/image',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    'nuxt-compress'
   ],
   googleAnalytics: {
     id: 'UA-183921946-1'
