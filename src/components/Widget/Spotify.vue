@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="Object.keys(spotify).length === 0"
-    class="bg-green-500 w-full flex items-center animate-pulse p-4 rounded-md"
+    class="bg-green-500 w-full h-full flex items-center animate-pulse p-4 rounded-md"
   >
     <img class="w-16 h-16 rounded-md mr-4 bg-gray-900 outline-none" alt />
     <div class="flex flex-col justify-center space-y-3">
@@ -10,9 +10,11 @@
     </div>
   </div>
 
-  <div v-else-if="isPlaying" class="w-full">
-    <div class="bg-green-500 dark:bg-green-500 mt-2 bg-opacity-30 flex p-4 items-center rounded-md">
-      <div class="flex mt-2">
+  <div v-else-if="isPlaying" class="h-full w-full">
+    <div
+      class="bg-green-500 dark:bg-green-500 h-full bg-opacity-30 flex p-4 items-center rounded-md"
+    >
+      <div class="h-full items-center flex">
         <img
           class="w-16 h-16 rounded-md mr-4 bg-gray-900 outline-none"
           alt

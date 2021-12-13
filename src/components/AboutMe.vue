@@ -9,9 +9,9 @@
         </p>
       </div>
     </div>
-    <div class="flex flex-col md:flex-row gap-2 w-full">
+    <div class="flex flex-col md:(grid-cols-2 grid) gap-2 w-full">
       <WidgetDiscord />
-      <WidgetSpotify />
+      <WidgetSpotify class="h-full" />
     </div>
     <div class="grid md:grid-cols-3 gap-2">
       <nuxt-link
