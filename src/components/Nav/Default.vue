@@ -6,14 +6,8 @@
       <div class="flex w-10/12 justify-between">
         <nuxt-link to="/">
           <div class="flex items-center">
-            <nuxt-img
-              src="/icon.png"
-              format="webp"
-              class="w-10 h-10 rounded-md"
-            />
-            <h1 class="font-bold hidden sm:block text-2xl ml-4">
-              Mehmetali345Dev
-            </h1>
+            <nuxt-img src="/icon.png" format="webp" class="w-10 h-10 rounded-md" />
+            <h1 class="font-bold hidden sm:block text-2xl ml-4">Mehmetali345Dev</h1>
           </div>
         </nuxt-link>
 
@@ -23,32 +17,10 @@
             :key="`link-${index}`"
             class="text-lg font-bold"
             :to="link.to"
-            >{{ link.name }}</nuxt-link
-          >
+          >{{ link.name }}</nuxt-link>
           <Color />
         </div>
-        <div
-          class="flex flex-col md:hidden relative justify-center items-center"
-        >
-          <h1 class="font-bold cursor-pointer text-lg" @click="showMenu()">
-            Menu
-          </h1>
-          <transition name="fade" mode="out-in">
-            <div
-              v-if="menu"
-              class="bg-gray-900 absolute top-10 bg-opacity-50 p-4 flex flex-col items-end rounded-md"
-            >
-              <nuxt-link
-                v-for="(link, index) in links"
-                :key="`link-${index}`"
-                class="text-lg font-bold"
-                :to="link.to"
-                >{{ link.name }}</nuxt-link
-              >
-              <Color />
-            </div>
-          </transition>
-        </div>
+        <Color class="md:hidden" />
       </div>
     </div>
   </div>
@@ -58,7 +30,6 @@
 export default {
   data() {
     return {
-      menu: false,
       links: [
         {
           name: 'projects',
@@ -74,15 +45,6 @@ export default {
         },
       ],
     }
-  },
-  methods: {
-    showMenu() {
-      if (this.menu === false) {
-        this.menu = true
-      } else {
-        this.menu = false
-      }
-    },
   },
 }
 </script>

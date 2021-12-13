@@ -9,7 +9,7 @@
         </p>
       </div>
     </div>
-    <div class="flex flex-col gap-1 w-full">
+    <div class="flex flex-col md:flex-row gap-2 w-full">
       <WidgetDiscord />
       <WidgetSpotify />
     </div>
@@ -17,11 +17,11 @@
       <nuxt-link
         v-for="(link, index) in links"
         :key="`link-${index}`"
-        :to="link"
-        class="bg-gray-900 w-full gap-2 flex flex-col bg-opacity-30 p-4"
+        :to="link.to"
+        class="bg-gray-900 rounded-md w-full gap-2 flex flex-col bg-opacity-30 p-4"
       >
         <h1 class="text-xl font-bold">{{ link.name }}</h1>
-        <p class="text-lg text-gray-200">{{link.desc}}</p>
+        <p class="text-lg text-gray-800 dark:text-gray-200">{{ link.desc }}</p>
       </nuxt-link>
     </div>
   </header>

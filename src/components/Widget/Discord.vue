@@ -15,7 +15,7 @@
   </div>
 
   <div v-else class="w-full">
-    <div class="bg-gray-900 grid bg-opacity-30 flex p-4 rounded-md">
+    <div class="bg-gray-900 grid bg-opacity-30 flex gap-2 p-4 rounded-md">
       <div class="flex space-x-2 items-center">
         <img
           :src="`https://cdn.discordapp.com/avatars/404360912460578816/${this.lanyard.discord_user.avatar}`"
@@ -49,14 +49,14 @@
         </h1>
       </div>
 
-      <div v-else class="flex mt-2">
+      <div v-else class="flex gap-2">
         <img
-          class="w-16 h-16 relative rounded-md bg-gray-900 outline-none"
+          class="w-16 h-16 relative rounded-md md:flex hidden bg-gray-900 outline-none"
           alt=""
           :src="getStatusImage"
         />
 
-        <div class="flex flex-col space-y-1 ml-2 justify-center">
+        <div class="flex flex-col space-y-1 justify-center">
           <div
             class="text-sm font-bold leading-tight truncate"
           >
