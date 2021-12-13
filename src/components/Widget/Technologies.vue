@@ -32,6 +32,7 @@ export default {
     return {
       technologies: [
         'JavaScript',
+        'TypeScript',
         'C#',
         'Python',
         'Vue.js',
@@ -40,6 +41,7 @@ export default {
         'Firebase',
         'Node.js',
         'Sass',
+        'Docker',
         'Dotnet',
         'Github',
         'Figma',
