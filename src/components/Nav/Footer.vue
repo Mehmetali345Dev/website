@@ -6,11 +6,25 @@
         class="font-bold text-xl"
         target="_blank"
         rel="noreferrer noopener"
-        >Bu website açık kaynaklıdır.</a
-      >
-      <WidgetContact />
+      >{{getText}}</a>
+      <Contact />
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    getText() {
+      if (!this.$route.path.includes('blog')){
+        return "This website is open source on Github";
+
+      } else {
+        return "Bu website Github üzerinde açık kaynaklıdır";
+      }
+    }
+  }
+}
+</script>
 
 <style scoped></style>

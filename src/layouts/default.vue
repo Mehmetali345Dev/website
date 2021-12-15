@@ -13,7 +13,6 @@
     </div>
     <NavFooter
       class="dark:(bg-gray-900 bg-opacity-30) bg-gray-300 bg-opacity-30"
-      v-if="$route.path.includes('blog')"
     />
     <div class="bg-green-600 h-2 w-full" />
   </div>

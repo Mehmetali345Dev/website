@@ -1,8 +1,5 @@
 <template>
   <div>
-    <h1 v-if="!$route.path.includes('blog')" class="font-bold text-xl">
-      Contact Me
-    </h1>
     <div class="flex items-center space-x-3">
       <a
         v-for="(links, index) in getLinks"
@@ -13,21 +10,11 @@
       >
         <IconBrand :name="links.icon" class="dark:text-white h-8 w-8" />
       </a>
-      <a
-        title="Send me an e-mail!"
-        :href="isLoaded ? `${$config.links.mail}` : false"
-      >
+      <a title="Send me an e-mail!" :href="isLoaded ? `${$config.links.mail}` : false">
         <IconAt class="h-8 w-8" />
       </a>
       <BlogGoTop v-if="$route.path.includes('blog')" />
     </div>
-    <a
-      v-if="!$route.path.includes('blog')"
-      class="font-bold text-lg"
-      target="_blank"
-      href="https://github.com/mehmetali345dev/website"
-      >Also this website is open source!</a
-    >
   </div>
 </template>
 
