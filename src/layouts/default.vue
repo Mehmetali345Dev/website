@@ -2,6 +2,8 @@
   <div
     class="flex min-h-screen flex-col items-center bg-gray-200 scrollbar text-black dark:(bg-black text-gray-50)"
   >
+    <div class="bg-green-600 h-2 w-full" />
+
     <transition name="fade" mode="out-in">
       <NavDefault class="sticky top-0 z-40" />
     </transition>
@@ -11,9 +13,7 @@
     >
       <Nuxt class="flex-grow" />
     </div>
-    <NavFooter
-      class="dark:(bg-gray-900 bg-opacity-30) bg-gray-300 bg-opacity-30"
-    />
+    <NavFooter />
     <div class="bg-green-600 h-2 w-full" />
   </div>
 </template>
