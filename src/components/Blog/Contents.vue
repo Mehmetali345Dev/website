@@ -18,8 +18,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .list::marker {
-    @apply bg-green-600;
+    @apply text-green-600;
 }
 </style>
