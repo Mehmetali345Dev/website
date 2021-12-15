@@ -1,12 +1,14 @@
 <template>
   <div class="w-full flex justify-center p-4">
-    <div class="md:w-9/12 flex justify-between items-center">
+    <div
+      class="md:w-9/12 flex flex-col md:flex-row justify-between items-start gap-2 md:items-center"
+    >
       <a
         href="https://github.com/Mehmetali345Dev/website"
         class="font-bold text-xl"
         target="_blank"
         rel="noreferrer noopener"
-      >{{getText}}</a>
+      >{{ getText }}</a>
       <Contact />
     </div>
   </div>
@@ -16,7 +18,7 @@
 export default {
   computed: {
     getText() {
-      if (!this.$route.path.includes('blog')){
+      if (!this.$route.path.includes('blog')) {
         return "This website is open source on Github";
 
       } else {

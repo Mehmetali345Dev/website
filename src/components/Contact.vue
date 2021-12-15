@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex items-center space-x-3">
+    <div class="flex items-center md:justify-start w-full justify-between gap-2">
       <a
         v-for="(links, index) in getLinks"
         :key="`links-${index}`"
