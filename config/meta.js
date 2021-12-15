@@ -67,7 +67,7 @@ export default {
     {
       hid: 'og:image',
       name: 'og:image',
-      content: 'https://345dev.me/icon.png',
+      content: 'https://345dev.me/banner.png',
     },
     /* Others */
     {
