@@ -16,7 +16,7 @@
         <Skeleton
           type="image"
           :imageUrl="post.banner"
-          class="h-60 rounded -mx-[4.25vw] md:-mx-0 filter dark:brightness-75"
+          class="h-60 rounded md:w-full -mx-[4.25vw] md:-mx-0 filter dark:brightness-75"
         />
         <div
           class="absolute flex gap-2 text-white -mx-[4.25vw] md:-mx-0 bottom-5 left-5"
@@ -35,6 +35,7 @@
         <h1 class="text-2xl font-bold">{{ post.title }}</h1>
         <p>{{ post.description }}</p>
       </div>
+      <BlogContents class="mt-2" :contents="post.toc"/>
     </header>
     <article class="w-full">
       <nuxt-content :document="post" class="my-8" />
