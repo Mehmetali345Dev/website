@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="flex flex-col md:(grid-cols-2 grid) gap-2 w-full">
-      <WidgetDiscord />
+      <WidgetDiscord  />
       <WidgetSpotify class="h-full" />
     </div>
     <div class="grid md:grid-cols-3 gap-2">

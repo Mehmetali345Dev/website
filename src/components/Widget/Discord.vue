@@ -7,68 +7,54 @@
     "
     class="bg-gray-900 bg-opacity-30 w-full flex animate-pulse p-4 rounded-md"
   >
-    <img class="w-16 h-16 rounded-md mr-4 bg-gray-900 outline-none" alt="" />
+    <img class="w-16 h-16 rounded-md mr-4 bg-gray-900 outline-none" alt />
     <div class="flex flex-col justify-center space-y-3">
       <h1 class="h-4 w-16 bg-gray-900"></h1>
       <h1 class="h-4 w-28 bg-gray-900"></h1>
     </div>
   </div>
 
-  <div v-else class="w-full">
-    <div class="bg-gray-900 grid bg-opacity-30 flex gap-2 p-4 rounded-md">
+  <div v-else class="w-full h-full">
+    <div class="bg-gray-900 bg-opacity-30 h-full flex flex-col justify-center gap-2 p-4 rounded-md">
       <div class="flex space-x-2 items-center">
         <img
           :src="`https://cdn.discordapp.com/avatars/404360912460578816/${this.lanyard.discord_user.avatar}`"
           class="w-9 h-9 rounded-full"
-          alt=""
+          alt
           v-tooltip="'Its me MARIO!'"
         />
-        <div
-          :class="`h-3 w-3 rounded-full flex-shrink-0 ${getDiscordStatus}`"
-        />
+        <div :class="`h-3 w-3 rounded-full flex-shrink-0 ${getDiscordStatus}`" />
         <h1 class="font-bold">
           {{
             this.lanyard.discord_user.username +
-            '#' +
-            this.lanyard.discord_user.discriminator
+              '#' +
+              this.lanyard.discord_user.discriminator
           }}
         </h1>
       </div>
+
       <div
         v-if="
           Object.keys(
-            this.lanyard.activities.filter((activity) => activity.type === 0)
-          ).length === 0
+            lanyard.activities.filter((activity) => activity.type === 0)
+          ).length !== 0
         "
+        class="flex gap-2"
       >
-        <h1
-          v-if="!this.lanyard.listening_to_spotify"
-          class="font-bold text-sm mt-2 leading-tight truncate"
-        >
-          I'm not doing anything
-        </h1>
-      </div>
-
-      <div v-else class="flex gap-2">
         <img
           class="w-16 h-16 relative rounded-md md:flex hidden bg-gray-900 outline-none"
-          alt=""
+          alt
           :src="getStatusImage"
         />
 
         <div class="flex flex-col space-y-1 justify-center">
-          <div
-            class="text-sm font-bold leading-tight truncate"
-          >
-            {{ getStatusDetails.name }}
-          </div>
-          <div class="text-sm leading-tight truncate">
-            {{ getStatusDetails.details }}
-          </div>
-          <div class="text-sm leading-tight truncate">
-            {{ getStatusDetails.state }}
-          </div>
+          <div class="text-sm font-bold leading-tight truncate">{{ getStatusDetails.name }}</div>
+          <div class="text-sm leading-tight truncate">{{ getStatusDetails.details }}</div>
+          <div class="text-sm leading-tight truncate">{{ getStatusDetails.state }}</div>
         </div>
+      </div>
+      <div v-else>
+        <h1 class="font-bold text-sm leading-tight truncate">I'm not doing anything</h1>
       </div>
     </div>
   </div>
