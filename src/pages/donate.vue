@@ -19,7 +19,7 @@
       <div
         v-for="(account, index) in accounts"
         :key="`account-${index}`"
-        class="font-bold flex items-center bg-gray-900 bg-opacity-50 p-4 rounded-md space-x-2"
+        class="font-bold flex items-center bg-gray-900 bg-opacity-40 p-4 rounded-md space-x-2"
       >
         <img :src="account.image" class="w-24" alt="" />
         <div>
