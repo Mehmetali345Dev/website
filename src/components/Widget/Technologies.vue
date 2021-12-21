@@ -5,7 +5,7 @@
       <div
         v-for="(tech, index) in technologies"
         :key="`tech-${index}`"
-        class="bg-gray-900 rounded-md bg-opacity-30 flex items-center justify-between p-2"
+        class="bg-gray-900 rounded-md bg-opacity-30 flex items-center justify-between p-4"
       >
         <IconBrand :name="tech" class="w-10 h-10" />
         <h1 class="bold">{{ tech }}</h1>

@@ -14,9 +14,9 @@
     <div
       class="bg-green-500 dark:bg-green-500 h-full bg-opacity-30 flex p-4 items-center rounded-md"
     >
-      <div class="h-full items-center flex">
+      <a :href="this.spotify.url" title="View song on LastFM" target="_blank"  class="h-full items-center flex">
         <img
-          class="w-16 h-16 rounded-md mr-4 bg-gray-900 outline-none"
+          class="w-20 h-20 rounded-md md:flex hidden mr-4 bg-gray-900 outline-none"
           alt
           :src="this.spotify.image[1]['#text']"
         />
@@ -25,8 +25,11 @@
           <div
             class="text-sm leading-tight truncate-ellipsis"
           >{{ 'by ' + this.spotify.artist['#text'] }}</div>
+          <div
+            class="text-sm leading-tight truncate-ellipsis"
+          >{{ 'from ' + this.spotify.album['#text'] }}</div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
   <div v-else class="w-full bg-gray-900 bg-opacity-30 items-center flex p-4 rounded-md">

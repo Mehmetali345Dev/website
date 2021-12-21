@@ -66,8 +66,8 @@ export default {
           link: 'https://repeatpay.ga',
         },
         {
-          title: 'mehmetali345.xyz',
-          image: 'https://mehmetali345.xyz/icon.png',
+          title: 'This website',
+          image: 'https://345dev.me/icon.png',
           description: 'My personal portfolio made by NuxtJS and WindiCSS',
           link: '/',
         },
