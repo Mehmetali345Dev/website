@@ -39,6 +39,7 @@ export default {
       search: '',
     }
   },
+  fetchOnServer: false,
   async fetch() {
     const ref = this.$fire.firestore.collection('dictionary')
 

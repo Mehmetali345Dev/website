@@ -56,7 +56,7 @@ export default {
         {
           name: 'Dictionary',
           to: '/dictionary',
-          desc: "A dictionary for awkward Turkish words (Coming Soon...)."
+          desc: "A dictionary for awkward Turkish words."
         },
         {
           name: 'Utils',
