@@ -1,5 +1,3 @@
 export default {
-  lastfm: {
-    apikey: process.env.LASTFM_APIKEY,
-  },
+  lastfm: process.env.LASTFM_APIKEY,
 }

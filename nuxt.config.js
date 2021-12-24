@@ -2,6 +2,7 @@ import head from './config/meta'
 import sitemap from './config/sitemap'
 import publicRuntimeConfig from './config/publicRuntimeConfig'
 import privateRuntimeConfig from './config/privateRuntimeConfig'
+import firebase from './config/firebase'
 
 export default {
   rootDir: './',
@@ -22,11 +23,11 @@ export default {
     '@nuxtjs/moment',
     '@nuxt/image',
     '@nuxtjs/google-analytics',
-    'nuxt-compress'
+    'nuxt-compress',
   ],
   googleAnalytics: {
-    id: 'UA-183921946-1'
-},
+    id: 'UA-183921946-1',
+  },
 
   modules: [
     'nuxt-webfontloader',
@@ -36,13 +37,17 @@ export default {
     '@nuxt/content',
     '@nuxtjs/robots',
     ['@nuxtjs/sitemap', sitemap],
+    ['@nuxtjs/firebase', firebase]
   ],
 
   // Loads all of css files from one rootscss file
   css: ['~/stylesheets/root.scss'],
 
   // Imports Animate-on-scroll and v-tooltip plugin
-  plugins: ['@/plugins/aos.client.js', '@plugins/v-tooltip.client.js'],
+  plugins: [
+    '@/plugins/aos.client.js',
+    '@/plugins/v-tooltip.client.js',
+  ],
 
   // Configuration for modules
 
@@ -65,14 +70,14 @@ export default {
 
     markdown: {
       prism: {
-        theme: "prism-themes/themes/prism-holi-theme.css",
-      },     
+        theme: 'prism-themes/themes/prism-holi-theme.css',
+      },
     },
   },
 
-  webfontloader:{
-    google:{
-      families: ['JetBrains Mono:400,700']
-    }
-  }
+  webfontloader: {
+    google: {
+      families: ['JetBrains Mono:400,700'],
+    },
+  },
 }
