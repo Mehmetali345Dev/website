@@ -22,11 +22,11 @@ export default {
     '@nuxtjs/moment',
     '@nuxt/image',
     '@nuxtjs/google-analytics',
-    'nuxt-compress'
+    'nuxt-compress',
   ],
   googleAnalytics: {
-    id: 'UA-183921946-1'
-},
+    id: 'UA-183921946-1',
+  },
 
   modules: [
     'nuxt-webfontloader',
@@ -42,7 +42,11 @@ export default {
   css: ['~/stylesheets/root.scss'],
 
   // Imports Animate-on-scroll and v-tooltip plugin
-  plugins: ['@/plugins/aos.client.js', '@plugins/v-tooltip.client.js'],
+  plugins: [
+    '@/plugins/aos.client.js',
+    '@/plugins/v-tooltip.client.js',
+    '@/plugins/firebase.js',
+  ],
 
   // Configuration for modules
 
@@ -65,14 +69,14 @@ export default {
 
     markdown: {
       prism: {
-        theme: "prism-themes/themes/prism-holi-theme.css",
-      },     
+        theme: 'prism-themes/themes/prism-holi-theme.css',
+      },
     },
   },
 
-  webfontloader:{
-    google:{
-      families: ['JetBrains Mono:400,700']
-    }
-  }
+  webfontloader: {
+    google: {
+      families: ['JetBrains Mono:400,700'],
+    },
+  },
 }
