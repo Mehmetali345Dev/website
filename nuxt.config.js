@@ -2,6 +2,7 @@ import head from './config/meta'
 import sitemap from './config/sitemap'
 import publicRuntimeConfig from './config/publicRuntimeConfig'
 import privateRuntimeConfig from './config/privateRuntimeConfig'
+import firebase from './config/firebase'
 
 export default {
   rootDir: './',
@@ -36,6 +37,7 @@ export default {
     '@nuxt/content',
     '@nuxtjs/robots',
     ['@nuxtjs/sitemap', sitemap],
+    ['@nuxtjs/firebase', firebase]
   ],
 
   // Loads all of css files from one rootscss file
@@ -45,7 +47,6 @@ export default {
   plugins: [
     '@/plugins/aos.client.js',
     '@/plugins/v-tooltip.client.js',
-    '@/plugins/firebase.js',
   ],
 
   // Configuration for modules
