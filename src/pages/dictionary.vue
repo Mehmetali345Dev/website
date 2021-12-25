@@ -9,19 +9,11 @@
       <Skeleton type="word" v-for="index in 6" :key="index" />
     </div>
     <div v-else class="w-full grid md:grid-cols-3 gap-3">
-      <div
-        class="bg-gray-900 p-4 rounded-md w-full flex flex-col gap-2 bg-opacity-30"
+      <CardWord
         v-for="(item, index) in items"
         :key="`items-${index}`"
-      >
-        <h1 class="font-bold text-lg rounded-md bg-opacity-30">
-          {{ item.turkish }}
-        </h1>
-        <p>{{ item.exp }}</p>
-        <p class="gap-2 flex items-center">
-          <IconCalendar class="h-6 w-6" />{{ getDate(item.date) }}
-        </p>
-      </div>
+        :word="item"
+      />
     </div>
   </div>
 </template>
@@ -52,11 +44,6 @@ export default {
       })
 
     this.items = allwords
-  },
-  methods: {
-    getDate(date) {
-      return this.$moment(date).format('YYYY/MM/DD')
-    },
   },
   head() {
     const title = 'Dictionary'
