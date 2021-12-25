@@ -16,7 +16,7 @@ My personal portfolio and blog made with Nuxt.js, Vue.js, WindiCSS.
     - Skeleton loaders, cards etc.
 - Static blog
     - Comments with Disqus
-    - Blog posts wrote with Markdown
+    - Write blog posts with markdown!
 - Real-world apps
     - Firebase integration!
     - Turkish Dictionary for awkward words (Firestore)
