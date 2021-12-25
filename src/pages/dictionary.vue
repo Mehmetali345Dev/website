@@ -55,5 +55,68 @@ export default {
       return this.$moment(date).format('YYYY/MM/DD')
     },
   },
+  head() {
+    const title = 'Dictionary'
+    const description =
+      'This is an dictionary for awkward Turkish words. Made with Firebase.'
+    const href = `https://345dev.me/dictionary`
+    const object = {
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: description,
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: `turkish, english, words, dictionary, firebase, mehmetali345, mehmetali345 blog, blog, teknoloji, vue, yazılım, discord, mehmetali_345, gönderi`,
+        },
+        // Open-Graph
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: title,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: href,
+        },
+        // Twitter
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: title,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: description,
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: 'https://345dev.me/banners/dictionary.png',
+        },
+      ].map((i) => {
+        if (i.name && !i.property) i.property = i.name
+        return i
+      }),
+      link: [
+        {
+          rel: 'canonical',
+          href,
+        },
+      ],
+    }
+    return object
+  },
 }
 </script>
