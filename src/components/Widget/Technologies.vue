@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col">
     <h1 class="font-bold text-lg">Technologies I use</h1>
-    <div class="h-full my-2 grid sm:grid-cols-4 gap-3">
+    <div class="h-full my-2 grid sm:grid-cols-2 md:grid-cols-4 gap-3">
       <div
         v-for="(tech, index) in technologies"
         :key="`tech-${index}`"

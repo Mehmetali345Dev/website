@@ -21,7 +21,7 @@
         :to="link.to"
         class="bg-gray-900 rounded-md w-full gap-2 flex flex-col bg-opacity-30 p-4"
       >
-        <h1 class="text-xl font-bold">{{ link.name }}</h1>
+        <h1 class="text-xl font-bold truncate">{{ link.name }}</h1>
         <p class="text-lg text-gray-800 dark:text-gray-200 line-clamp-2">{{ link.desc }}</p>
       </nuxt-link>
     </div>

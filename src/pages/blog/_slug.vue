@@ -21,7 +21,10 @@
         <div
           class="absolute flex gap-2 text-white -mx-[4.25vw] md:-mx-0 bottom-5 left-5"
         >
-          <div class="bg-black bg-opacity-50 font-bold p-4 rounded">
+          <div
+            class="bg-black bg-opacity-50 font-bold p-4 flex gap-2 items-center rounded"
+          >
+            <IconCalendar class="h-6 w-6" />
             {{ getReadableDate(post.date) }}
           </div>
           <nuxt-link
@@ -35,7 +38,7 @@
         <h1 class="text-2xl font-bold">{{ post.title }}</h1>
         <p>{{ post.description }}</p>
       </div>
-      <BlogContents class="mt-2" :contents="post.toc"/>
+      <BlogContents class="mt-2" :contents="post.toc" />
     </header>
     <article class="w-full">
       <nuxt-content :document="post" class="my-8" />

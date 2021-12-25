@@ -24,7 +24,7 @@
           v-tooltip="'Its me MARIO!'"
         />
         <div :class="`h-3 w-3 rounded-full flex-shrink-0 ${getDiscordStatus}`" />
-        <h1 class="font-bold">
+        <h1 class="font-bold truncate">
           {{
             this.lanyard.discord_user.username +
               '#' +

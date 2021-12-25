@@ -68,7 +68,7 @@ export default {
         {
           title: 'This website',
           image: 'https://345dev.me/icon.png',
-          description: 'My personal portfolio made by NuxtJS and WindiCSS',
+          description: 'My personal portfolio made with NuxtJS and WindiCSS',
           link: '/',
         },
       ],

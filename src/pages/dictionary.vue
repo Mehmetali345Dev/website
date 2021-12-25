@@ -4,17 +4,6 @@
       <p>
         This is an dictionary for awkward Turkish words. Made with Firebase.
       </p>
-      <div class="flex gap-2">
-        <input
-          class="p-4 w-full rounded-md focus:outline-none bg-gray-900 bg-opacity-30 dark:text-white"
-          type="text"
-          placeholder="Search an Word!"
-          v-model="search"
-        />
-        <button class="bg-green-600 p-4 rounded-md" @click="getSearch()">
-          Search!
-        </button>
-      </div>
     </header>
     <div class="w-full grid md:grid-cols-3 gap-3">
       <div
@@ -26,6 +15,9 @@
           {{ item.turkish }}
         </h1>
         <p>{{ item.exp }}</p>
+        <p class="gap-2 flex items-center">
+          <IconCalendar class="h-6 w-6" />{{ getDate(item.date) }}
+        </p>
       </div>
     </div>
   </div>
@@ -59,37 +51,8 @@ export default {
     this.items = allwords
   },
   methods: {
-    async getSearch() {
-      const ref = this.$fire.firestore.collection('dictionary')
-
-      const searchedwords = []
-
-      if (this.search == '') {
-        await ref
-          .get()
-          .then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-              searchedwords.push(doc.data())
-            })
-          })
-          .catch((err) => {
-            alert(err.message)
-          })
-      } else {
-        await ref
-          .where('turkish', '==', this.search)
-          .get()
-          .then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-              searchedwords.push(doc.data())
-            })
-          })
-          .catch((err) => {
-            alert(err.message)
-          })
-
-        this.items = searchedwords
-      }
+    getDate(date) {
+      return this.$moment(date).format('YYYY/MM/DD')
     },
   },
 }
