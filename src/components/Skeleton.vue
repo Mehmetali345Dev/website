@@ -2,14 +2,7 @@
   <!-- Repository Card -->
   <div
     v-if="type === 'repository'"
-    class="
-      p-4
-      space-y-1
-      animate-pulse
-      rounded-md
-      ring-1 ring-gray-900
-      bg-gray-900 bg-opacity-30
-    "
+    class="p-4 space-y-1 animate-pulse rounded-md ring-1 ring-gray-900 bg-gray-900 bg-opacity-30"
   >
     <div class="flex items-center justify-between">
       <div
@@ -72,30 +65,10 @@
   <!-- Song Card -->
   <div
     v-else-if="type === 'song'"
-    class="
-      flex
-      items-center
-      px-4
-      py-2
-      space-x-2
-      bg-gray-100
-      rounded-md
-      cursor-pointer
-      select-none
-      ring-1 ring-gray-200
-      dark:ring-gray-800 dark:bg-gray-800
-    "
+    class="flex items-center px-4 py-2 space-x-2 bg-gray-100 rounded-md cursor-pointer select-none ring-1 ring-gray-200 dark:ring-gray-800 dark:bg-gray-800"
   >
     <div
-      class="
-        flex-shrink-0
-        w-16
-        h-16
-        bg-gray-200
-        rounded-md
-        animate-pulse
-        dark:bg-gray-700
-      "
+      class="flex-shrink-0 w-16 h-16 bg-gray-200 rounded-md animate-pulse dark:bg-gray-700"
     />
 
     <div class="flex-grow space-y-1">
@@ -114,6 +87,16 @@
     v-else-if="type === 'block'"
     class="bg-gray-100 rounded dark:bg-gray-800 animate-pulse"
   />
+  <div
+    v-else-if="type === 'word'"
+    class="bg-gray-900 p-4 rounded-md w-full flex flex-col gap-2 animate-pulse bg-opacity-30"
+  >
+    <h1
+      class="font-bold w-full h-6 text-lg rounded-md bg-gray-800 bg-opacity-30"
+    ></h1>
+    <p class="h-16 w-full bg-gray-800 bg-opacity-30"></p>
+    <p class="gap-2 w-24 h-3 bg-gray-800 bg-opacity-30 flex items-center"></p>
+  </div>
 </template>
 
 <script>

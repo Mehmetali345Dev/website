@@ -5,7 +5,10 @@
         This is an dictionary for awkward Turkish words. Made with Firebase.
       </p>
     </header>
-    <div class="w-full grid md:grid-cols-3 gap-3">
+    <div v-if="$fetchState.pending" class="w-full grid md:grid-cols-3 gap-3">
+      <Skeleton type="word" v-for="index in 6" :key="index" />
+    </div>
+    <div v-else class="w-full grid md:grid-cols-3 gap-3">
       <div
         class="bg-gray-900 p-4 rounded-md w-full flex flex-col gap-2 bg-opacity-30"
         v-for="(item, index) in items"
