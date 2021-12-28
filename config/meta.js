@@ -1,5 +1,5 @@
 const description =
-  "My name is Mehmet Ali. I'm full stack developer and student from Turkey. I love Vue.js and Nuxt.js. Visit website and learn more about me."
+  "My name is Mehmet Ali. I'm full stack developer and student from Turkey. Visit website and learn more about me."
 
 export default {
   title: "Mehmetali345Dev",
