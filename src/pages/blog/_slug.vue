@@ -38,7 +38,7 @@
         <h1 class="text-2xl font-bold">{{ post.title }}</h1>
         <p>{{ post.description }}</p>
       </div>
-      <BlogContents class="mt-2" :contents="post.toc" />
+      <BlogContents class="mt-2" v-if="post.toc.length > 0" :contents="post.toc" />
     </header>
     <article class="w-full">
       <nuxt-content :document="post" class="my-8" />
