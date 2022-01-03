@@ -2003,7 +2003,7 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
-"@popperjs/core@^2.10.2":
+"@popperjs/core@^2.11.0":
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.0.tgz#6734f8ebc106a0860dff7f92bf90df193f0935d7"
   integrity sha512-zrsUxjLOKAzdewIDRWy9nsV1GQsKBCWaGwsZQlCgr6/q+vjyZhFgqedLfFBuI9anTPEUT4APq9Mu0SZBTzIcGQ==
@@ -10898,12 +10898,12 @@ uuid@^8.0.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
-v-tooltip@^3.0.0-beta.1:
-  version "3.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/v-tooltip/-/v-tooltip-3.0.0-beta.1.tgz#114784cf003c8fa04a740eb27a6ea53450602288"
-  integrity sha512-sItlARqYRsTePth1OniRsvxp0jfbxYTbiJobrgHV+WnevR5Tm+V4vmW1FdYKCTENxjmCUbfTQUvpjuEblnS+vw==
+v-tooltip@^3.0.0-beta.3:
+  version "3.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/v-tooltip/-/v-tooltip-3.0.0-beta.3.tgz#f20c59aefb30250436ac7a56f931b4a0fd6f754b"
+  integrity sha512-lj4jpmp9qlXaUD9zJxXe0yzFv7eJr3nSFTooru6Ko3iKUydF+qhpbWcWKqZ/1VNJdlpcIPf9K3OsU4SiF6+0Bw==
   dependencies:
-    "@popperjs/core" "^2.10.2"
+    "@popperjs/core" "^2.11.0"
     vue-resize "^1.0.0"
 
 vary@^1.1.2, vary@~1.1.2:
