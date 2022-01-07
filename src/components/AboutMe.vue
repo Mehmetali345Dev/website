@@ -62,12 +62,12 @@ export default {
           },
           {
             name: 'My Github Repos',
-            to: '/info/repos',
+            to: '/info/projects',
             desc: 'You can see github repos from here.',
           },
           {
             name: 'My Works',
-            to: '/info/works',
+            to: '/info/projects',
             desc: 'You can see my works from here.',
           },
         ],
