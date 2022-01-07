@@ -1,8 +1,9 @@
 <template>
   <div class="flex flex-col items-start">
     <div class="grid">
+      <WidgetTechnologies class="md:mt-0 mt-2" />
       <h1 class="text-xl font-bold">Projects are made by me</h1>
-      <div class="grid gap-3 sm:grid-cols-3 mt-2">
+      <div class="grid gap-3 sm:grid-cols-2 mt-2">
         <CardProject
           :project="project"
           v-for="(project, index) in projects"

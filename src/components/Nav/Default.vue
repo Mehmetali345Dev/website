@@ -6,21 +6,18 @@
       <div class="flex w-9/12 justify-between">
         <nuxt-link to="/">
           <div class="flex items-center">
-            <nuxt-img src="/icon.png" alt="345Dev" format="webp" class="w-10 h-10 rounded-md" />
-            <h1 class="font-bold hidden sm:block text-2xl ml-4">Mehmetali345Dev</h1>
+            <nuxt-img
+              src="/icon.png"
+              alt="345Dev"
+              format="webp"
+              class="w-10 h-10 rounded-md"
+            />
+            <h1 class="font-bold hidden sm:block text-2xl ml-4">
+              Mehmetali345Dev
+            </h1>
           </div>
         </nuxt-link>
-
-        <div class="hidden md:flex items-center space-x-5">
-          <nuxt-link
-            v-for="(link, index) in links"
-            :key="`link-${index}`"
-            class="text-lg font-bold"
-            :to="link.to"
-          >{{ link.name }}</nuxt-link>
-          <Color />
-        </div>
-        <Color class="md:hidden" />
+        <Color />
       </div>
     </div>
   </div>

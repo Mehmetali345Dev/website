@@ -1,20 +1,13 @@
 <template>
   <a
     :href="project.link"
-    class="
-      grid
-      rounded-md
-      justify-items-center
-      items-center
-      p-4
-      bg-gray-900 bg-opacity-30
-    "
+    class="flex gap-4 rounded-md justify-items-center items-center p-4 bg-gray-900 bg-opacity-30"
   >
     <Skeleton
       v-if="project.image"
       type="image"
+      class="w-32"
       :image-url="project.image"
-      class="rounded-tl rounded-tr"
     />
     <div class="grid items-center">
       <h1 class="text-lg font-bold">{{ project.title }}</h1>

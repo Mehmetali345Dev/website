@@ -11,10 +11,6 @@
         <h1 class="bold">{{ tech }}</h1>
       </div>
     </div>
-    <nuxt-link
-      to="/projects"
-      class="bg-green-600 font-bold p-4 rounded-md"
-    >See my all works, projects and repos</nuxt-link>
   </div>
 </template>
 
