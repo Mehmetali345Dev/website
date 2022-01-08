@@ -65,11 +65,6 @@ export default {
             to: '/info/repos',
             desc: 'You can see github repos from here.',
           },
-          {
-            name: 'My Works',
-            to: '/info/works',
-            desc: 'You can see my works from here.',
-          },
         ],
         pages: [
           {

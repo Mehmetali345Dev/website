@@ -2,8 +2,8 @@
   <div
     class="w-full flex flex-col bg-gray-200 dark:bg-black bg-opacity-60 dark:bg-opacity-60 items-end p-4"
   >
-    <div class="w-full flex justify-center">
-      <div class="flex w-9/12 justify-between">
+    <div class="w-full flex items-center justify-center">
+      <div class="flex w-9/12 items-center justify-between">
         <nuxt-link to="/">
           <div class="flex items-center">
             <nuxt-img
@@ -17,7 +17,21 @@
             </h1>
           </div>
         </nuxt-link>
-        <Color />
+        <div class="flex gap-2 items-center">
+          <nuxt-link
+            v-if="currentPath"
+            to="/"
+            class="font-bold text-lg text-black dark:text-white"
+            >Go back</nuxt-link
+          >
+          <nuxt-link
+            v-if="$route.params.slug"
+            to="/"
+            class="font-bold text-lg text-black dark:text-white"
+            >Geri dön</nuxt-link
+          >
+          <Color />
+        </div>
       </div>
     </div>
   </div>
@@ -27,23 +41,26 @@
 export default {
   data() {
     return {
-      links: [
-        {
-          name: 'projects',
-          to: '/projects',
-        },
-        {
-          name: 'donate',
-          to: '/donate',
-        },
-        {
-          name: 'blog',
-          to: '/blog',
-        },
+      paths: [
+        'info-projects',
+        'info-repos',
+        'info-whoami',
+        'dictionary',
+        'recommends',
+        'donate',
       ],
     }
   },
+  computed: {
+    currentPath() {
+      console.log(this.$route.name)
+      if (this.paths.includes(this.$route.name)) {
+        return true
+      } else {
+        return false
+      }
+    },
+  },
 }
 </script>
-
 <style></style>
