@@ -19,7 +19,7 @@
       <WidgetSpotify class="h-full" />
     </div>
     <h1 class="text-2xl font-bold">About Me</h1>
-    <div class="grid md:grid-cols-2 gap-2">
+    <div class="grid w-full md:grid-cols-2 gap-2">
       <nuxt-link
         v-for="(link, index) in links.me"
         :key="`link-${index}`"
@@ -33,7 +33,7 @@
       </nuxt-link>
     </div>
     <h1 class="text-2xl font-bold">Pages</h1>
-    <div class="grid md:grid-cols-2 gap-2">
+    <div class="grid w-full md:grid-cols-2 gap-2">
       <nuxt-link
         v-for="(link, index) in links.pages"
         :key="`link-${index}`"
