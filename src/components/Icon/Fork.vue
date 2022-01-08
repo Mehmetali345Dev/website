@@ -1,0 +1,66 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="192"
+    height="192"
+    fill="currentColor"
+    viewBox="0 0 256 256"
+  >
+    <rect width="256" height="256" fill="none"></rect>
+    <circle
+      cx="128"
+      cy="188"
+      r="28"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+    ></circle>
+    <circle
+      cx="188"
+      cy="68"
+      r="28"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+    ></circle>
+    <circle
+      cx="68"
+      cy="68"
+      r="28"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+    ></circle>
+    <path
+      d="M68,96v8a23.9,23.9,0,0,0,24,24h72a23.9,23.9,0,0,0,24-24V96"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+    ></path>
+    <line
+      x1="128"
+      y1="128"
+      x2="128"
+      y2="160"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+    ></line>
+  </svg>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style></style>
