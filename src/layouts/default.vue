@@ -9,7 +9,7 @@
     </transition>
 
     <div
-      class="flex flex-col w-11/12 md:w-7/12 my-6 z-10 h-full flex-grow items-start justify-center"
+      class="flex flex-col w-11/12 md:w-7/12 my-6 z-10 h-full flex-grow items-center justify-center"
     >
       <Nuxt class="flex-grow" />
     </div>

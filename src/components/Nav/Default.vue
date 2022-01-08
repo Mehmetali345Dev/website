@@ -3,7 +3,7 @@
     class="w-full flex flex-col bg-gray-200 dark:bg-black bg-opacity-60 dark:bg-opacity-60 items-end p-4"
   >
     <div class="w-full flex items-center justify-center">
-      <div class="flex w-9/12 items-center justify-between">
+      <div class="flex w-full md:w-9/12 items-center justify-between">
         <nuxt-link to="/">
           <div class="flex items-center">
             <nuxt-img
