@@ -26,7 +26,7 @@
         :to="link.to"
         class="bg-gray-900 scale-up rounded-md w-full gap-2 flex flex-col bg-opacity-30 p-4"
       >
-        <h1 class="text-xlitems-center font-bold truncate">
+        <h1 class="text-xl items-center font-bold truncate">
           {{ link.name }}
         </h1>
         <p class="text-lg text-gray-800 dark:text-gray-200 line-clamp-2">
