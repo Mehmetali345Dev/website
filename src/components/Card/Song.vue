@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex flex-col md:flex-row gap-3">
     <iframe
-      class="w-full rounded-md"
+      class="w-full rounded-md h-[30vh]"
       :src="`https://www.youtube.com/embed/${song.youtubeId}`"
       title="YouTube video player"
       frameborder="0"
