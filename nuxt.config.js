@@ -17,6 +17,10 @@ export default {
   // Meta tags imported from ./config/meta.js
   head,
 
+  googleAnalytics: {
+    id: 'UA-183921946-1',
+  },
+
   buildModules: [
     'nuxt-windicss',
     '@nuxtjs/color-mode',
@@ -25,9 +29,6 @@ export default {
     '@nuxtjs/google-analytics',
     'nuxt-compress',
   ],
-  googleAnalytics: {
-    id: 'UA-183921946-1',
-  },
 
   modules: [
     'nuxt-webfontloader',
@@ -37,17 +38,14 @@ export default {
     '@nuxt/content',
     '@nuxtjs/robots',
     ['@nuxtjs/sitemap', sitemap],
-    ['@nuxtjs/firebase', firebase]
+    ['@nuxtjs/firebase', firebase],
   ],
 
   // Loads all of css files from one rootscss file
   css: ['~/stylesheets/root.scss'],
 
   // Imports Animate-on-scroll and v-tooltip plugin
-  plugins: [
-    '@/plugins/aos.client.js',
-    '@/plugins/v-tooltip.client.js',
-  ],
+  plugins: ['@/plugins/aos.client.js', '@/plugins/v-tooltip.client.js'],
 
   // Configuration for modules
 

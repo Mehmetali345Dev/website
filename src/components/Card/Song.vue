@@ -8,7 +8,7 @@
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
     ></iframe>
-    <div class="flex flex-col w-full gap-3">
+    <div class="flex flex-col w-full justify-center gap-3">
       <div
         class="flex flex-col p-4 w-full bg-gray-900 bg-opacity-30 rounded-md gap-3"
       >
@@ -23,6 +23,14 @@
         <h1 class="flex gap-3 font-bold text-lg">
           Artist:
           <h1 class="w-full">{{ song.artist }}</h1>
+        </h1>
+      </div>
+      <div
+        class="flex flex-col p-4 w-full bg-gray-900 bg-opacity-30 rounded-md gap-3"
+      >
+        <h1 class="flex gap-3 font-bold text-lg">
+          Date:
+          <h1 class="w-full">{{ getDate }}</h1>
         </h1>
       </div>
       <a
@@ -53,6 +61,11 @@ export default {
     song: {
       type: Object,
       required: true,
+    },
+  },
+  computed: {
+    getDate() {
+      return this.$moment(this.song.date).format('YYYY/MM/DD')
     },
   },
 }
