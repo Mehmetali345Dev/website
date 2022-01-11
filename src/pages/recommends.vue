@@ -1,6 +1,7 @@
 <template>
   <div class="flex flex-col w-full items-start justify-center gap-3">
     <div
+      v-if="noSongToday"
       class="bg-opacity-30 p-4 w-full bg-red-600 border-l-4 border-red-600 rounded-md dark:border-red-600 font-bold"
     >
       No song for today! **Sad Trombone**
