@@ -14,25 +14,35 @@
     <div
       class="bg-green-500 dark:bg-green-500 h-full bg-opacity-30 flex p-4 items-center rounded-md"
     >
-      <a :href="this.spotify.url" title="View song on LastFM" target="_blank"  class="h-full items-center flex">
+      <a
+        :href="this.spotify.url"
+        title="View song on LastFM"
+        target="_blank"
+        class="h-full items-center flex"
+      >
         <img
           class="w-20 h-20 rounded-md md:flex hidden mr-4 bg-gray-900 outline-none"
           alt
           :src="this.spotify.image[1]['#text']"
         />
         <div class="flex flex-col space-y-1 justify-center">
-          <div class="text-sm font-bold leading-tight truncate-ellipsis">{{ this.spotify.name }}</div>
-          <div
-            class="text-sm leading-tight truncate-ellipsis"
-          >{{ 'by ' + this.spotify.artist['#text'] }}</div>
-          <div
-            class="text-sm leading-tight truncate-ellipsis"
-          >{{ 'from ' + this.spotify.album['#text'] }}</div>
+          <div class="text-sm font-bold leading-tight truncate-ellipsis">
+            {{ this.spotify.name }}
+          </div>
+          <div class="text-sm leading-tight truncate-ellipsis">
+            {{ 'by ' + this.spotify.artist['#text'] }}
+          </div>
+          <div class="text-sm leading-tight truncate-ellipsis">
+            {{ 'from ' + this.spotify.album['#text'] }}
+          </div>
         </div>
       </a>
     </div>
   </div>
-  <div v-else class="w-full bg-gray-900 bg-opacity-30 items-center flex p-4 rounded-md">
+  <div
+    v-else
+    class="w-full bg-gray-900 bg-opacity-30 items-center flex p-4 rounded-md"
+  >
     <h1 class="font-bold text-xl">Nothing is playing</h1>
   </div>
 </template>
@@ -52,23 +62,22 @@ export default {
   },
   methods: {
     async fetchInfo() {
-      const { data: music } = await this.$axios.get(
-        'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=Mehmetali345Dev&api_key=8f397e39b6d189cff1da808c7b971737&format=json&limit=1'
-      )
+      const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=Mehmetali345Dev&api_key=${this.$config.lastfm}&format=json&limit=1`
+
+      const { data: music } = await this.$axios.get(url)
 
       this.spotify = music.recenttracks.track[0]
 
       if (music.recenttracks.track[0]['@attr'] !== undefined) {
         this.isPlaying = true
-      }
-      else {
+      } else {
         this.isPlaying = false
       }
-    }
+    },
   },
   beforeDestroy() {
-    clearInterval(this.timer);
-  }
+    clearInterval(this.timer)
+  },
 }
 </script>
 <style></style>

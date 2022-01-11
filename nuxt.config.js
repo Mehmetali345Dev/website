@@ -1,7 +1,6 @@
 import head from './config/meta'
 import sitemap from './config/sitemap'
 import publicRuntimeConfig from './config/publicRuntimeConfig'
-import privateRuntimeConfig from './config/privateRuntimeConfig'
 import firebase from './config/firebase'
 
 export default {
@@ -11,8 +10,6 @@ export default {
   ssr: true,
   components: true,
   publicRuntimeConfig,
-
-  privateRuntimeConfig,
 
   // Meta tags imported from ./config/meta.js
   head,

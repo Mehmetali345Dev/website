@@ -26,7 +26,7 @@
           >
           <nuxt-link
             v-if="$route.params.slug"
-            to="/"
+            to="/blog"
             class="font-bold text-lg text-black dark:text-white"
             >Geri dön</nuxt-link
           >
@@ -48,12 +48,12 @@ export default {
         'dictionary',
         'recommends',
         'donate',
+        'blog'
       ],
     }
   },
   computed: {
     currentPath() {
-      console.log(this.$route.name)
       if (this.paths.includes(this.$route.name)) {
         return true
       } else {

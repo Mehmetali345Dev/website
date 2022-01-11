@@ -5,4 +5,5 @@ export default {
       Github: "https://github.com/Mehmetali345Dev/?utm_source=mehmetali345.xyz",
       mail: "mailto:345m.ali2007@gmail.com",
   },
+  lastfm: process.env.LASTFM_APIKEY
 }
