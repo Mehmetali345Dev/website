@@ -16,6 +16,10 @@ html {
   }
 }
 
+.scale-up{
+  @apply hover:scale-103 transform ease-in transition-all duration-200;
+}
+
 .nuxt-content {
   @apply space-y-2;
   /** Apply styles for headings */

@@ -56,6 +56,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/moment": "^1.6.1",
+    "@windicss/plugin-animations": "^1.0.9",
     "@windicss/plugin-scrollbar": "^1.2.3",
     "nuxt-compress": "^5.0.0",
     "nuxt-windicss": "^2.2.2",

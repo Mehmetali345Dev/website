@@ -24,11 +24,20 @@
         v-for="(link, index) in links.me"
         :key="`link-${index}`"
         :to="link.to"
-        class="bg-gray-900 rounded-md w-full gap-2 flex flex-col bg-opacity-30 p-4"
+        class="bg-gray-900 scale-up rounded-md w-full gap-2 flex flex-col bg-opacity-30 p-4"
       >
-        <h1 class="text-xl font-bold truncate">{{ link.name }}</h1>
+        <h1 class="text-xlitems-center font-bold truncate">
+          {{ link.name }}
+        </h1>
         <p class="text-lg text-gray-800 dark:text-gray-200 line-clamp-2">
           {{ link.desc }}
+        </p>
+        <p
+          v-if="link.featured"
+          class="gap-1 items-center font-bold text-lg flex"
+        >
+          Featured
+          <IconFire class="w-6 rounded-full h-6 text-red-600" />
         </p>
       </nuxt-link>
     </div>
@@ -38,11 +47,20 @@
         v-for="(link, index) in links.pages"
         :key="`link-${index}`"
         :to="link.to"
-        class="bg-gray-900 rounded-md w-full gap-2 flex flex-col bg-opacity-30 p-4"
+        class="bg-gray-900 scale-up rounded-md w-full gap-2 flex flex-col bg-opacity-30 p-4"
       >
-        <h1 class="text-xl font-bold truncate">{{ link.name }}</h1>
+        <h1 class="text-xl items-center font-bold truncate">
+          {{ link.name }}
+        </h1>
         <p class="text-lg text-gray-800 dark:text-gray-200 line-clamp-2">
           {{ link.desc }}
+        </p>
+        <p
+          v-if="link.featured"
+          class="gap-1 items-center font-bold text-lg flex"
+        >
+          Featured
+          <IconFire class="w-6 rounded-full h-6 text-red-600" />
         </p>
       </nuxt-link>
     </div>
@@ -64,6 +82,7 @@ export default {
             name: 'My Github Repos',
             to: '/info/repos',
             desc: 'You can see github repos from here.',
+            featured: true,
           },
         ],
         pages: [
@@ -76,11 +95,13 @@ export default {
             name: 'Turkish Blog',
             to: '/blog',
             desc: 'You can see my Turkish blog from here.',
+            featured: true,
           },
           {
             name: 'Recommendations',
             to: '/recommends',
-            desc: 'My daily song and weekly book recommendations (Coming Soon...).',
+            desc: 'My daily song and weekly book recommendations.',
+            featured: true,
           },
           {
             name: 'Dictionary',
@@ -91,6 +112,7 @@ export default {
             name: 'Utils',
             to: '/utils',
             desc: 'Useful tools for you like Opengraph viewer and generator (Coming Soon...).',
+            featured: true,
           },
         ],
       },

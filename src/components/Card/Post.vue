@@ -5,7 +5,7 @@
       name: 'blog-slug',
       params: { slug: getPostMeta.slug },
     }"
-    class="bg-gray-900 flex justify-start bg-opacity-30 items-center rounded-md px-6 py-4"
+    class="bg-gray-900 scale-up flex justify-start bg-opacity-30 items-center rounded-md px-6 py-4"
   >
     <img
       :src="getPostMeta.image"
