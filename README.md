@@ -20,7 +20,7 @@ My personal portfolio and blog made with Nuxt.js, Vue.js, WindiCSS.
 - Real-world apps
     - Firebase integration!
     - Turkish Dictionary for awkward words (Firestore)
-    - Recommendations (WIP) (Firestore)
+    - Recommendations (Firestore)
     - Utilities like metatag generator (WIP)
 - Most of styling job is made with WindiCSS
     - JIT!
@@ -74,9 +74,9 @@ I have two special pages, a Dictionary and Recommendations. If you don't need th
 - [ ] Add works
 - [x] Custom error page
 - Recommandations
-    - [ ] Create page
+    - [x] Create page
     - [ ] Add weekly book recommandation
-    - [ ] Add daily song recommandation
+    - [x] Add daily song recommandation
 
 # Special Thanks
 to [Eggsy](https://github.com/eggsy), [Ven](https://ven.earth) and [Tarık Coşkun](https://github.com/tarikcoskun). I'm very inspired by them, and i used some of their code.
