@@ -14,7 +14,7 @@
         Couldn't load GitHub repositories.
       </div>
 
-      <div v-else-if="repos.length > 0" class="grid gap-3 sm:grid-cols-2 mt-2">
+      <div v-else-if="repos.length > 0" class="grid gap-3 grid-cols-1 sm:grid-cols-2 mt-2">
         <a
           v-for="(repo, index) in repos"
           :key="`repo-${index}`"
@@ -43,8 +43,9 @@ export default {
     const { data: repos } = await this.$axios.get(
       'https://api.github.com/users/mehmetali345dev/repos?per_page=100'
     )
-    this.repos = repos
-      ?.sort((a, b) => b?.stargazers_count - a?.stargazers_count)
+    this.repos = repos?.sort(
+      (a, b) => b?.stargazers_count - a?.stargazers_count
+    )
   },
   head() {
     const title = 'Repos'

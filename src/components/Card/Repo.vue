@@ -8,29 +8,26 @@
       >
         {{ repo.name }}
       </span>
-
-      <div class="flex items-center space-x-1">
-        <div class="flex items-center space-x-1">
-          <IconFork
-            v-if="repo.fork"
-            class="w-6 h-6"
-            v-bind:class="{
-              ' text-white': $colorMode.preference === 'dark',
-              ' text-black': $colorMode.preference === 'light',
-            }"
-          />
-          {{ repo.stars }} <IconStar class="w-6 h-6 text-yellow-400" />
-        </div>
+      <div class="flex items-center space-x-2">
+        <IconFork
+          v-if="repo.fork"
+          class="w-6 h-6"
+          v-bind:class="{
+            ' text-white': $colorMode.preference === 'dark',
+            ' text-black': $colorMode.preference === 'light',
+          }"
+        />
+        <h1>{{ repo.stargazers_count }}</h1>
+        <IconStar class="w-6 h-6 text-yellow-400" />
       </div>
     </div>
-
-    <p class="text-gray-700 line-clamp-2 dark:text-gray-300">
+    <p class="text-gray-700 w-full truncate dark:text-gray-300">
       {{ repo.description }}
     </p>
     <div class="flex flex-col gap-1">
       <h1 class="flex gap-3 justify-between font-bold text-lg">
         License:
-        <span v-if="repo.license !== null" class="truncate">{{
+        <span v-if="repo.license !== null" class="truncate max-w-40">{{
           repo.license.name
         }}</span>
         <span v-else>None</span>
@@ -53,8 +50,9 @@ export default {
   },
   computed: {
     repoLanguage() {
-      if(this.repo.language === "Vue") return "Vue.js";
-      else return this.repo.language;
+      if (this.repo.language === 'Vue') return 'Vue.js'
+      else if (this.repo.language === 'SCSS') return 'Sass'
+      else return this.repo.language
     },
   },
 }
