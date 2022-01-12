@@ -18,13 +18,16 @@
     </div>
     <div
       v-else-if="$fetchState.pending"
-      class="font-bold text-2xl flex items-center justify-center flex-grow"
+      class="font-bold text-2xl flex gap-2 items-center flex-wrap justify-center flex-grow"
     >
-      Please wait fetching now!
+      <IconCircle class="animate-spin w-16 h-16" />
+      Please wait, fetching now!
     </div>
     <div v-else>
       <div class="flex flex-col gap-3">
-        <div class="flex flex-col gap-3 p-4 rounded-md bg-gray-900 bg-opacity-30">
+        <div
+          class="flex flex-col gap-3 p-4 rounded-md bg-gray-900 bg-opacity-30"
+        >
           <a
             class="text-blue-600"
             v-if="tag.metadata.website"
@@ -67,7 +70,7 @@ export default {
     const { data: meta } = await this.$axios.get(url)
     this.tag = meta
   },
-   head() {
+  head() {
     const title = 'Metatag Viewer'
     const description =
       'Fetch metatag from a website and display it in a simple way'

@@ -74,4 +74,7 @@ export default {
       families: ['JetBrains Mono:400,700'],
     },
   },
+  windicss: {
+    analyze: true,
+  },
 }
