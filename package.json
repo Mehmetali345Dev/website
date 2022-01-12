@@ -40,6 +40,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.20.2",
     "firebase": "^9.6.1",
+    "meta-fetcher": "^3.1.1",
     "nuxt": "^2.15.7",
     "nuxt-helmet": "^2.0.1",
     "nuxt-webfontloader": "^1.1.0",
