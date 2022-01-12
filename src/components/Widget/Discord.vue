@@ -7,7 +7,7 @@
     "
     class="bg-gray-900 bg-opacity-30 w-full flex animate-pulse p-4 rounded-md"
   >
-    <img class="w-16 h-16 rounded-md mr-4 bg-gray-900 outline-none" alt />
+    <div class="w-16 h-16 rounded-md mr-4 bg-gray-900 outline-none" /> 
     <div class="flex flex-col justify-center space-y-3">
       <h1 class="h-4 w-16 bg-gray-900"></h1>
       <h1 class="h-4 w-28 bg-gray-900"></h1>
