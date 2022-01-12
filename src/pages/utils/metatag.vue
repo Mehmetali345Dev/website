@@ -24,9 +24,7 @@
     </div>
     <div v-else>
       <div class="flex flex-col gap-3">
-        <div
-          :class="`flex flex-col gap-3 p-4 rounded-md ${getThemeColor}`"
-        >
+        <div class="flex flex-col gap-3 p-4 rounded-md bg-gray-900 bg-opacity-30">
           <a
             class="text-blue-600"
             v-if="tag.metadata.website"
@@ -52,8 +50,6 @@
 </template>
 
 <script>
-import metaFetcher from 'meta-fetcher'
-
 export default {
   data() {
     return {
@@ -61,18 +57,15 @@ export default {
       tag: [],
     }
   },
+  fetchOnServer: false,
   async fetch() {
-    if (this.url.length === 0) {
-      alert('Please enter an URL')
-    }
-    const result = await metaFetcher(this.url)
-    this.tag = result
-  },
-  computed: {
-    getThemeColor() {
-      if (this.tag.metadata.themeColor) return `bg-hex-${this.tag.metadata.themeColor}`
-      else return 'bg-gray-900 bg-opacity-30'
-    },
+    const url =
+      process.env.NODE_ENV === 'production'
+        ? `https://345dev.me/.netlify/functions/getMetatag?url=${this.url}`
+        : `http://localhost:8888/.netlify/functions/getMetatag?url=${this.url}`
+
+    const { data: meta } = await this.$axios.get(url)
+    this.tag = meta
   },
 }
 </script>
