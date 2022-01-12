@@ -29,17 +29,17 @@
           class="flex flex-col gap-3 p-4 rounded-md bg-gray-900 bg-opacity-30"
         >
           <a
-            class="text-blue-600"
+            class="flex gap-2 flex-wrap text-blue-600"
             v-if="tag.metadata.website"
             :href="tag.metadata.website"
-            >{{ tag.metadata.website }}</a
+            ><img :src="tag.favicons[1]" class="w-6 h-6 rounded-md" />{{ tag.metadata.website }}</a
           >
           <h1 v-if="tag.metadata.title" class="font-bold text-lg">
             Title: {{ tag.metadata.title }}
           </h1>
           <Skeleton
             type="image"
-            class="h-full rounded-md"
+            class="h-full min-h-96 rounded-md"
             :imageUrl="tag.metadata.banner"
           />
           <div v-if="tag.metadata.description">

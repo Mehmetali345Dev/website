@@ -111,7 +111,7 @@ export default {
           {
             name: 'Utils',
             to: '/utils',
-            desc: 'Useful tools for you like Opengraph viewer and generator (Coming Soon...).',
+            desc: 'Useful tools for you like Opengraph viewer and generator.',
             featured: true,
           },
         ],
