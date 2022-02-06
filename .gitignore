@@ -89,5 +89,5 @@ sw.*
 # Vim swap files
 *.swp
 
-# New blog post
-/posts/neden-elementaryos.md
+# netlify folder
+.netlify
