@@ -38,6 +38,13 @@ export default {
           description: 'My personal portfolio made with NuxtJS and WindiCSS',
           link: '/',
         },
+        {
+          title: 'MADE',
+          image: 'https://made.345dev.me/icon.png',
+          description:
+            "Awesome showcase for dotfiles and a wiki for ricing and for intruducing WM/DE's and ricing releated software to new users.",
+          link: 'https://made.345dev.me',
+        },
       ],
     }
   },
