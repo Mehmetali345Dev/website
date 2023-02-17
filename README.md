@@ -4,6 +4,11 @@
 I created this project after cloning thinking it was going to be pretty simple, come to find out that this project is slightly deprecated, outdated, and a bit of discouraging to new developers who wants to use a nice Blog like this.
 However, this project is still a good project and IS Still usable. Below is a list of fixes to this project that will help you to be about to use this project.
 
+I personally used `yarn install` so that I can see easier on whats causing issues, it will complete the installation through this repo. Once it was done, I was just curious so, I also ran `npm run build` right after to actually build some files if any was needed, I was unsure what I was dealing with so... let it be!
+Once it was one building, I ran `set NODE_OPTIONS=--openssl-legacy-provider` next to fix the  code: 'ERR_OSSL_EVP_UNSUPPORTED' issue, see below other options.
+
+And finally, run `npm run dev` to see the work :) I hope these fixes will help everyone. Enjoy and, you can thank him for making this blog, I just fixed it without firebase and `yarn` issues. I personally believe when creating a project, pick only 1 package and stick without, do not have 2 other options as it WILL or CAN cause issues for other developers, especially if they are new, they arent going to know the problems it causes let alone, reading the `.log` files and using google to help with the errors.
+
 ![Preview](https://raw.githubusercontent.com/Mehmetali345Dev/website/master/preview.png)
 
 [![CodeFactor](https://www.codefactor.io/repository/github/mehmetali345dev/website/badge)](https://www.codefactor.io/repository/github/mehmetali345dev/website)
